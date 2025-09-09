@@ -5,7 +5,7 @@ import avanis.sitemap.configuration.SitemapConfig;
 import com.liferay.blogs.model.BlogsEntry;
 import com.liferay.blogs.service.BlogsEntryLocalServiceUtil;
 import com.liferay.petra.string.StringPool;
-import com.liferay.portal.kernel.dao.orm.QueryUtil;
+//import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Layout;
@@ -32,8 +32,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.format.DateTimeFormatter;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.ArrayList;
+//import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -169,14 +169,17 @@ public class SitemapFilter extends BaseFilter {
     // Obtener y ordenar layouts
     private List<Layout> getOrderedLayouts() {
         OrderByComparator<Layout> orderByComparator = OrderByComparatorFactoryUtil.create("Layout", "modifiedDate", false);
-        return LayoutLocalServiceUtil.getLayouts(Long.parseLong(_configuration.groupId()), false, QueryUtil.ALL_POS, QueryUtil.ALL_POS, orderByComparator);
+        return LayoutLocalServiceUtil.getLayouts(
+                Long.parseLong(_configuration.groupId()), false, 0, _configuration.maxLayouts(), orderByComparator);
     }
 
     // Obtener y ordenar BlogsEntry
     private List<BlogsEntry> getOrderedBlogsEntries() {
         List<BlogsEntry> blogEntries = new ArrayList<>(BlogsEntryLocalServiceUtil.getBlogsEntries(QueryUtil.ALL_POS, QueryUtil.ALL_POS));
         Collections.sort(blogEntries, (entry1, entry2) -> entry2.getModifiedDate().compareTo(entry1.getModifiedDate()));
-        return blogEntries;
+        return BlogsEntryLocalServiceUtil.getBlogsEntries(
+                0, _configuration.maxBlogs(),
+                OrderByComparatorFactoryUtil.create("BlogsEntry", "modifiedDate", false));
     }
 
     // Obtener PermissionChecker para el usuario invitado

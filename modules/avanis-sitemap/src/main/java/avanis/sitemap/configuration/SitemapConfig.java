@@ -15,5 +15,11 @@ public interface SitemapConfig {
 
     @Meta.AD(name = "Categorias", deflt="paginas;actualidad")
     String categorias();
+    
+    @Meta.AD(name = "Max Layouts", deflt="100")
+    int maxLayouts();
+
+    @Meta.AD(name = "Max Blogs", deflt="100")
+    int maxBlogs();
 
 }
