@@ -6,6 +6,8 @@ import avanis.lonjas.model.Grupo;
 import avanis.lonjas.model.PrecioLonja;
 import avanis.lonjas.model.ProductoExplot;
 import avanis.lonjas.model.ProductoUser;
+import avanis.lonjas.model.Lonja;
+import avanis.lonjas.model.FechaLonja;
 import avanis.lonjas.service.FechaLonjaLocalServiceUtil;
 import avanis.lonjas.service.GrupoLocalServiceUtil;
 import avanis.lonjas.service.LonjaLocalServiceUtil;
@@ -32,6 +34,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -45,6 +48,9 @@ import java.util.stream.Collectors;
 public class LonjasUtil {
 
     private volatile AvanisLonjasWidgetConfig _config;
+    
+    private final Map<Long, Lonja> lonjaCache = new HashMap<>();
+    private final Map<Long, FechaLonja> fechaLonjaCache = new HashMap<>();
 
 	@Activate
 	@Modified
@@ -103,13 +109,34 @@ public class LonjasUtil {
         List<InfoProducto> favoritosUser = new ArrayList<>();
 
         List<ProductoUser> favoritosUserSearch = ProductoUserLocalServiceUtil.getProductoUserByUserId(userId);
-        for (ProductoUser favoritoUser : favoritosUserSearch) {
-            OrderByComparator<PrecioLonja> orderByComparator = OrderByComparatorFactoryUtil.create("AVANIS_LONJAS_PRECIOLONJA", "fecha", false) ;
-            List<PrecioLonja> productosLista = PrecioLonjaLocalServiceUtil.getPrecioLonjaByLonjaIdByProductoId(favoritoUser.getLonjaId(), favoritoUser.getProductoId(), orderByComparator);
+        Set<Long> lonjaIds = favoritosUserSearch.stream()
+                .map(ProductoUser::getLonjaId)
+                .collect(Collectors.toSet());
 
-            if (!productosLista.isEmpty()) {
-                Grupo grupo = GrupoLocalServiceUtil.fetchGrupo(productosLista.get(0).getGrupoId());
-                favoritosUser.add(completarInfoProducto(productosLista.get(0), grupo, userId));
+        Set<Long> productoIds = favoritosUserSearch.stream()
+                .map(ProductoUser::getProductoId)
+                .collect(Collectors.toSet());
+
+        OrderByComparator<PrecioLonja> orderByComparator = OrderByComparatorFactoryUtil.create(
+                "AVANIS_LONJAS_PRECIOLONJA", "fecha", false);
+
+        Map<String, PrecioLonja> precios = PrecioLonjaLocalServiceUtil
+                .getLatestByLonjaIdsAndProductoIds(lonjaIds, productoIds, orderByComparator)
+                .stream()
+                .collect(Collectors.toMap(pl -> pl.getLonjaId() + "_" + pl.getProductoId(), pl -> pl));
+
+        Set<Long> grupoIds = precios.values().stream()
+                .map(PrecioLonja::getGrupoId)
+                .collect(Collectors.toSet());
+
+        Map<Long, Grupo> grupos = GrupoLocalServiceUtil.getGrupos(grupoIds).stream()
+                .collect(Collectors.toMap(Grupo::getGrupoId, g -> g));
+
+        for (ProductoUser favoritoUser : favoritosUserSearch) {
+            PrecioLonja precio = precios.get(favoritoUser.getLonjaId() + "_" + favoritoUser.getProductoId());
+            if (precio != null) {
+                Grupo grupo = grupos.get(precio.getGrupoId());
+                favoritosUser.add(completarInfoProducto(precio, grupo, userId));
             }
         }
         return favoritosUser;
@@ -125,20 +152,18 @@ public class LonjasUtil {
             infoProducto.setIdGrupo(String.valueOf(grupo.getGrupoId()));
         }
 
-        LonjaLocalServiceUtil.getLonjaBylonjaId(producto.getLonjaId())
-            .stream()
-            .findFirst()
-            .ifPresent(lonja -> {
-                infoProducto.setNombreLonja(lonja.getNombre());
-                infoProducto.setIdLonja(lonja.getLonjaId());
-            });
+        Lonja lonja = lonjaCache.computeIfAbsent(producto.getLonjaId(),
+                id -> LonjaLocalServiceUtil.getLonjaBylonjaId(id).stream().findFirst().orElse(null));
+        if (lonja != null) {
+            infoProducto.setNombreLonja(lonja.getNombre());
+            infoProducto.setIdLonja(lonja.getLonjaId());
+        }
 
-        FechaLonjaLocalServiceUtil.getFechaLonjaByLonjaId(producto.getLonjaId())
-            .stream()
-            .findFirst()
-            .ifPresent(fechaLonja -> {
-                infoProducto.setFechaLonja(fechaFormato(fechaLonja.getFecha()));
-            });
+        FechaLonja fechaLonja = fechaLonjaCache.computeIfAbsent(producto.getLonjaId(),
+                id -> FechaLonjaLocalServiceUtil.getFechaLonjaByLonjaId(id).stream().findFirst().orElse(null));
+        if (fechaLonja != null) {
+            infoProducto.setFechaLonja(fechaFormato(fechaLonja.getFecha()));
+        }
 
         infoProducto.setNombreProducto(producto.getNombreProducto());
         infoProducto.setProductoId(producto.getProductoId());
