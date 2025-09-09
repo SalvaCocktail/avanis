@@ -1,0 +1,32 @@
+<c:if test="${isEmbedded == null || !isEmbedded}">
+    <div>
+        <% if (resourceUrl != null && !resourceUrl.isEmpty()) { %>
+        <a href="<%= resourceUrl %>" target="_blank">
+
+            <% if (resourceTitle != null && !resourceTitle.isEmpty()) { %>
+            <div class="hilos-comunidad-titulo">
+                <%= resourceTitle %>
+            </div>
+            <% } %>
+
+            <% if (resourceSubtitle != null && !resourceSubtitle.isEmpty()) { %>
+            <div class="hilos-comunidad-subtitulo">
+                <%= resourceSubtitle %>
+            </div>
+            <% } %>
+
+            <% if (resourceImageUrl != null && !resourceImageUrl.isEmpty()) { %>
+            <br>
+            <img class="hilos-comunidad-imagen" src="<%= resourceImageUrl %>" alt="resourceImage">
+            <% } %>
+
+            <% if (resourceStartDate != null && resourceEndDate != null) { %>
+            <div class="hilos-comunidad-fecha">
+                <%= resourceStartDate + " - " + resourceEndDate %>
+            </div>
+            <% } %>
+
+        </a>
+        <% } %>
+    </div>
+</c:if>

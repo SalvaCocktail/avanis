@@ -1,0 +1,100 @@
+.avanis-slider-widget-portlet {
+}
+
+#portlet_avanis_lonjas_AvanisLonjasWidgetPortlet .av-lmw .av-lmw__container a:hover{
+  color: #107e3e;
+}
+.slider-comunidad .portlet-de-eventos .av-pe__footer-text:hover{
+  color: #107e3e;
+}
+.slider-comunidad .portlet-de-ayudas{
+  height:unset!important;
+}
+.comunidad_header {
+  display: grid
+;
+  /* grid-template-columns: 67.4% 35%; */
+  /* row-gap: 20px; */
+  column-gap: 40px;
+  align-items: start;
+  background-color: #EFF0E8;
+}
+.slick-next.slick-arrow{
+  display: none;
+}
+.av-co-header__greeting {
+  grid-column: 1;
+}
+
+.av-co-header__tabs {
+  grid-column: 1;
+}
+
+.av-co-header__share-container {
+  grid-column: 1;
+}
+
+.av-co-header__categories {
+  grid-column: 1;
+}
+
+.av-co-header__filters {
+  grid-column: 1;
+}
+
+.portlet-de-sliders {
+  grid-column: 2;
+  align-self: start;
+  grid-row: 1 / 9;
+}
+
+/* Opcional: Asegurar que los elementos de la izquierda no tengan márgenes que alteren la altura */
+.av-co-header__greeting,
+.av-co-header__tabs,
+.av-co-header__share-container,
+.av-co-header__categories,
+.av-co-header__filters {
+  margin: 0;
+  padding: 10px 16px;
+}
+
+.av-co-header__share-container{
+  margin: 0;
+  padding: 10px 16px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5rem;
+}
+#portlet_avanisComunidadPortlet_AvanisComunidadPortlet{
+  background-color: #eff0e8;
+}
+@media (max-width: 1000px) {
+  .comunidad_header {
+    display: block;
+  }
+}
+
+.slick-next.slick-arrow,.slick-prev.slick-arrow {
+  display: none!important;
+}
+
+/* A más de 1000px */
+@media (min-width: 1000px) {
+  #portlet_avanis_slider_widget_portlet_AvanisSliderWidgetPortlet_INSTANCE_1234 {
+    width: 400px;
+  }
+}
+
+/* A menos o igual a 1000px */
+@media (max-width: 1000px) {
+  #portlet_avanis_slider_widget_portlet_AvanisSliderWidgetPortlet_INSTANCE_1234 {
+    width: 100%;
+    .av-te-wte {
+      max-width: 100%;
+    }
+  }
+}
+
+.modal-seguidores .av-te-ma-modal .av-buttons-tipo-registro.js-btn-register-email a:hover span{
+  color: white!important;
+}

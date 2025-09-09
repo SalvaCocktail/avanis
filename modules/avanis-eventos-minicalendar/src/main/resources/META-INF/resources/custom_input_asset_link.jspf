@@ -1,0 +1,202 @@
+<%@ page import="com.liferay.staging.StagingGroupHelper" %>
+<%@ page import="com.liferay.staging.StagingGroupHelperUtil" %>
+<%@ page import="com.liferay.asset.link.model.AssetLink" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.liferay.asset.link.service.AssetLinkLocalServiceUtil" %>
+<%@ page import="com.liferay.calendar.model.CalendarBooking" %>
+<%@ page import="com.liferay.asset.kernel.model.AssetEntry" %>
+
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+<%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+<%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
+<%@ page import="com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil" %>
+<%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
+<%@ page import="java.util.ArrayList" %>
+
+<aui:input type="file" name="customRelatedAssets" multiple="true" id="customRelatedAssets">
+</aui:input>
+
+
+<%
+    StagingGroupHelper stagingGroupHelper = StagingGroupHelperUtil.getStagingGroupHelper();
+
+    AssetEntry assetEntry = AssetEntryLocalServiceUtil.fetchEntry(CalendarBooking.class.getName(), calendarBookingId);
+    List<AssetLink> assetLinks = new ArrayList<>();
+
+    if (assetEntry != null) {
+        assetLinks = AssetLinkLocalServiceUtil.getDirectLinks(assetEntry.getEntryId());
+    }
+
+%>
+
+
+<liferay-ui:search-container
+        compactEmptyResultsMessage="<%= true %>"
+        emptyResultsMessage="none"
+        headerNames="title,null"
+        total="<%= assetLinks.size() %>"
+>
+    <liferay-ui:search-container-results
+            results="<%= assetLinks %>"
+    />
+
+    <liferay-ui:search-container-row
+            className="com.liferay.asset.link.model.AssetLink"
+            keyProperty="entryId2"
+            modelVar="assetLink"
+    >
+
+        <%
+            AssetEntry assetLinkEntry = null;
+            try {
+                assetLinkEntry = AssetEntryLocalServiceUtil.getAssetEntry(assetLink.getEntryId2());
+            } catch (PortalException ignored) {
+
+            }
+        %>
+
+        <liferay-ui:search-container-column-text
+                name="title"
+        >
+            <div class="list-group-title">
+                <%= HtmlUtil.escape(assetLinkEntry.getTitle(locale)) %>
+            </div>
+
+
+        </liferay-ui:search-container-column-text>
+
+        <liferay-ui:search-container-column-text>
+            <clay:button
+                    aria-label='<%= LanguageUtil.get(request, "remove") %>'
+                    borderless="<%= true %>"
+                    cssClass="float-right lfr-portal-tooltip modify-link"
+                    data-rowId="<%= assetLinkEntry.getEntryId() %>"
+                    displayType="secondary"
+                    icon="times-circle"
+                    title="remove"
+                    type="button"
+            />
+        </liferay-ui:search-container-column-text>
+    </liferay-ui:search-container-row>
+
+    <liferay-ui:search-iterator
+            markupView="lexicon"
+            paginate="<%= false %>"
+            searchResultCssClass="table table-autofit table-heading-nowrap"
+    />
+</liferay-ui:search-container>
+
+<c:if test="<%= stagingGroupHelper.isLiveGroup(themeDisplay.getScopeGroupId()) %>">
+	<span>
+		<liferay-ui:message key="related-assets-for-staged-asset-types-can-be-managed-on-the-staging-site"/>
+	</span>
+</c:if>
+
+
+<aui:input name="assetLinkEntryIds" type="hidden"/>
+
+<aui:script use="liferay-search-container">
+    var searchContainer = Liferay.SearchContainer.get(
+    '<portlet:namespace/>assetLinksSearchContainer'
+    );
+
+    searchContainer.get('contentBox').delegate(
+    'click',
+    (event) => {
+    var link = event.currentTarget;
+
+    var tr = link.ancestor('tr');
+
+    searchContainer.deleteRow(tr, link.getAttribute('data-rowId'));
+    },
+    '.modify-link'
+    );
+</aui:script>
+
+
+<script>
+    function validateRelatedAssets() {
+        console.log("VALIDATE")
+        let inputFile = document.getElementById('<portlet:namespace/>customRelatedAssets');
+
+        const files = inputFile.files;
+        const allowedExtensions = ['pdf', 'png', 'jpg'];
+        const maxFileSize = 5 * 1024 * 1024; // 5 MB
+        const maxTotalSize = 10 * 1024 * 1024; // 10 MB
+        const maxFiles = 5;
+
+        let errorMessages = [];
+
+        if (files.length > maxFiles) {
+            errorMessages.push('No puedes seleccionar m\u00E1s de 5 archivos.');
+        }
+
+        let totalSize = 0;
+
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            let fileName = file.name;
+            let fileSize = file.size;
+            let fileExtension = fileName.split('.').pop().toLowerCase();
+
+            if (allowedExtensions.indexOf(fileExtension) === -1) {
+                errorMessages.push('Archivo ' + fileName + ' no tiene una extensi\u00F3n v\u00E1lida. Las extensiones permitidas son: pdf, png, jpg.');
+            }
+
+            if (fileSize > maxFileSize) {
+                errorMessages.push('Archivo ' + fileName + ' excede el tamaño m\u00E1ximo de 5 MB.');
+            }
+
+            totalSize += fileSize;
+        }
+
+        if (totalSize > maxTotalSize) {
+            errorMessages.push('El tamaño combinado de todos los archivos excede el l\u00EDmite de 10 MB.');
+        }
+        showRelatedAssetError(errorMessages)
+
+        const thereIsErrors = errorMessages.length > 0
+
+        if (thereIsErrors) {
+            const errorContainer = document.getElementById('relatedAssetErrors');
+            errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        return !thereIsErrors
+
+    }
+
+    function showRelatedAssetError(errorMessages) {
+        const errorContainer = document.getElementById('relatedAssetErrors');
+
+        errorContainer.innerHTML = '';
+
+        errorMessages.forEach((error) => {
+            const errorHtml = `
+            <div class="alert alert-dismissible alert-danger" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="liferay-alert" type="button">
+                    <span class="c-inner" tabindex="-1">
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-times" focusable="false">
+                            <use href="/o/theme-avanis/images/clay/icons.svg#times"></use>
+                        </svg>
+                    </span>
+                    <span class="sr-only">Close</span>
+                </button>
+
+                <span class="alert-indicator">
+                    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-exclamation-full">
+                        <use xlink:href="/o/theme-avanis/images/clay/icons.svg#exclamation-full"></use>
+                    </svg>
+                </span>
+
+                <strong class="lead">Error:</strong> \${error}
+            </div>
+        `;
+
+            // Añadimos el HTML al contenedor de errores
+            errorContainer.insertAdjacentHTML('beforeend', errorHtml);
+        });
+
+
+    }
+</script>

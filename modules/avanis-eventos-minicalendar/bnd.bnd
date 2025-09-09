@@ -1,0 +1,8 @@
+Bundle-Name: avanis-eventos-minicalendar
+Bundle-SymbolicName: avanis.eventos.minicalendar
+Bundle-Version: 1.0.0
+Export-Package: avanis.eventos.minicalendar.constants
+-dsannotations-options: inherit
+Import-Package: avanis.eventos.widget.eventos.actividades.resource;version="[1.0,2.0)", \
+                *
+

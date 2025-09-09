@@ -1,0 +1,8 @@
+{
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "themes\\avanis-v2-theme"
+        ]
+    }
+}

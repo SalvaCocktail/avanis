@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  font-family: Inter;
+}
+a {
+  text-decoration: none !important;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  font-family: Inter;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: #122c1f;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-top {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+@media (min-width: 992px) {
+  .info-top {
+    max-width: 1440px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer__logo {
+  width: 138px;
+  height: 30px;
+}
+@media (min-width: 992px) {
+  .footer__logo {
+    width: 185px;
+    height: 40px;
+  }
+}
+
+.footer__contact {
+  text-align: left;
+}
+@media (min-width: 992px) {
+  .footer__contact {
+    text-align: right;
+  }
+}
+.footer__contact-any-question {
+  margin-bottom: 2px;
+}
+
+.footer__paragraph-strong {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 32px;
+}
+
+.footer__sm-link-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.info-bottom {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+}
+@media (min-width: 992px) {
+  .info-bottom {
+    max-width: 1440px;
+    height: 50px;
+    padding: 0 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.info-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #646b6b;
+}
+
+.footer__footer-menu {
+  font-weight: 600;
+}
+
+.footer__footer-menu ul {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .footer__footer-menu ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.footer__footer-menu ul li a {
+  padding: 4px !important;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: right;
+  color: #fff;
+}
+.footer__footer-menu ul li a:hover {
+  color: inherit;
+}
+@media (min-width: 992px) {
+  .footer__footer-menu ul li span {
+    padding-right: 8px;
+    border-right: 1px solid #646b6b;
+  }
+  .footer__footer-menu ul li:last-child span {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+

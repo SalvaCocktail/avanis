@@ -1,0 +1,14 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"name": "googleLoginUrl",
+					"type": "text",
+					"label": "Google Login URL",
+					"defaultValue": "/home/-/login//openid_connect_request?_com_liferay_login_web_portlet_LoginPortlet_OPEN_ID_CONNECT_PROVIDER_NAME=Google&_com_liferay_login_web_portlet_LoginPortlet_redirect=https://www.avanis.es/comunidad"
+				}
+			]
+		}
+	]
+}

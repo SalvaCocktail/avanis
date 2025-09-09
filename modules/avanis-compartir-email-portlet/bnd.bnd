@@ -1,0 +1,5 @@
+Bundle-Name: avanis-compartir-email-portlet
+Bundle-SymbolicName: avanis.compartir.email.portlet
+Bundle-Version: 1.0.0
+Export-Package: \
+ avanis.compartir.email.portlet.constants

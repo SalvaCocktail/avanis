@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="avanis.calendarbooking.sb.model.BookingAgenda">
+		<field name="uuid" type="String" />
+		<field name="calendarBookingAgendaId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="day" type="long" />
+		<field name="startHour" type="long" />
+		<field name="endHour" type="long" />
+		<field name="title" type="String" />
+		<field name="description" type="String" />
+		<field name="calendarBookingId" type="long" />
+	</model>
+	<model name="avanis.calendarbooking.sb.model.Protagonist">
+		<field name="uuid" type="String" />
+		<field name="protagonistId" type="long" />
+		<field name="calendarBookingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="lastName" type="String" />
+		<field name="profession" type="String" />
+		<field name="bio" type="String" />
+		<field name="portraitUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+	</model>
+	<model name="avanis.calendarbooking.sb.model.Sponsor">
+		<field name="uuid" type="String" />
+		<field name="sponsorId" type="long" />
+		<field name="calendarBookingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="iconUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+	</model>
+</model-hints>

@@ -1,0 +1,574 @@
+@import '_variables';
+
+// #reginon Texts
+
+// Texts
+$text-family: 'Inter', sans-serif;
+
+.text-capitalize{
+  text-transform: capitalize;
+}
+
+.av-ma .h2 {
+  font-family: $text-family;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: $color-content-01;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    color: $color-content-01;
+  }
+}
+
+.av-ma .h2-inverse {
+  font-family: $text-family;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: $color-content-01-inverse;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    color: $color-content-01-inverse;
+  }
+}
+
+.av-ma .h3 {
+  font-family: $text-family;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: $color-content-01;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    color: $color-content-01;
+  }
+}
+
+.av-ma .h3-inverse {
+  font-family: $text-family;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: $color-content-01-inverse;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    color: $color-content-01-inverse;
+  }
+}
+
+.av-ma .h5 {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $color-content-01;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $color-content-01;
+  }
+}
+
+.av-ma .h5-inverse {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $color-content-01-inverse;
+
+  @media (min-width: 769px) {
+    font-family: $text-family;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $color-content-01-inverse;
+  }
+}
+
+.av-ma .body-m {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $color-content-01;
+}
+.av-ma .body-m-inverse {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $color-content-01-inverse;
+}
+
+.av-ma .body-s {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-content-01;
+}
+.av-ma .body-s-light {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-content-02;
+}
+.av-ma .body-s-inverse {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-content-01-inverse;
+}
+.av-ma .body-s-strong {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: $color-content-01;
+}
+.av-ma .body-s-strong-inverse {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: $color-content-01-inverse;
+}
+
+.av-ma .link-l {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $color-content-active;
+}
+.av-ma .link-l-inverse {
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $color-content-active-inverse;
+}
+
+.av-ma .link-s {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: $color-content-active;
+}
+.av-ma .link-s-inverse {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: $color-content-active-inverse;
+}
+
+.av-ma .text-label {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: $color-content-01;
+}
+.av-ma .text-label-inverse {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: $color-content-01;
+}
+
+.av-ma .weather-temperature-big {
+  font-family: $text-family;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 56px;
+  color: $color-content-01;
+
+  @media (min-width: 769px) {
+    font-size: 72px;
+    line-height: 85px;
+  }
+}
+.av-ma .weather-temperature-big-inverse {
+  font-family: $text-family;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 56px;
+  color: $color-content-01-inverse;
+
+  @media (min-width: 769px) {
+    font-size: 72px;
+    line-height: 85px;
+  }
+}
+
+.av-ma .weather-temperature-small {
+  font-family: $text-family;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  color: $color-content-01;
+}
+.av-ma .weather-temperature-small-inverse {
+  font-family: $text-family;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  color: $color-content-01-inverse;
+}
+
+.av-ma .alert-title {
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: $color-content-alert-title;
+}
+
+.av-ma .alert-tag {
+  font-family: $text-family;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: $color-content-01;
+}
+.av-ma .alert-tag-strong {
+  font-family: $text-family;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  color: $color-content-01;
+}
+// #endreginon Texts
+
+// #reginon Buttons
+.av-ma .av-ma__btn {
+  width: 100%;
+  height: 40px;
+  max-height: 40px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.av-ma .av-ma-pd .av-ma__btn {
+  width: 100%;
+  max-width: 320px;
+  @media (min-width: 769px) {
+    max-width: 192px;
+  }
+}
+
+.av-ma .av-ma__btn--primary {
+  background-color: $color-btn-bg-active;
+  color: $color-content-01-inverse;
+  
+  &:hover{
+      background-color: $color-content-hover-02;
+  color: $color-white;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  }
+}
+
+.av-ma .av-ma__btn--secondary {
+  background-color: $color-bg-01;
+  color: $color-content-active;
+  border: 1px solid $color-border-active;
+  
+  &:hover{
+    background-color: transparent;
+    border-color: $color-content-hover;
+    color: $color-content-hover;
+    cursor: pointer;
+  }
+}
+
+// #endreginon Buttons
+// #reginon Weather Icons
+
+.symbol-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  &--1 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/1.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/1-noche.svg');
+    }
+  }
+  &--2 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/2.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/2-noche.svg');
+    }
+  }
+  &--3 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/3.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/3-noche.svg');
+    }
+  }
+  &--4 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/4.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/4-noche.svg');
+    }
+  }
+  &--5 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/5.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/5-noche.svg');
+    }
+  }
+  &--6 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/6.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/6-noche.svg');
+    }
+  }
+  &--7 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/7.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/7-noche.svg');
+    }
+  }
+  &--8 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/8.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/8-noche.svg');
+    }
+  }
+  &--9 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/9.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/9-noche.svg');
+    }
+  }
+  &--10 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/10.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/10-noche.svg');
+    }
+  }
+  &--11 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/11.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/11-noche.svg');
+    }
+  }
+  &--12 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/12.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/12-noche.svg');
+    }
+  }
+  &--13 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/13.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/13-noche.svg');
+    }
+  }
+  &--14 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/14.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/14-noche.svg');
+    }
+  }
+  &--15 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/15.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/15-noche.svg');
+    }
+  }
+  &--16 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/16.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/16-noche.svg');
+    }
+  }
+  &--17 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/17.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/17-noche.svg');
+    }
+  }
+  &--18 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/18.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/18-noche.svg');
+    }
+  }
+  &--19 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/19.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/19-noche.svg');
+    }
+  }
+  &--20 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/20.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/20-noche.svg');
+    }
+  }
+  &--21 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/21.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/21-noche.svg');
+    }
+  }
+  &--22 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/22.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/22-noche.svg');
+    }
+  }
+  &--23 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/23.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/23-noche.svg');
+    }
+  }
+  &--24 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/24.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/24-noche.svg');
+    }
+  }
+  &--25 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/25.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/25-noche.svg');
+    }
+  }
+  &--26 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/26.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/26-noche.svg');
+    }
+  }
+  &--27 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/27.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/27-noche.svg');
+    }
+  }
+  &--28 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/28.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/28-noche.svg');
+    }
+  }
+  &--29 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/29.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/29-noche.svg');
+    }
+  }
+  &--30 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/30.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/30-noche.svg');
+    }
+  }
+  &--31 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/31.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/31-noche.svg');
+    }
+  }
+  &--32 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/32.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/32-noche.svg');
+    }
+  }
+  &--33 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/33.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/33-noche.svg');
+    }
+  }
+  &--34 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/34.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/34-noche.svg');
+    }
+  }
+  &--35 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/35.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/35-noche.svg');
+    }
+  }
+  &--36 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/36.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/36-noche.svg');
+    }
+  }
+  &--37 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/37.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/37-noche.svg');
+    }
+  }
+  &--38 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/38.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/38-noche.svg');
+    }
+  }
+  &--39 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/39.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/39-noche.svg');
+    }
+  }
+  &--40 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/40.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/40-noche.svg');
+    }
+  }
+  &--41 {
+    background-image: url('/o/theme-avanis/images/icons/weather-icons/day/41.svg');
+    &.iconNight {
+      background-image: url('/o/theme-avanis/images/icons/weather-icons/night/41-noche.svg');
+    }
+  }
+}
+// #endreginon Weather Icons

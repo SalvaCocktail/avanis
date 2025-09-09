@@ -1,0 +1,4 @@
+Bundle-Name: avanis-crear-paginas
+Bundle-SymbolicName: avanis.crear.paginas
+Bundle-Version: 1.0.0
+Export-Package: avanis.crear.paginas.constants

@@ -1,0 +1,95 @@
+{
+"details": [
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "Legumes"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "beef"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "oilseed"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "meat_goat"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "tubers"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "dairy_ovine"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "shelled_fruits"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "dairy_goat"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "foragers"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "stockbreeding_others"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "porcine"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "vegetables"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "vineyard"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "rabbit_farming"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "meat_ovine"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "fruit_trees"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "plant_health"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "dairy_cattle"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "cereals"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "poultry_farming"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "animal_health"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "agriculture_others"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"label" : "olive_grove"
+	}
+]}

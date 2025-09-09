@@ -1,0 +1,7 @@
+Bundle-Name: avanis-compartir-rrss-portlet
+Bundle-SymbolicName: avanis.compartir.rrss.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.compartir.rrss.portlet.constants
+Provide-Capability: \
+    	liferay.language.resources;\
+    		resource.bundle.base.name="content.Language"

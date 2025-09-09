@@ -1,0 +1,6 @@
+dependencies {
+	implementation project(path: ':modules:avanis-eventos-follow-SB:avanis-eventos-follow-SB-api')
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

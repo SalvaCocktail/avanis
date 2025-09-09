@@ -1,0 +1,31 @@
+{
+"dedications": [
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "agriculture"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "stockbreeding"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "sale-of-products-or-services"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "transforming-industry"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "startups"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "technology-and-agrotech"
+	},
+	{
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"dedication_string" : "other"
+	}
+]}

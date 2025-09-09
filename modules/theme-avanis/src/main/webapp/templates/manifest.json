@@ -1,0 +1,55 @@
+{
+  "name": "avanis",
+  "short_name": "avanis",
+  "start_url": "/",
+  "background_color": "#122C1F",
+  "theme_color": "#C6E75A",
+  "display": "standalone",
+  "description": "La comunidad para el sector agroalimentario",
+  "icons": [
+    {
+      "src": "/o/theme-avanis/images/pwa/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "32x28"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/o/theme-avanis/images/pwa/screenshot1.png",
+      "sizes": "1552x987",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/o/theme-avanis/images/pwa/screenshot2.png",
+      "sizes": "828x1524",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

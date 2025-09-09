@@ -1,0 +1,11 @@
+dependencies {
+	api project(":modules:avanis-eventos-follow-SB:avanis-eventos-follow-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-eventos-follow-SB-api/src/main/java"
+}
+
+group = "avanis.eventos.follow.sb"

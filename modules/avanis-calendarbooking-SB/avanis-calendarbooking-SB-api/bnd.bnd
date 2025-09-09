@@ -1,0 +1,10 @@
+Bundle-Name: avanis-calendarbooking-SB-api
+Bundle-SymbolicName: avanis.calendarbooking.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	avanis.calendarbooking.sb.exception,\
+	avanis.calendarbooking.sb.model,\
+	avanis.calendarbooking.sb.service,\
+	avanis.calendarbooking.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../avanis-calendarbooking-SB-service/service.xml

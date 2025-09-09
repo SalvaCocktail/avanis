@@ -1,0 +1,7 @@
+Bundle-Name: avanis-compartir-widget-portlet
+Bundle-SymbolicName: avanis.compartir.widget
+Bundle-Version: 1.0.0
+Export-Package: avanis.compartir.widget.constants
+Provide-Capability: \
+    	liferay.language.resources;\
+    		resource.bundle.base.name="content.Language"

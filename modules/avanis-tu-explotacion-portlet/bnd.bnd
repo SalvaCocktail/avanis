@@ -1,0 +1,9 @@
+Bundle-Name: avanis-tu-explotacion-portlet
+Bundle-SymbolicName: avanis.tu.explotacion.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.tu.explotacion.portlet.constants,\
+avanis.tu.explotacion.sb.model.impl,\
+    avanis.tu.explotacion.sb.service.base,\
+    avanis.tu.explotacion.sb.service.http,\
+    avanis.tu.explotacion.sb.service.impl,\
+    avanis.tu.explotacion.sb.service.persistence.impl

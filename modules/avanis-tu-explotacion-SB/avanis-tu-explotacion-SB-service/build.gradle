@@ -1,0 +1,13 @@
+dependencies {
+	api project(":modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api")
+    implementation project(path: ':modules:importDataService')
+    implementation project(path: ':modules:meteored-service')
+
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-tu-explotacion-SB-api/src/main/java"
+}
+
+group = "avanis.tu.explotacion.sb"

@@ -1,0 +1,17 @@
+
+<div class="alloy-editor-container">
+    <liferay-editor:editor
+            allowBrowseDocuments="<%= false %>"
+            contents=""
+            cssClass="reply-message-body"
+            editorName="ckeditor_classic"
+            name="replyMessageBody${message.messageId}"
+            showSource="<%= false %>"
+     />
+</div>
+
+<aui:script>
+    function <portlet:namespace />${message.messageId}getHTML() {
+    return window.<portlet:namespace />replyMessageBody${message.messageId}.getHTML();
+    }
+</aui:script>

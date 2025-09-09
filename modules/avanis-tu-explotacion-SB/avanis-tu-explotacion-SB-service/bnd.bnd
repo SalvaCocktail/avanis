@@ -1,0 +1,13 @@
+Bundle-Name: avanis-tu-explotacion-SB-service
+Bundle-SymbolicName: avanis.tu.explotacion.sb.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+-dsannotations-options: inherit
+
+Export-Package:\
+	avanis.tu.explotacion.sb.model.impl,\
+	avanis.tu.explotacion.sb.service.base,\
+	avanis.tu.explotacion.sb.service.http,\
+	avanis.tu.explotacion.sb.service.impl,\
+	avanis.tu.explotacion.sb.service.persistence.impl

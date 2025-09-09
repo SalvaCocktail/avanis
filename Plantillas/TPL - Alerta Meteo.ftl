@@ -1,0 +1,2 @@
+<strong>[$TITLE$]</strong>
+[$BODY$]

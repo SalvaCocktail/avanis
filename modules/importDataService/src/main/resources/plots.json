@@ -1,0 +1,20 @@
+{
+"plots": [
+	{
+		"id" : "37a98772-6a1c-4f90-a0bd-964946a3e931",
+		"version" : 1,
+		"user_id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"province" : "Madrid",
+		"longitude" : -3.710718154907227,
+		"height" : 600,
+		"location" : "La Latina",
+		"name" : "parcela2",
+		"deleted" : false,
+		"latitude" : 40.41113216703276,
+		"meteored_location_id" : "5c824857eeb0a45342fc1c17386d23e8",
+		"size" : null,
+		"size_unit" : "UNKNOWN",
+		"is_main" : false,
+		"categories" : "POULTRY_FARMING, FRUIT_TREES, SHELL_FRUITS, MEAT_GOAT, OTHER_STOCKBREEDING, MILK_GOAT, DAIRY_CATTLE, RABBIT_FARMING, DAIRY_SHEEP, OLIVE_GROVE, CEREALS, FORAGING, MEAT_BEEF, PORCINE, MEAT_SHEEP, VEGETABLES, LEGUMES, OTHER_AGRICULTURE, ROOT_AND_TUBERS, VINEYARD"
+	}
+]}

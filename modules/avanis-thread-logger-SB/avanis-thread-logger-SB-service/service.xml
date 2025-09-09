@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="avanis.thread.logger.sb">
+	<namespace>ThreadLogger</namespace>
+
+	<entity name="ThreadLog" local-service="true" remote-service="false">
+
+		<column name="threadLogId" type="long" primary="true" />
+		<column name="createDate" type="Date" />
+		<column name="threadName" type="String" />
+		<column name="stackTrace" type="String" />
+		<column name="threadState" type="String" />
+		<column name="lockName" type="String" />
+		<column name="lockOwnerName" type="String" />
+		<column name="lockOwnerId" type="long" />
+
+		<order by="desc">
+			<order-column name="threadLogId" />
+		</order>
+
+		<finder name="CreateDate" return-type="Collection">
+			<finder-column name="createDate"/>
+		</finder>
+
+	</entity>
+</service-builder>

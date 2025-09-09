@@ -1,0 +1,4 @@
+Bundle-Name: avanis-author-portlet
+Bundle-SymbolicName: avanis.author.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.author.portlet.constants

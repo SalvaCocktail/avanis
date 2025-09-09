@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN"
+		"http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="avanis.calendarbooking.sb">
+	<namespace>AVANIS_CALENDAR</namespace>
+
+	<!-- CalendarBookingAgenda Entity -->
+	<entity local-service="true" name="BookingAgenda"  remote-service="true" uuid="true" >
+
+		<!-- PK fields -->
+		<column name="calendarBookingAgendaId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Additional fields -->
+		<column name="day" type="long" />
+		<column name="startHour" type="long" />
+		<column name="endHour" type="long" />
+		<column name="title" type="String" />
+		<column name="description" type="String" />
+		<column name="calendarBookingId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="calendarBookingId" return-type="Collection">
+			<finder-column name="calendarBookingId" />
+		</finder>
+
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+
+	</entity>
+
+	<!-- Protagonist Entity -->
+	<entity local-service="true" name="Protagonist" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="protagonistId" primary="true" type="long" />
+
+		<!-- FK fields -->
+		<column name="calendarBookingId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Additional fields -->
+		<column name="name" type="String" />
+		<column name="lastName" type="String" />
+		<column name="profession" type="String" />
+		<column name="bio" type="String" />
+		<column name="portraitUrl" type="String" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="calendarBookingId" return-type="Collection">
+			<finder-column name="calendarBookingId" />
+		</finder>
+
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+
+
+	<!-- Sponsor Entity -->
+	<entity local-service="true" name="Sponsor" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="sponsorId" primary="true" type="long" />
+
+		<!-- FK fields -->
+		<column name="calendarBookingId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Additional fields -->
+		<column name="name" type="String" />
+		<column name="iconUrl" type="String" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="calendarBookingId" return-type="Collection">
+			<finder-column name="calendarBookingId" />
+		</finder>
+
+
+	</entity>
+
+
+
+</service-builder>

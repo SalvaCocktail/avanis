@@ -1,0 +1,12 @@
+dependencies {
+    implementation project(path: ':modules:avanis-listener')
+    compileOnly group: 'com.liferay', name: 'com.liferay.frontend.js.web', version: '5.0.99'
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "130.0.1"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "21.0.0"
+
+	compileOnly project(path: ":modules:avanis-social-follow-SB:avanis-social-follow-SB-api")
+	compileOnly project(path: ':modules:avanis-comunidad-SB:avanis-comunidad-SB-api')
+	implementation project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api')
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	implementation 'commons-io:commons-io:2.16.1'
+}

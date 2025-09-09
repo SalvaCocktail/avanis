@@ -1,0 +1,8 @@
+dependencies {
+	compileOnly project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api')
+	compileOnly project(path: ':modules:meteored-service')
+	compileOnly project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-service')
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

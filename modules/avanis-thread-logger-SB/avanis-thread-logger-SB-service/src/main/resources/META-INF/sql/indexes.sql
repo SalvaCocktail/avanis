@@ -1,0 +1,1 @@
+create index IX_1AE23FD9 on ThreadLogger_ThreadLog (createDate);

@@ -1,0 +1,11 @@
+dependencies {
+	api project(":modules:avanis-calendarbooking-SB:avanis-calendarbooking-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-calendarbooking-SB-api/src/main/java"
+}
+
+group = "avanis.calendarbooking.sb"

@@ -1,0 +1,43 @@
+.btn-guardar-preferencias {
+  background-color: #053c1c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 187px;
+}
+.btn-cancelar-preferencias {
+  width: 187px;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: #107e3e;
+  border-color: #107e3e!important;
+}
+
+.titulo-mis-preferencias-principal{
+  margin-bottom: 1em;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  /* line-height: 48px; */
+  text-align: left;
+}
+
+.titulo-mis-preferencias{
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+}
+.mis-preferencias-contadores{
+//styleName: Label;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+
+}

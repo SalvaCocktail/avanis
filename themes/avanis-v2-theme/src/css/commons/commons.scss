@@ -1,0 +1,70 @@
+.av-theme {
+  &__hidden {
+    display: none !important;
+  }
+  &__hidden-mobile {
+    display: none !important;
+
+    @media (min-width: 769px) {
+      display: inherit !important;
+    }
+  }
+  &__hidden-desktop {
+    display: inherit !important;
+
+    @media (min-width: 769px) {
+      display: none !important;
+    }
+  }
+
+  &__visible-flex {
+    display: flex !important;
+  }
+
+  &__visible-block {
+    display: block !important;
+  }
+
+  &__icon-box-16 {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon-box-24 {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    min-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon-box-32 {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    min-height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__rotate-180 {
+    rotate: 180deg;
+  }
+
+  &__slider-draggable {
+    user-select: none !important;
+    cursor: grab !important;
+  }
+
+  &__capitalize-first {
+    text-transform: capitalize !important;
+  }
+}

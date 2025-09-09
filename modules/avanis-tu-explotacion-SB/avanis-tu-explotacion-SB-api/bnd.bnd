@@ -1,0 +1,10 @@
+Bundle-Name: avanis-tu-explotacion-SB-api
+Bundle-SymbolicName: avanis.tu.explotacion.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	avanis.tu.explotacion.sb.exception,\
+	avanis.tu.explotacion.sb.model,\
+	avanis.tu.explotacion.sb.service,\
+	avanis.tu.explotacion.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../avanis-tu-explotacion-SB-service/service.xml

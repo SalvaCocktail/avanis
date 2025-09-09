@@ -1,0 +1,12 @@
+dependencies {
+	api project(":modules:avanis-lonjas-SB:avanis-lonjas-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-lonjas-SB-api/src/main/java"
+	testDir = "../avanis-lonjas-SB-test/src/testIntegration/java"
+}
+
+group = "avanis.lonjas"

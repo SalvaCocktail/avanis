@@ -1,0 +1,110 @@
+
+
+
+<div class="header">
+  <div class="header-container">
+    <nav class="navbar">
+      <div class="navbar__logo-cta-menu">
+        <div class="navbar__logo">
+          <a href="/">
+            <img
+              src="/documents/d/guest/logo-avanis"
+              alt="Logo Avanis"
+              class="navbar__logo-complete"
+            />
+            <img
+              src="/documents/d/guest/logo-avanis-small"
+              alt="Logo Avanis Small"
+              class="navbar__logo-small"
+            />
+          </a>
+        </div>
+
+        <div class="navbar__cta-menu">
+          <div class="navbar__cta navbar__cta--top">
+            [#if themeDisplay.isSignedIn()]
+            <img
+              src="/documents/d/guest/icon-bell"
+            />
+            <div
+              class="user-personal-bar-fragment user-personal-bar-fragment--first"
+            >
+              [@liferay.user_personal_bar /]
+						
+            </div>
+            [/#if] [#if !themeDisplay.isSignedIn()]
+            <a
+              href="${themeDisplay.getURLHome()}/login"
+              class="navbar__btn navbar__btn--outline"
+              aria-label="Ingresa a tu cuenta"
+              >Entrar</a
+            >
+            <a
+              href="${themeDisplay.getURLHome()}/registro"
+              class="navbar__btn navbar__btn--primary"
+              aria-label="Date de alta"
+              >Crear cuenta gratis</a
+            >
+            [/#if]
+          </div>
+
+          <div class="navbar__menu-icons-mobile">
+            <span
+              class="navbar__menu-icons-mobile-icon navbar__menu-icons-mobile-burger"
+              >Menú
+              <img
+                src="/documents/d/guest/icon-burger-menu"
+                alt="Burger Menu Icon"
+                class="navbar__icon-burger"
+              />
+            </span>
+            <span
+              class="navbar__menu-icons-mobile-icon navbar__menu-icons-mobile-close"
+              >Menú
+              <img
+                src="/documents/d/guest/icon-close"
+                alt="Close Icon"
+                class="navbar__icon-x-close"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar__menu-list">
+        [#if themeDisplay.isSignedIn()]
+        <lfr-widget-nav id="avNavbarMenu001"></lfr-widget-nav>
+        [/#if] [#if !themeDisplay.isSignedIn()]
+        <lfr-widget-nav id="avNavbarMenu002"></lfr-widget-nav>
+        [/#if]
+      </div>
+
+      <div class="navbar__cta navbar__cta-bottom">
+        [#if themeDisplay.isSignedIn()]
+        <img
+          src="/documents/d/guest/icon-bell"
+					class="navbar__cta-bottom-bell-icon"
+        />
+        <div
+          class="user-personal-bar-fragment user-personal-bar-fragment--second"
+        >
+          [@liferay.user_personal_bar /]
+        </div>
+        [/#if] [#if !themeDisplay.isSignedIn()]
+        <a
+          href="${themeDisplay.getURLHome()}/login"
+          class="navbar__btn navbar__btn--outline"
+          aria-label="Ingresa a tu cuenta"
+          >Entrar</a
+        >
+        <a
+          href="${themeDisplay.getURLHome()}/registro"
+          class="navbar__btn navbar__btn--primary"
+          aria-label="Date de alta"
+          >Crear cuenta gratis</a
+        >
+        [/#if]
+      </div>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+Bundle-Name: avanis-comunidad-portlet
+Bundle-SymbolicName: avanisComunidadPortlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.comunidad.portlet.constants,\
+                avanis.comunidad.portlet.util,\
+                avanis.comunidad.portlet.cache
+Provide-Capability: \
+    	liferay.language.resources;\
+    		resource.bundle.base.name="content.Language"

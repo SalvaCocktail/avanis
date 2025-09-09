@@ -1,0 +1,10 @@
+Bundle-Name: avanis-lonjas-SB-api
+Bundle-SymbolicName: avanis.lonjas.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	avanis.lonjas.exception,\
+	avanis.lonjas.model,\
+	avanis.lonjas.service,\
+	avanis.lonjas.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../avanis-lonjas-SB-service/service.xml

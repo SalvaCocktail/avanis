@@ -1,0 +1,4 @@
+Bundle-Name: avanis-sitemap
+Bundle-SymbolicName: avanis.sitemap
+Bundle-Version: 1.0.0
+Export-Package: avanis.sitemap

@@ -1,0 +1,56 @@
+
+<div class="modal fade " id="audienciaModal" tabindex="-1" role="dialog" aria-labelledby="audienciaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="audienciaModalLabel"><liferay-ui:message key="audiencia-de-la-publicacion-title"/></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="av-content-form">
+                    <div class="av-content-right">
+                        <div><b><liferay-ui:message key="audiencia-question" /></b></div>
+                        <div><liferay-ui:message key="audiencia-desc1" /></div>
+                        <div><liferay-ui:message key="audiencia-desc2" /></div>
+                        <div class="mb-3">
+                            <input id="<portlet:namespace />visibilityOptions1" type="radio" ${visibility=="public" ? 'checked' : '' } name="<portlet:namespace />visibilityOptions" value="public" >
+                            <label for="<portlet:namespace />visibilityOptions1">
+                                <span><b><liferay-ui:message key="audiencia-publico"/></b></span>
+                                <span><liferay-ui:message key="audiencia-publico-desc"/></span>
+                            </label>
+                            <input id="<portlet:namespace />visibilityOptions2" type="radio" ${visibility=="registered" ? 'checked' : '' } name="<portlet:namespace />visibilityOptions" value="registered" >
+                            <label for="<portlet:namespace />visibilityOptions2">
+                                <span><b><liferay-ui:message key="audiencia-usuarios-avanis"/></b></span>
+                                <span><liferay-ui:message key="audiencia-usuarios-avanis"/></span>
+                            </label>
+                            <input id="<portlet:namespace />visibilityOptions3" type="radio" ${visibility=="followers" ? 'checked' : '' } name="<portlet:namespace />visibilityOptions" value="followers" >
+                            <label for="<portlet:namespace />visibilityOptions3">
+                                <span><b><liferay-ui:message key="audiencia-mis-seguidores"/></b></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="modal-footer">
+                <button type="button" class="av-theme__btn av-theme__btn--secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="av-theme__btn av-theme__btn--primary" onClick="closeAudienciaModal()"><liferay-ui:message key="audiencia-apply"/></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+    });
+
+    function showaudienciaModal (){
+        $('#audienciaModal').modal('show');
+    }
+
+    function closeAudienciaModal() {
+        $('#audienciaModal').modal('hide');
+    }
+
+</script>

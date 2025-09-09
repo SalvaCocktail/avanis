@@ -1,0 +1,6 @@
+Bundle-Name: avanis-site-initializer
+Bundle-SymbolicName: avanis.site.initializer
+Bundle-Version: 1.0.0
+Liferay-Site-Initializer-Name: Avanis Inicializer
+Provide-Capability: liferay.site.initializer
+Web-ContextPath: /avanis-site-initializer

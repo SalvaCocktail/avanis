@@ -1,0 +1,235 @@
+.iconBadge {
+  background-image: url(../images/Badge.svg);
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.iconProfilePicture {
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  border-radius: 50%;
+}
+.iconUserAlt {
+  background-image: url(../images/user-alt.svg);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 4px;
+}
+/*  Hasta aqui iconos */
+
+
+.profile-card {
+  background-color: white;
+  width: 100%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  Barra circular de progreso de perfil */
+.profile-photo-container {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  top: -60px;
+}
+.profile-upload-photo {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.av-user-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.av-donut {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.av-donut svg {
+  width: 100%;
+  height: 100%;
+}
+.av-donut circle {
+  fill: none;
+  stroke-width: 6;
+}
+.av-donut .progress {
+  stroke: #c6e75a;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+/* */
+
+.profile-info {
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+  margin-top: -50px;
+}
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-name,
+.profile-surname {
+  margin: 10px 0;
+}
+.profile-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff0e8;
+  border-radius: 4px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.profile-tag img {
+  margin-right: 4px;
+}
+.profile-tag p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px;
+}
+.profile-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/*  Dropdown */
+.dropdown .div-boton-enviar,.dropdown .div-boton-seguir,{
+  text-align: center;
+}
+.dropdown-button-text {
+  padding-right: 16px;
+}
+.profile-surname {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+}
+.profile-dropdown-button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.profile-dropdown-button:hover {
+  border: 1px solid #107e3e;
+}
+.profile-dropdown-button.active {
+  border-color: #107e3e;
+}
+.icon-arrow {
+  width: 10px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(45deg);
+  transition: transform 0.3s, border-color 0.3s;
+  margin-left: 4px;
+}
+.profile-dropdown-button:hover .icon-arrow {
+  border-color: #107e3e;
+}
+.dropdown.active .icon-arrow {
+  transform: rotate(-135deg);
+}
+.profile-dropdown-content {
+  display: none;
+  border: 1px solid #107e3e;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+  top: calc(100% + 10px);
+  width: 100%;
+}
+.profile-dropdown-content p {
+  margin: 0;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+.profile-dropdown-content p:hover {
+  background-color: #c6e75a;
+}
+.profile-dropdown-content p:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+.profile-dropdown-content p:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+/*  */
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-bottom: 1px solid #bfc7c6;
+  padding-bottom: 3px;
+}
+.profile-content-title {
+  font-size: 16px;
+}
+.profile-content-data {
+  color: #646b6b;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+
+  .profile-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: -200px !important;
+    z-index: 99;
+    margin-left: 16px;
+    position: relative;
+  }
+
+  .profile-photo-container {
+    top: 0;
+  }
+
+  .profile-info {
+    margin: 0;
+  }
+}

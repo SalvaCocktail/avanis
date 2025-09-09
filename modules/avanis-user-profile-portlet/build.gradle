@@ -1,0 +1,12 @@
+dependencies {
+	implementation project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api')
+    implementation project(path: ':modules:meteored-service')
+    implementation project(path: ':modules:avanis-tu-explotacion-portlet')
+    implementation project(path: ':modules:avanis-social-follow-SB:avanis-social-follow-SB-api')
+    api project(path: ':modules:avanis-comunidad-portlet')
+    implementation project(path: ':modules:avanis-comunidad-SB:avanis-comunidad-SB-api')
+    implementation project(path: ':modules:avanis-eventos-follow-SB:avanis-eventos-follow-SB-api')
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

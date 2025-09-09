@@ -1,0 +1,4 @@
+Bundle-Name: multiselect
+Bundle-SymbolicName: multiselect
+Bundle-Version: 1.0.0
+Export-Package: multiselect.api

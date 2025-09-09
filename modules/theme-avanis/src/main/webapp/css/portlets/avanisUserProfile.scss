@@ -1,0 +1,148 @@
+@import '../commons/variables';
+
+// #region Profile card
+.av-pc {
+  h4,
+  p,
+  span {
+    font-family: $text-family;
+    text-align: left;
+    color: $color-content-01;
+  }
+
+  &__fake-input-profile-visibility {
+  }
+
+  &__modal-body-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  &__modal-body-subtitle,
+  &__modal-user-visibility-text-explanation,
+  &__fipv {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__public-profile-audience,
+  &__modal-user-visibility-text-option {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__modal-user-visibility-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__modal-user-visibility-label {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+
+    &:has(input)::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/radiobutton-off-icon.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    &:has(input:checked)::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/radiobutton-on-icon.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+
+  &__modal-user-visibility-icon {
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__modal-user-visibility-icon--public .av-theme__icon-box-24 {
+    background-image: url('/o/theme-avanis/images/icons/assets-icons/globe-icon.svg');
+  }
+  &__modal-user-visibility-icon--registered .av-theme__icon-box-24 {
+    background-image: url('/o/theme-avanis/images/icons/assets-icons/users-icon.svg');
+  }
+  &__modal-user-visibility-icon--followers .av-theme__icon-box-24 {
+    background-image: url('/o/theme-avanis/images/icons/assets-icons/user-plus-icon.svg');
+  }
+
+  &__fake-input-chevron-icon {
+    position: absolute;
+    right: 16px;
+  }
+
+  &__modal-user-visibility-radio {
+    display: none;
+  }
+
+  &__modal-user-visibility-texts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__fipv {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 48px 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px solid $color-border-01;
+    cursor: pointer;
+
+    & .av-pc__fake-input-variable-icon {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &.public .av-pc__fake-input-variable-icon {
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/globe-icon.svg');
+    }
+    &.registered .av-pc__fake-input-variable-icon {
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/users-icon.svg');
+    }
+    &.followers .av-pc__fake-input-variable-icon {
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/user-plus-icon.svg');
+    }
+  }
+
+  &__fipv-text {
+    &--hidden {
+      display: none;
+    }
+    &--public,
+    &--registered,
+    &--followers {
+      display: inline-block;
+    }
+  }
+}
+
+.av-theme__modal-body .av-pc__modal-body-title,
+.av-theme__modal-body .av-pc__modal-body-subtitle {
+  margin-bottom: 24px !important;
+}
+// #endregion Profile card

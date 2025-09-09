@@ -1,0 +1,4 @@
+Bundle-Name: avanis-meteo-alerta-portlet
+Bundle-SymbolicName: avanis.meteo.alerta.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.meteo.alerta.portlet.constants

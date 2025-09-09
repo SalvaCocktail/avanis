@@ -1,0 +1,4 @@
+Bundle-Name: avanis-embedded-comunidad-portlet
+Bundle-SymbolicName: avanis.embedded.comunidad.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.embedded.comunidad.portlet.constants

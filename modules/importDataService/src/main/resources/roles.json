@@ -1,0 +1,358 @@
+{
+  "authority": [
+    {
+      "authority": "ROLE_SEO",
+      "description": "seo",
+      "resourcePermissions": [
+        {
+          "resourceName": "com.liferay.blogs.model.BlogsEntry",
+          "actions": [
+            "UPDATE",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW",
+            "CONFIGURATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.depot.model.DepotEntry",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Group",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        }
+      ]
+    },
+    {
+      "authority": "ROLE_MANAGER",
+      "description": "manager",
+      "resourcePermissions": [
+        {
+          "resourceName": "com.liferay.blogs",
+          "actions": [
+            "ADD_ENTRY"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.depot.model.DepotEntry",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Group",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        }
+      ]
+    },
+    {
+      "authority": "ROLE_SUPER_MANAGER",
+      "description": "super manager",
+      "resourcePermissions": [
+        {
+          "resourceName": "com.liferay.blogs.model.BlogsEntry",
+          "actions": [
+            "UPDATE",
+            "VIEW",
+            "DELETE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.blogs",
+          "actions": [
+            "ADD_ENTRY"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.depot.model.DepotEntry",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Group",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        }
+      ]
+    },
+    {
+      "authority": "ROLE_MODERATOR",
+      "description": "moderador",
+      "resourcePermissions": [
+        {
+          "resourceName": "com.liferay.message.boards.model.MBMessage",
+          "actions": [
+            "VIEW",
+            "DELETE",
+            "UPDATE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.message.boards.model.MBThread",
+          "actions": [
+            "VIEW",
+            "DELETE",
+            "PERMISSIONS"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.message.boards",
+          "actions": [
+            "VIEW",
+            "BAN_USER"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.User",
+          "actions": [
+            "DEACTIVATE",
+            "ACTIVATE",
+            "DELETE",
+            "PERMISSIONS",
+            "IMPERSONATE",
+            "UPDATE",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.depot.model.DepotEntry",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Group",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_message_boards_web_portlet_MBAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_users_admin_web_portlet_UsersAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL"
+          ]
+        },
+        {
+          "resourceName": "90",
+          "actions": [
+            "VIEW_CONTROL_PANEL"
+          ]
+        }
+      ]
+    },
+    {
+      "authority": "ROLE_SUPER_WEATHER",
+      "description": "super meteorólogo"
+    },
+    {
+      "authority": "ROLE_WEATHER",
+      "description": "meteorólogo"
+    },
+    {
+      "authority": "ROLE_ADMIN",
+      "description": "admin",
+      "resourcePermissions": [
+        {
+          "resourceName": "com.liferay.blogs.model.BlogsEntry",
+          "actions": [
+            "UPDATE",
+            "VIEW",
+            "DELETE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.blogs",
+          "actions": [
+            "ADD_ENTRY"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.message.boards.model.MBMessage",
+          "actions": [
+            "VIEW",
+            "DELETE",
+            "UPDATE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.message.boards.model.MBThread",
+          "actions": [
+            "VIEW",
+            "DELETE",
+            "PERMISSIONS"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.message.boards",
+          "actions": [
+            "VIEW",
+            "BAN_USER"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Role",
+          "actions": [
+            "VIEW",
+            "DELETE",
+            "PERMISSIONS",
+            "DEFINE_PERMISSIONS",
+            "ASSIGN_MEMBERS",
+            "MANAGE_ANNOUNCEMENTS",
+            "UPDATE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.User",
+          "actions": [
+            "DEACTIVATE",
+            "ACTIVATE",
+            "DELETE",
+            "PERMISSIONS",
+            "IMPERSONATE",
+            "UPDATE",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.depot.model.DepotEntry",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.portal.kernel.model.Group",
+          "actions": [
+            "VIEW_SITE_ADMINISTRATION"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_message_boards_web_portlet_MBAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_users_admin_web_portlet_UsersAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.expando.kernel.model.ExpandoColumn",
+          "actions": [
+            "UPDATE",
+            "VIEW",
+            "DELETE",
+            "PERMISSIONS"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_expando_web_portlet_ExpandoPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "ADD_EXPANDO"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_roles_admin_web_portlet_RolesAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com_liferay_asset_categories_admin_web_portlet_AssetCategoriesAdminPortlet",
+          "actions": [
+            "ACCESS_IN_CONTROL_PANEL",
+            "VIEW"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.asset.categories",
+          "actions": [
+            "PERMISSIONS",
+            "ADD_CATEGORY",
+            "ADD_VOCABULARY"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.asset.kernel.model.AssetCategory",
+          "actions": [
+            "PERMISSIONS",
+            "ADD_CATEGORY",
+            "VIEW",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "resourceName": "com.liferay.asset.kernel.model.AssetVocabulary",
+          "actions": [
+            "PERMISSIONS",
+            "VIEW",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "resourceName": "90",
+          "actions": [
+            "VIEW_CONTROL_PANEL"
+          ]
+        }
+      ]
+    },
+    {
+      "authority": "User",
+      "description": "user"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+"Subcategories": [
+	{
+		"category_label" : "regulations_and_aid",
+		"subcategory_label" : "pac"
+	},
+	{
+		"category_label" : "regulations_and_aid",
+		"subcategory_label" : "legislation"
+	},
+	{
+		"category_label" : "regulations_and_aid",
+		"subcategory_label" : "subsidies"
+	},
+	{
+		"category_label" : "logistics_and_machinery",
+		"subcategory_label" : "storage_and_tools"
+	},
+	{
+		"category_label" : "logistics_and_machinery",
+		"subcategory_label" : "logistics_vehicles_transport"
+	},
+	{
+		"category_label" : "logistics_and_machinery",
+		"subcategory_label" : "machinery"
+	},
+	{
+		"category_label" : "logistics_and_machinery",
+		"subcategory_label" : "maintenance_and_repairs"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "fruit_trees"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "vineyard"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "olive_grove"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "cereals"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "Legumes"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "oilseed"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "vegetables"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "tubers"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "foragers"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "agriculture_others"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "plant_health"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "dairy_cattle"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "beef"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "dairy_ovine"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "dairy_goat"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "porcine"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "poultry_farming"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "rabbit_farming"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "stockbreeding_others"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "animal_health"
+	},
+	{
+		"category_label" : "innovation-and_development",
+		"subcategory_label" : "digitization"
+	},
+	{
+		"category_label" : "innovation-and_development",
+		"subcategory_label" : "research_and_development"
+	},
+	{
+		"category_label" : "innovation-and_development",
+		"subcategory_label" : "innovation"
+	},
+	{
+		"category_label" : "commerce_and_market",
+		"subcategory_label" : "buy_and_sell"
+	},
+	{
+		"category_label" : "commerce_and_market",
+		"subcategory_label" : "import_and_export"
+	},
+	{
+		"category_label" : "sustainability_and_collaborations",
+		"subcategory_label" : "ecological_agriculture"
+	},
+	{
+		"category_label" : "sustainability_and_collaborations",
+		"subcategory_label" : "rural_development"
+	},
+	{
+		"category_label" : "companies_and_collaborations",
+		"subcategory_label" : "companies_and_collaborations"
+	},
+	{
+		"category_label" : "supplies",
+		"subcategory_label" : "ranchers"
+	},
+	{
+		"category_label" : "supplies",
+		"subcategory_label" : "agricultural"
+	},
+	{
+		"category_label" : "agriculture",
+		"subcategory_label" : "shelled_fruits"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "meat_ovine"
+	},
+	{
+		"category_label" : "stockbreeding",
+		"subcategory_label" : "meat_goat"
+	},
+	{
+		"category_label" : "sustainability_and_collaborations",
+		"subcategory_label" : "water_reserve"
+	},
+	{
+		"category_label" : "sustainability_and_collaborations",
+		"subcategory_label" : "meteorology"
+	}
+]}

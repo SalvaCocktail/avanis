@@ -1,0 +1,418 @@
+.iconFollowerPicture {
+  background-image: url(../images/follower-picture.png);
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.buscar-btn{
+  display: none;
+}
+.resultado-busqueda-texto{
+  margin-left: 1em;
+  margin-bottom: 0px;
+}
+.profile__search {
+  background-color: white;
+  border-radius: 4px 4px 0px 0px;
+  margin: 16px 16px -32px 16px;
+  padding: 1em 1em 1em 1em;
+}
+.iconFaceFrown{
+  background-image: url(../images/face-frown.svg);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.search-container {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-image: url(../images/icon-search.svg);
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 1;
+}
+
+.search-container input[type=text] {
+  padding-left: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.iconArrowDown {
+  background-image: url(../images/arrow-down.svg);
+  width: 20px;
+  height: 20px;
+}
+
+/*  Hasta aqui iconos */
+
+.follower-info-request {
+  font-size: 14px;
+  color: #101717;
+  font-weight: 400;
+}
+.follower-info {
+  display: flex;
+  align-items: center;
+  a{
+    color:#212529;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.follower-info-name{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.table td {
+  border-style: none;
+}
+.table-striped tbody tr:nth-of-type(odd) td, .table-striped tbody tr:nth-of-type(odd) th {
+  background-color: white;
+}
+
+/*  Estilos especificos para la tabla */
+#followers thead, #followers tfoot, #followers label, #following thead, #following tfoot, #following label{
+  display: none;
+}
+#followersStyle .col-md-auto,
+#followingStyle .col-md-auto{
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: -webkit-fill-available !important;
+}
+#followersStyle .form-control,
+#followingStyle .form-control{
+  background-color: white;
+  border-color: black;
+  padding-left: 40px;
+}
+#followersStyle .row,
+#followingStyle .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+#followersStyle .form-control:focus-visible,
+#followingStyle .form-control:focus-visible {
+  box-shadow: none;
+}
+#followersStyle label,
+#followingStyle label{
+  display: none;
+}
+
+/*  iconos de busqueda y de close */
+ .dt-search::before,
+ .dt-search::before{
+  content: "";
+  background-image: url(../images/icon-search.svg);
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 40px;
+  height: 100%;
+  z-index: 5;
+  transform: translate(10px, -10px);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+ .dt-search span,
+ .dt-search span {
+  content: "";
+  background-image: url(../images/icon-close.svg);
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  width: 20px;
+  height: 100%;
+  z-index: 5;
+  transform: translate(10px, -10px);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+/*  div del contador de busqueda del input de seguidos y seguidores */
+#followersStyle > .dt-container.dt-bootstrap5,
+#followingStyle > .dt-container.dt-bootstrap5 {
+  display: flex;
+  flex-direction: column;
+}
+
+#followersStyle > .dt-container.dt-bootstrap5 > .row.mt-2.justify-content-md-center,
+#followingStyle > .dt-container.dt-bootstrap5 > .row.mt-2.justify-content-md-center {
+  order: 1;
+}
+
+.follower-details {
+  padding-top: 10px;
+}
+.follower-info-container {
+  display: grid;
+}
+
+/*  botones de seguir y no seguir, data y no data*/
+.table-container-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  gap: 8px;
+}
+.profile__button-publication {
+  background: none;
+  border: solid 1px #107e3e;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #107e3e;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.profile__button-request-secondary {
+  background: none;
+  border: solid 1px #107e3e;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #107e3e;
+  padding: 8px 16px;
+  cursor: pointer;
+
+}
+.profile__button-request-primary {
+  background-color: #053c1c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+.profile__button-follow{
+  background-color: #053c1c;
+  color: white;
+  border: none;
+  height: 32px;
+  width: 118px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.profile__button-following{
+  background: none;
+  border: solid 1px #107e3e;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #107e3e;
+  height: 32px;
+  width: 118px;
+  cursor: pointer;
+}
+.follower__button--load{
+  background-color: #053c1c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+}
+.follower__load{
+  display: flex;
+  justify-content: center;
+}
+
+/*  ocultar la x que viene por defecto dentro del input */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; }
+
+
+/*  cuando la busqueda no hay datos */
+.no-results-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  text-align: center;
+}
+.no-results-container-text{
+  padding-bottom: 24px;
+  padding-top: 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .follower-info-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+}
+
+/*modal seguidores*/
+.modal-seguidores,.modal-cancelar-peticion{
+  /* av-te-ma Avanis Tu Explotación Meteo Alert MODAL */
+  .av-te-ma-modal {
+    background-color: rgba(39, 48, 47, 0.6);
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 111;
+    display: none;
+
+    &__panel {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      left: 50%;
+      max-height: 688px;
+      max-width: 608px; /* Máximo ancho */
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      border-radius: 0em 0em 1em 1em;
+    }
+
+    &__header {
+      align-items: center;
+      background-color: #EFF0E8;
+      border-radius: 16px 16px 0 0;
+      color: #101717;
+      display: flex;
+      font-size: 16px;
+      justify-content: space-between;
+      padding: 12px 16px;
+
+      &--yellow {
+        background-color: #FED257;
+      }
+
+      &--orange {
+        background-color: #FFA14D;
+      }
+
+      &--red {
+        background-color: #EE606F;
+      }
+
+      div {
+        align-items: center;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+      }
+    }
+
+    /* .av-icon-alert {
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/...');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 12px;
+      margin-left: 8px;
+      width: 12px;
+    } */
+
+    &__heading {
+      color: #1B1B1B;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 0 0 0 6px;
+      text-align: center;
+    }
+
+    .av-icon-close {
+      font-size: 32px;
+      font-weight: 200;
+      margin-left: auto;
+    }
+
+    &__content {
+      background-color: #FFFFFF;
+      padding: 32px;
+      text-align: center;
+      border-radius: 0em 0em 1em 1em;
+    }
+
+     &__title {
+      color: #1B1B1B;
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    &__footer {
+      background-color: #FFFFFF;
+      border-radius: 0 0 16px 16px;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 24px;
+      width: 100%;
+    }
+
+    &__accept-btn {
+      background-color: #053C1C;
+      border-radius: 8px;
+      border: 1px solid #053C1C;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 8px 16px;
+    }
+
+    .modal-title{
+      text-align: center;
+    }
+    .btn-dejar-de-seguir-modal{
+      width: 140px;
+    }
+    .left-arrow,.av-icon-close{
+      cursor: pointer;
+
+    }
+  }
+
+}
+.profile__non-data .btn-crear-cuenta-gratis{
+  width: auto;
+}

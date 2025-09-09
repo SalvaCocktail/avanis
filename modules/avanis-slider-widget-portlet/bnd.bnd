@@ -1,0 +1,4 @@
+Bundle-Name: avanis-slider-widget-portlet
+Bundle-SymbolicName: avanis.slider.widget.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.slider.widget.portlet.constants

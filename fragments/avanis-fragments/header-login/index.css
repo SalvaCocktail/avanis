@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* #region Logic */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+	background-color: transparent;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* #region NavBar Logos */
+.navbar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* #endregion NavBar Logos */
+
+/* #region Styles */
+.navbar {
+  width: 100%;
+  min-height: 80px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+}
+@media (min-width: 992px) {
+  .navbar {
+    padding: auto 24px;
+		flex-wrap: nowrap;
+    border-radius: 0;
+  }
+}
+
+.navbar__logo-cta-menu {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+}
+/* #endregion Styles */

@@ -1,0 +1,9 @@
+Bundle-Name: Avanis Utils API
+Bundle-SymbolicName: avanis.utils.api
+Bundle-Version: 1.0.0
+Import-Package: \
+    javax.ws.rs.*, \
+    com.liferay.portal.kernel.*, \
+    *
+Export-Package:\
+    avanis.utils.api.*

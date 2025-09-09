@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly project(path: ':modules:avanis-comunidad-SB:avanis-comunidad-SB-api')
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

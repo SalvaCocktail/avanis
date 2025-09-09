@@ -1,0 +1,4 @@
+Bundle-Name: hubspot-service
+Bundle-SymbolicName: hubspot.service
+Bundle-Version: 1.0.0
+Export-Package: hubspot.service.api, hubspot.service.impl, hubspot.model.forms,hubspot.model.mails, hubspot.usecase

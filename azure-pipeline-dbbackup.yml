@@ -1,0 +1,44 @@
+---
+parameters:
+  - name: serviceConnection
+    type: string
+
+steps:
+  - task: Kubernetes@1
+    displayName: Run Backup Cronjob
+    continueOnError: true
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '${{ parameters.serviceConnection }}'
+      namespace: 'cron'
+      command: 'create'
+      arguments: 'job --from=cronjob/dbbackup azure-pipelines'
+
+  - task: Kubernetes@1
+    displayName: Wait for Job Completion
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '${{ parameters.serviceConnection }}'
+      namespace: 'cron'
+      command: 'wait'
+      arguments: '--for=condition=complete --timeout=180s job/azure-pipelines'
+
+  - task: Kubernetes@1
+    displayName: CronJob Logs
+    continueOnError: true
+    inputs:
+      connectionType: "Kubernetes Service Connection"
+      kubernetesServiceEndpoint: '${{ parameters.serviceConnection }}'
+      namespace: 'cron'
+      command: logs
+      arguments: '-l job-name=azure-pipelines --tail=-1'
+
+  - task: Kubernetes@1
+    displayName: Delete Job
+    continueOnError: true
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '${{ parameters.serviceConnection }}'
+      namespace: 'cron'
+      command: 'delete'
+      arguments: 'job azure-pipelines'

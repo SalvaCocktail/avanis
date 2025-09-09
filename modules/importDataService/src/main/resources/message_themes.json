@@ -1,0 +1,123 @@
+{
+"themes": [
+	{
+		"id" : "6bd67f92-9686-4045-bcf1-04800374c646",
+		"label" : "plant_health"
+	},
+	{
+		"id" : "48586026-9e08-4834-a2ab-f3dd71df0546",
+		"label" : "poultry_farming"
+	},
+	{
+		"id" : "d87927f6-5f76-4729-8a07-a4a2bc28a8df",
+		"label" : "rabbit_farming"
+	},
+	{
+		"id" : "8292ac9c-5918-47bf-9401-f9e74e110a47",
+		"label" : "companies_and_collaborations"
+	},
+	{
+		"id" : "b561b96f-2386-429a-bee8-eed8a2f8e639",
+		"label" : "pac"
+	},
+	{
+		"id" : "b65ef7c9-dded-474e-bda9-afc00254145d",
+		"label" : "ecological_agriculture"
+	},
+	{
+		"id" : "9590a9e3-8128-4017-b0fa-39f89bb33b6c",
+		"label" : "logistics_vehicles_transport"
+	},
+	{
+		"id" : "128bcd79-57cd-4d02-b048-bbd375a01257",
+		"label" : "pac"
+	},
+	{
+		"id" : "9cb98338-5961-478d-96c4-d52f7c8f21bb",
+		"label" : "agriculture_others"
+	},
+	{
+		"id" : "fbee27a2-f020-40f2-bfef-f1f91c2ed80b",
+		"label" : "pac"
+	},
+	{
+		"id" : "05409e9e-eba0-4bd6-9cb4-4495693cf6b7",
+		"label" : "Legumes"
+	},
+	{
+		"id" : "dc2441a8-10c2-49e3-8ca5-683aa13640dd",
+		"label" : "foragers"
+	},
+	{
+		"id" : "b14d9842-83c0-4036-b6fa-11166ebec8d6",
+		"label" : "vineyard"
+	},
+	{
+		"id" : "23182cbb-0e96-479f-ad3f-a1cd7c24e8f3",
+		"label" : "subsidies"
+	},
+	{
+		"id" : "b09ddfee-8e32-4e0b-813b-730a9942b634",
+		"label" : "rural_development"
+	},
+	{
+		"id" : "7a26edc1-a674-4eff-af0f-42f5c88ebb36",
+		"label" : "maintenance_and_repairs"
+	},
+	{
+		"id" : "bc48dc96-259a-4058-8f86-787559f6cbfa",
+		"label" : "rural_development"
+	},
+	{
+		"id" : "7bc88235-f6ce-4df3-9102-b8f8bad96b41",
+		"label" : "vineyard"
+	},
+	{
+		"id" : "147a8a41-8501-4cb6-b599-042a0a37a632",
+		"label" : "oilseed"
+	},
+	{
+		"id" : "b7d5252f-e2a2-451f-873f-e23234a8ec19",
+		"label" : "legislation"
+	},
+	{
+		"id" : "754b19bb-3201-4f40-baf2-1c723d256114",
+		"label" : "digitization"
+	},
+	{
+		"id" : "b07de5d1-9c74-4a82-8c9d-b005ad83f152",
+		"label" : "foragers"
+	},
+	{
+		"id" : "46ce0a81-a7da-4edf-8b9b-c9cbc436c7b2",
+		"label" : "rabbit_farming"
+	},
+	{
+		"id" : "29366088-b301-403c-80c0-f43f4def4118",
+		"label" : "ecological_agriculture"
+	},
+	{
+		"id" : "45808029-7d97-4361-8b29-aaa0808e1e68",
+		"label" : "porcine"
+	},
+	{
+		"id" : "27d93d67-16f2-45a5-928e-653cf3445770",
+		"label" : "poultry_farming"
+	},
+	{
+		"id" : "9019dc8f-3d47-44c2-acea-2ba1872f7768",
+		"label" : "rabbit_farming"
+	},
+	{
+		"id" : "224beac3-3320-49f2-b85d-12a729227f28",
+		"label" : "digitization"
+	},
+	{
+		"id" : "aad84e26-0754-4164-b031-e9d36e593a37",
+		"label" : "companies_and_collaborations"
+	},
+	{
+		"id" : "5e573d8d-6e3f-46a7-9bfb-31539b5622c5",
+		"label" : "fruit_trees"
+	}
+]}

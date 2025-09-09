@@ -1,0 +1,67 @@
+@import 'variables';
+
+// #reginon Buttons
+.av-theme__btn {
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  max-height: 40px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  text-align: center;
+
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  @media (min-width: 769px) {
+    max-width: 192px;
+  }
+}
+
+.av-theme__btn--primary {
+  background-color: $color-btn-bg-active;
+  color: $color-content-01-inverse;
+  border: none !important;
+
+  &:hover {
+    background-color: $color-content-hover-02;
+    color: $color-white;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.av-theme__btn--secondary {
+  background-color: $color-bg-01;
+  color: $color-content-active;
+  border: 1px solid $color-border-active;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $color-content-hover;
+    color: $color-content-hover;
+    cursor: pointer;
+  }
+}
+
+.av-theme__btn--link {
+  width: fit-content;
+  padding: 8px 0;
+  font-family: $text-family;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: $color-content-active;
+
+  border: none !important;
+  cursor: pointer;
+}
+
+// #endreginon Buttons

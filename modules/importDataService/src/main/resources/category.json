@@ -1,0 +1,39 @@
+{
+"category": [
+	{
+		"id" : "16c170ac-cbb6-456b-a386-740720208102",
+		"label" : "regulations_and_aid"
+	},
+	{
+		"id" : "f266ac26-65f5-4f5c-a450-8e9a6ee0cb07",
+		"label" : "logistics_and_machinery"
+	},
+	{
+		"id" : "430e1e1e-7616-44ad-a676-9ff31364353c",
+		"label" : "agriculture"
+	},
+	{
+		"id" : "942f8363-2b82-45ab-95c7-0a5d1a63c2e4",
+		"label" : "stockbreeding"
+	},
+	{
+		"id" : "ae79de77-ce4b-4b22-a983-34706a112cb1",
+		"label" : "innovation-and_development"
+	},
+	{
+		"id" : "4c6d8088-a589-451e-8f22-a04d57e4e2f1",
+		"label" : "commerce_and_market"
+	},
+	{
+		"id" : "f8484337-6d22-4a55-9962-f39a8b0c0805",
+		"label" : "sustainability_and_collaborations"
+	},
+	{
+		"id" : "dfdb6002-fede-4bf8-83d6-84c13a98176c",
+		"label" : "companies_and_collaborations"
+	},
+	{
+		"id" : "9d23750c-180b-4ff4-a8c6-de76edbb070c",
+		"label" : "supplies"
+	}
+]}

@@ -1,0 +1,94 @@
+<%@ page import="avanis.calendarbooking.sb.model.Protagonist" %>
+<%@ page import="java.util.List" %>
+<%@ page import="avanis.calendarbooking.sb.service.ProtagonistLocalServiceUtil" %>
+<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+
+<portlet:resourceURL var="addProtagonistURL" id="addProtagonist">
+</portlet:resourceURL>
+<portlet:resourceURL var="removeProtagonistURL" id="removeProtagonist">
+</portlet:resourceURL>
+<portlet:resourceURL var="getAllProtagonistURL" id="getAllProtagonist">
+</portlet:resourceURL>
+
+<div id="protagonista-form">
+    <aui:input name="protagonistName" type="text"/>
+    <aui:input name="protagonistLastName" type="text"/>
+    <aui:input name="protagonistRol" type="text"/>
+    <aui:input name="protagonistBio" type="text"/>
+    <aui:input type="file" name="protagonistPhoto" multiple="true">
+    </aui:input>
+
+    <aui:button type="button" value="Añadir Protagonista" onClick="addProtagonist();"/>
+</div>
+<%
+    List<Protagonist> protagonists = ProtagonistLocalServiceUtil.getProtagonistsByCalendarBookingId(calendarBookingId, 0, 8);
+    pageContext.setAttribute("protagonists", protagonists);
+    Integer protagonistCount = ProtagonistLocalServiceUtil.countProtagonistsByCalendarBookingId(calendarBookingId);
+    pageContext.setAttribute("protagonistCount", protagonistCount);
+    pageContext.setAttribute("calendarBookingId", calendarBookingId);
+
+%>
+<h3>Protagonistas Añadidos</h3>
+<%@ include file="/protagonist_list.jsp" %>
+
+<script>
+    function addProtagonist() {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        fetch("${addProtagonistURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            const divProtagonists = document.getElementById("protagonist-list");
+            divProtagonists.innerHTML = html + divProtagonists.innerHTML;
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+    function removeProtagonist(id) {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        formData.set("<portlet:namespace />protagonistId", id)
+
+        fetch("${removeProtagonistURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            const divProtagonist = document.getElementById(`protagonist-resource-\${id}`);
+            divProtagonist.remove();
+        }).catch(error => {
+
+            console.error(error)
+        })
+        return false;
+    }
+
+    function getAllProtagonist(calendarBookingId) {
+        const formData = new FormData();
+        formData.set("<portlet:namespace />calendarBookingId", calendarBookingId)
+
+        fetch("${getAllProtagonistURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            const divProtagonists = document.getElementById("protagonist-container");
+            divProtagonists.innerHTML = html;
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+
+</script>
+
+

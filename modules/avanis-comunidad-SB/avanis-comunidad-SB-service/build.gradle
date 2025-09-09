@@ -1,0 +1,11 @@
+dependencies {
+	api project(":modules:avanis-comunidad-SB:avanis-comunidad-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-comunidad-SB-api/src/main/java"
+}
+
+group = "avanis.comunidad"

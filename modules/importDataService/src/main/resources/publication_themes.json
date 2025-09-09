@@ -1,0 +1,327 @@
+{
+"themes": [
+	{
+		"id" : "9fe67a4f-6e6c-4004-8bdd-c9a2df94cd3d",
+		"label" : "pac"
+	},
+	{
+		"id" : "951d7d5b-9d05-4b4c-a2c3-33ba5fc8bdfa",
+		"label" : "legislation"
+	},
+	{
+		"id" : "bf683c5c-f5e6-4885-b1e5-c916794888ce",
+		"label" : "subsidies"
+	},
+	{
+		"id" : "fa3eed2f-3872-465d-8f98-5e3691b23074",
+		"label" : "storage_and_tools"
+	},
+	{
+		"id" : "5f701c7c-595d-4497-9a7a-1292225d0d57",
+		"label" : "logistics_vehicles_transport"
+	},
+	{
+		"id" : "8a281eec-078c-4ae0-80ed-6c094104c169",
+		"label" : "machinery"
+	},
+	{
+		"id" : "851475d4-4d5b-44fe-ac31-242bfb3b4c66",
+		"label" : "maintenance_and_repairs"
+	},
+	{
+		"id" : "90a69f5e-5c6b-42b3-8d67-eb6940bdc8b6",
+		"label" : "fruit_trees"
+	},
+	{
+		"id" : "6a768c78-a2f9-474e-ac5c-d91c1cfd8476",
+		"label" : "vineyard"
+	},
+	{
+		"id" : "6ee810e3-7c3c-432f-bf47-9181853902d5",
+		"label" : "olive_grove"
+	},
+	{
+		"id" : "2f2c3cf3-854e-4e15-8026-2beb546fbf01",
+		"label" : "cereals"
+	},
+	{
+		"id" : "8ee68e8b-7903-4d40-8057-4e36db0452fa",
+		"label" : "Legumes"
+	},
+	{
+		"id" : "561ea6e0-81c4-4d8f-9008-6c915bd91932",
+		"label" : "oilseed"
+	},
+	{
+		"id" : "853c7350-a382-42fd-8a70-bbc6c6549b04",
+		"label" : "vegetables"
+	},
+	{
+		"id" : "90de0ecc-d8d6-4255-b74d-20cb54788c1c",
+		"label" : "tubers"
+	},
+	{
+		"id" : "f3e1e1f8-dd5d-4fed-850c-bcd8fd4f123d",
+		"label" : "foragers"
+	},
+	{
+		"id" : "57ad8256-bc6f-4333-b0f2-93476643fd61",
+		"label" : "agriculture_others"
+	},
+	{
+		"id" : "50d7b4da-7f91-41f0-adb4-514142e30cdd",
+		"label" : "plant_health"
+	},
+	{
+		"id" : "60918aad-d6a9-4f42-99b2-f7b87aa2efec",
+		"label" : "dairy_cattle"
+	},
+	{
+		"id" : "d4fb3607-5dee-410e-a8ec-91179280da4b",
+		"label" : "beef"
+	},
+	{
+		"id" : "4cb8ee73-2006-4cdc-b029-5674efd3a7b8",
+		"label" : "dairy_ovine"
+	},
+	{
+		"id" : "75c7c7e0-e96f-4397-9071-7dc02dc6f474",
+		"label" : "dairy_goat"
+	},
+	{
+		"id" : "b0ac55e0-7157-45af-9b82-4176c753f60e",
+		"label" : "porcine"
+	},
+	{
+		"id" : "ee731311-e229-4934-a37f-4fa21c190313",
+		"label" : "poultry_farming"
+	},
+	{
+		"id" : "f692920c-4843-42cf-9f7f-5164df751b57",
+		"label" : "rabbit_farming"
+	},
+	{
+		"id" : "cbd2deb8-66e4-4458-98e6-46105d93d3a2",
+		"label" : "stockbreeding_others"
+	},
+	{
+		"id" : "6c0ec1a9-21ee-46ca-bf48-d3bbb8092c6b",
+		"label" : "animal_health"
+	},
+	{
+		"id" : "909def64-ff46-44de-b951-c54377936d8f",
+		"label" : "digitization"
+	},
+	{
+		"id" : "886f0722-0075-4a7c-b2c4-4e3d99f45df3",
+		"label" : "research_and_development"
+	},
+	{
+		"id" : "b52201f7-a798-4e98-9fb9-cd7d41df2853",
+		"label" : "pac"
+	},
+	{
+		"id" : "67452a39-75e9-47b1-bddf-a6ab57a4ab0c",
+		"label" : "legislation"
+	},
+	{
+		"id" : "64af79ca-fba1-4803-8b9f-7f74aed310d7",
+		"label" : "subsidies"
+	},
+	{
+		"id" : "ad9b9ffa-e97f-4108-9502-e408d739463c",
+		"label" : "storage_and_tools"
+	},
+	{
+		"id" : "ca27025e-9934-45c8-96df-6b07d8193d2e",
+		"label" : "logistics_vehicles_transport"
+	},
+	{
+		"id" : "ebb1440b-7d49-41ee-a3ee-d517a3efca7a",
+		"label" : "machinery"
+	},
+	{
+		"id" : "81e54c8a-cf7e-4b5c-a1c5-32f26233b9d3",
+		"label" : "maintenance_and_repairs"
+	},
+	{
+		"id" : "dde962e9-ba52-43e2-8c79-f45c8af67283",
+		"label" : "fruit_trees"
+	},
+	{
+		"id" : "fd8b3550-25a3-4e86-b235-067f7ca29aa2",
+		"label" : "vineyard"
+	},
+	{
+		"id" : "481da7c0-d78b-403e-8483-ef5544fdb41d",
+		"label" : "olive_grove"
+	},
+	{
+		"id" : "bfa95ffa-dfd1-4de1-b9b7-bee62eceb0e0",
+		"label" : "cereals"
+	},
+	{
+		"id" : "e2b39a6c-e99d-42c6-88a1-d863f983ce0f",
+		"label" : "Legumes"
+	},
+	{
+		"id" : "ee96617b-2367-43c1-8f69-094a4c095a3f",
+		"label" : "oilseed"
+	},
+	{
+		"id" : "9d6dcc65-c33f-4ce3-8416-d60142d9ffeb",
+		"label" : "vegetables"
+	},
+	{
+		"id" : "57492e9f-6718-4b2c-b951-ba2a70cf857c",
+		"label" : "tubers"
+	},
+	{
+		"id" : "f7b2d747-75b6-493c-beae-0961cf3a9748",
+		"label" : "foragers"
+	},
+	{
+		"id" : "b2eff3ea-0265-40b8-b0b9-653a3498ea30",
+		"label" : "agriculture_others"
+	},
+	{
+		"id" : "5a274397-00b9-49db-b3f5-7783f1bc3fe7",
+		"label" : "plant_health"
+	},
+	{
+		"id" : "06a40347-d194-4cc1-a37a-225750f715b2",
+		"label" : "dairy_cattle"
+	},
+	{
+		"id" : "90f871a1-9b36-4379-8068-2dff79a8641f",
+		"label" : "beef"
+	},
+	{
+		"id" : "5dc93605-923f-41de-a7c0-46a89fd72f11",
+		"label" : "dairy_ovine"
+	},
+	{
+		"id" : "2c36ce29-464b-4829-92a0-525873a42b9d",
+		"label" : "dairy_goat"
+	},
+	{
+		"id" : "d0741930-a430-48c0-9949-c28d0f9c7a36",
+		"label" : "porcine"
+	},
+	{
+		"id" : "c7a442f9-0d7e-4b5f-8199-a43574b2961e",
+		"label" : "poultry_farming"
+	},
+	{
+		"id" : "8780968b-3b8e-4bc5-8041-3297879212f7",
+		"label" : "rabbit_farming"
+	},
+	{
+		"id" : "4c16a706-ea7a-4433-8cd6-71a033009817",
+		"label" : "stockbreeding_others"
+	},
+	{
+		"id" : "d6f3d7d9-b299-437d-8af8-97a337104eef",
+		"label" : "animal_health"
+	},
+	{
+		"id" : "e856f413-0cab-4354-8816-004e4d5d5f25",
+		"label" : "digitization"
+	},
+	{
+		"id" : "e7177b4b-f0f1-41a3-bce8-1069b40fa754",
+		"label" : "research_and_development"
+	},
+	{
+		"id" : "060c107a-d491-4ebf-bca1-824f94385019",
+		"label" : "innovation"
+	},
+	{
+		"id" : "1d13e6b5-8e67-4054-ad81-66c7f81cc7ce",
+		"label" : "poultry_farming"
+	},
+	{
+		"id" : "f01434ed-e8a3-46d8-9cfa-34fadaebba18",
+		"label" : "rural_development"
+	},
+	{
+		"id" : "c313bdc2-f005-4ce5-bbfa-b4167de5249f",
+		"label" : "stockbreeding_others"
+	},
+	{
+		"id" : "65370d2b-59bb-4bd7-8ac1-56933a4e54ac",
+		"label" : "subsidies"
+	},
+	{
+		"id" : "24e41bf1-6165-444a-8c29-a69b7b986b09",
+		"label" : "dairy_ovine"
+	},
+	{
+		"id" : "1b934aa8-d1d0-40fb-9c12-cdb6cc4e5670",
+		"label" : "dairy_cattle"
+	},
+	{
+		"id" : "0e974a6b-257b-45f4-af1d-5453bcc72e29",
+		"label" : "beef"
+	},
+	{
+		"id" : "e035cee8-aeab-4f73-a427-00a42759726c",
+		"label" : "dairy_ovine"
+	},
+	{
+		"id" : "ca117522-6859-4fcf-92d3-5ee03d2b68b9",
+		"label" : "buy_and_sell"
+	},
+	{
+		"id" : "a65326e4-dc41-4c3e-81d2-ab527506abc1",
+		"label" : "agriculture_others"
+	},
+	{
+		"id" : "6150b401-b55c-4b5a-9ebd-f6e74da52ce0",
+		"label" : "animal_health"
+	},
+	{
+		"id" : "302f25a5-402e-452e-b2a9-de005fd7cb1f",
+		"label" : "vineyard"
+	},
+	{
+		"id" : "3377325f-6e5f-4157-8d95-8c695435579b",
+		"label" : "companies_and_collaborations"
+	},
+	{
+		"id" : "38bce0c4-cd35-42b9-aee0-0cc8bb43bc9f",
+		"label" : "buy_and_sell"
+	},
+	{
+		"id" : "81d9d200-8063-4a49-b27e-ad89cacd0ca6",
+		"label" : "fruit_trees"
+	},
+	{
+		"id" : "fabc5709-42c2-4d1a-af3c-9a5c9fd8afec",
+		"label" : "fruit_trees"
+	},
+	{
+		"id" : "4cb8ee73-2006-4cdc-b029-5674efd3a7b8",
+		"label" : "meat_ovine"
+	},
+	{
+		"id" : "5dc93605-923f-41de-a7c0-46a89fd72f11",
+		"label" : "meat_ovine"
+	},
+	{
+		"id" : "24e41bf1-6165-444a-8c29-a69b7b986b09",
+		"label" : "meat_ovine"
+	},
+	{
+		"id" : "e035cee8-aeab-4f73-a427-00a42759726c",
+		"label" : "meat_ovine"
+	},
+	{
+		"id" : "75c7c7e0-e96f-4397-9071-7dc02dc6f474",
+		"label" : "meat_goat"
+	},
+	{
+		"id" : "2c36ce29-464b-4829-92a0-525873a42b9d",
+		"label" : "meat_goat"
+	}
+]}

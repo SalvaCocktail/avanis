@@ -1,0 +1,27 @@
+<%@ include file="/init.jsp" %>
+
+<%
+ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+
+Group group = (Group)row.getObject();
+%>
+
+<liferay-ui:icon-menu
+	direction="left-side"
+	icon="<%= StringPool.BLANK %>"
+	markupView="lexicon"
+	message="<%= StringPool.BLANK %>"
+	showWhenSingleIcon="<%= true %>"
+>
+	<portlet:renderURL var="calendarsURL">
+		<portlet:param name="mvcPath" value="/view_calendars.jsp" />
+		<portlet:param name="redirect" value="<%= currentURL %>" />
+		<portlet:param name="classNameId" value="<%= String.valueOf(PortalUtil.getClassNameId(Group.class)) %>" />
+		<portlet:param name="classPK" value="<%= String.valueOf(group.getGroupId()) %>" />
+	</portlet:renderURL>
+
+	<liferay-ui:icon
+		message="view-calendars"
+		url="<%= calendarsURL %>"
+	/>
+</liferay-ui:icon-menu>

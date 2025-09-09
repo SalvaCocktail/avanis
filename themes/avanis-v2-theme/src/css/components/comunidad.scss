@@ -1,0 +1,17 @@
+@import '../clay/atlas-variables';
+
+@import "../mixins/mixin";
+
+$card-tab-border-left-color: #65b6f0;
+$card-tab-border-left-width: 4px;
+$card-tab-padding-left-width: 20px;
+
+html:not(#__):not(#___) .cadmin .modal-content .yui3-widget-hd.modal-header {
+	background-color: #EFF0E8;
+}
+
+.avanis-comunidad-portlet {
+	span#cke_54 {
+		display: none;
+	}
+}

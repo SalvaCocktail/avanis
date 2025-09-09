@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api')
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	implementation 'commons-io:commons-io:2.16.1'
+}

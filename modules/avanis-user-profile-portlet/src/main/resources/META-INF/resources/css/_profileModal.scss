@@ -1,0 +1,84 @@
+.perfil-modal{
+  position: relative;
+  z-index: 989;
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .modal-content {
+    background-color: transparent;
+    margin: 15% auto;
+    padding: 20px;
+    border: 0;
+    width: 80%;
+
+  }
+.modal-header{
+  align-items: center;
+  background-color: #EFF0E8;
+  border-radius: 16px 16px 0 0;
+  color: #101717;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  padding: 12px 16px;
+
+}
+
+  .cropper-wrap-box {
+    overflow: hidden;
+    background-color: white;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #4cae4c;
+  }
+  .modal-footer{
+    background-color: white;
+
+  }
+
+  .modal-body{
+    background-color: white;
+    display: block !important;
+    #inputimage{
+      margin: 1em;
+      border: 0;
+    }
+  }
+}
+
+#followingStyle .modal-cancelar-peticion .modal-title,.modal-seguidores .modal-title {
+  text-align: center!important;
+
+}

@@ -1,0 +1,305 @@
+
+<!-- Modal -->
+<div class="modal fade " id="publicationModalSelect" tabindex="-1" role="dialog" aria-labelledby="publicationModalSelectLabel" aria-hidden="true">
+    <div class="modal-dialog categoriesSelectorModal" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="publicationModalSelectLabel"><liferay-ui:message key="select-categories-for-publication"/></h5>
+            </div>
+            <div class="modal-body">
+                <div class="av-content-form">
+                    <div class="visibility-form hide">
+                        <div class="av-content-right">
+                            <div><b><liferay-ui:message key="audiencia-question" /></b></div>
+                            <div><liferay-ui:message key="audiencia-desc1" /></div>
+                            <div><liferay-ui:message key="audiencia-desc2" /></div>
+                            <div class="mb-3">
+                                <input id="<portlet:namespace />visibilityOptions1" type="radio" ${visibility=="public" ? 'checked' : '' } name="<portlet:namespace />visibilityOptionsTemp" value="public" >
+                                <label for="<portlet:namespace />visibilityOptions1">
+                                    <span><b><liferay-ui:message key="audiencia-publico"/></b></span>
+                                    <span><liferay-ui:message key="audiencia-publico-desc"/></span>
+                                </label>
+                                <input id="<portlet:namespace />visibilityOptions2" type="radio" ${visibility=="registered" ? 'checked' : '' } name="<portlet:namespace />visibilityOptionsTemp" value="registered" >
+                                <label for="<portlet:namespace />visibilityOptions2">
+                                    <span><b><liferay-ui:message key="audiencia-usuarios-avanis"/></b></span>
+                                    <span><liferay-ui:message key="audiencia-usuarios-avanis"/></span>
+                                </label>
+                                <input id="<portlet:namespace />visibilityOptions3" type="radio" ${visibility=="followers" ? 'checked' : '' } name="<portlet:namespace />visibilityOptionsTemp" value="followers" >
+                                <label for="<portlet:namespace />visibilityOptions3">
+                                    <span><b><liferay-ui:message key="audiencia-mis-seguidores"/></b></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-form">
+                        <div class="av-content-right">
+                            <div class="mb-3">
+                                <div class="mb-3 categoryGroup">
+                                    <p class="av-step-question"><liferay-ui:message key="agricultura" /> (<span id="countAgriculture">0</span>/13)
+                                        <liferay-ui:icon icon="angle-up-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupCloseIcon" id="agricultureCloseIcon"
+                                        />
+                                        <liferay-ui:icon icon="angle-down-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupOpenIcon hide" id="agricultureOpenIcon"
+                                        />
+                                    </p>
+                                    <div class="av-preferences-select-container" data-select-id="selectContainer1" id="agricultureCategories">
+                                        <c:forEach var="agricultureCategory" items="${agricultureCategories}">
+                                            <c:choose>
+                                                <c:when test="${userAssetCategoriesIds.contains(agricultureCategory.categoryId.toString())}">
+                                                    <div class="av-preferences-option selected" data-value="${agricultureCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${agricultureCategory.name}</div>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <div class="av-preferences-option" data-value="${agricultureCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${agricultureCategory.name}</div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="<portlet:namespace/>agricultureCategoryTemp" value="" id="hiddenSelectContainer1">
+                                <!-- Ganadería -->
+                                <div class="mb-3 categoryGroup">
+                                    <p class="av-step-question"><liferay-ui:message key="ganaderia" /> (<span id="countStockbreading">0</span>/10)
+                                        <liferay-ui:icon icon="angle-up-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupCloseIcon hide" id="stockbreadingCloseIcon"
+                                        />
+                                        <liferay-ui:icon icon="angle-down-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupOpenIcon" id="stockbreadingOpenIcon"
+                                        />
+                                    </p>
+                                    <div class="av-preferences-select-container hide" data-select-id="selectContainer2" id="stockbreadingCategories">
+                                        <c:forEach var="stockbreadingCategory" items="${stockbreadingCategories}">
+                                            <c:choose>
+                                                <c:when test="${userAssetCategoriesIds.contains(stockbreadingCategory.categoryId.toString())}">
+                                                    <div class="av-preferences-option selected" data-value="${stockbreadingCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${stockbreadingCategory.name}</div>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <div class="av-preferences-option" data-value="${stockbreadingCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${stockbreadingCategory.name}</div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="<portlet:namespace/>stockbreadingCategoryTemp" value="" id="hiddenSelectContainer2">
+                                <!-- Otros -->
+                                <div class="mb-3 categoryGroup">
+                                    <p class="av-step-question"><liferay-ui:message key="otros" /> (<span id="countOther">0</span>/9)
+                                        <liferay-ui:icon icon="angle-up-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupCloseIcon hide" id="otherCloseIcon"
+                                        />
+                                        <liferay-ui:icon icon="angle-down-small" markupView="lexicon"
+                                                         cssClass="iconCategoryGroup categoryGroupOpenIcon" id="otherOpenIcon"
+                                        />
+                                    </p>
+                                    <div class="av-preferences-select-container hide" data-select-id="selectContainer3" id="otherCategories">
+                                        <c:forEach var="otherCategory" items="${otherCategories}">
+                                            <c:choose>
+                                                <c:when test="${userAssetCategoriesIds.contains(otherCategory.categoryId.toString())}">
+                                                    <div class="av-preferences-option selected" data-value="${otherCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${otherCategory.name}</div>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <div class="av-preferences-option" data-value="${otherCategory.categoryId}"
+                                                         onclick="toggleIcon(this)">
+                                                            ${otherCategory.name}</div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="<portlet:namespace/>otherCategoryTemp" value="" id="hiddenSelectContainer3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="av-theme__btn av-theme__btn--secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="av-theme__btn av-theme__btn--primary" onClick="applyPublicationModalSelect()"><liferay-ui:message key="apply-categories"/></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function showCategoryListModal() {
+        let title = '<liferay-ui:message key="select-categories-for-publication"/>'
+        $('.visibility-form').hide();
+        $('#publicationModalSelectLabel').text(title);
+
+        let listAgricultureCategoriesSelected = $('#<portlet:namespace />agricultureCategory').val().split(",");
+        let listStockbreadingCategoriesSelected = $('#<portlet:namespace />stockbreadingCategory').val().split(",");
+        let listOtherCategoriesSelected = $('#<portlet:namespace />otherCategory').val().split(",");
+        $('#<portlet:namespace/>hiddenSelectContainer1').val('');
+        $('#<portlet:namespace/>hiddenSelectContainer2').val('');
+        $('#<portlet:namespace/>hiddenSelectContainer3').val('');
+
+
+        $('.av-preferences-select-container .av-preferences-option').removeClass('selected').each(function () {
+            $(this).removeClass('show-icon');
+            let element = $(this);
+            $.each(listAgricultureCategoriesSelected, function( index, value ){
+                if(value === element.attr('data-value')){
+                    element.addClass('selected').addClass('show-icon');
+                }
+            });
+            $.each(listStockbreadingCategoriesSelected, function( index, value ){
+                if(value === element.attr('data-value')){
+                    element.addClass('selected').addClass('show-icon');
+                }
+            });
+            $.each(listOtherCategoriesSelected, function( index, value ){
+                if(value === element.attr('data-value')){
+                    element.addClass('selected').addClass('show-icon');
+                }
+            });
+        });
+
+        updateHiddenFields();
+
+        $('.category-form').show();
+        $('#publicationModalSelect').modal('show');
+    }
+
+    function showVisibilityListModal() {
+        let title = '<liferay-ui:message key="audiencia-de-la-publicacion-title"/>'
+        $('.category-form').hide();
+        $('#publicationModalSelectLabel').text(title);
+
+        $('input:radio[name="<portlet:namespace />visibilityOptionsTemp"]').val($('#<portlet:namespace />visibilityOptions').val());
+
+        $('.visibility-form').show();
+        $('#publicationModalSelect').modal('show');
+    }
+
+    function applyPublicationModalSelect() {
+        if ($('.category-form').is(":visible")) {
+            $('#<portlet:namespace />agricultureCategory').val($('#hiddenSelectContainer1').val());
+            $('#<portlet:namespace />stockbreadingCategory').val($('#hiddenSelectContainer2').val());
+            $('#<portlet:namespace />otherCategory').val($('#hiddenSelectContainer3').val());
+        } else if ($('.visibility-form').is(":visible")) {
+            $('#<portlet:namespace />visibilityOptions').val($('input:radio[name="<portlet:namespace />visibilityOptionsTemp"]').val());
+        }
+        $('#publicationModalSelect').modal('hide');
+    }
+
+    $(document).ready(function () {
+
+        document.querySelectorAll('.categoryGroup').forEach(function (categoryGroup) {
+            categoryGroup.querySelector('.av-step-question').addEventListener('click', function (event) {
+                const categoryGroupElement = categoryGroup.querySelector('.av-preferences-select-container');
+                const categoryGroupArrowOpenElement = categoryGroup.querySelector('.categoryGroupOpenIcon');
+                const categoryGroupArrowCloseElement = categoryGroup.querySelector('.categoryGroupCloseIcon');
+
+                if (categoryGroupElement) {
+                    categoryGroupElement.classList.toggle('hide');
+                }
+                if (categoryGroupArrowOpenElement) {
+                    categoryGroupArrowOpenElement.classList.toggle('hide');
+                }
+                if (categoryGroupArrowCloseElement) {
+                    categoryGroupArrowCloseElement.classList.toggle('hide');
+                }
+            });
+        });
+
+        $('.selected').on('change', function () {
+            updateCounters();
+        });
+
+        updateCounters();
+
+    });
+
+    // Función para actualizar contadores
+    function updateCounters() {
+        // Agricultura
+        const agricultureCount = $('#agricultureCategories .av-preferences-option.selected').length;
+        $('#countAgriculture').text(agricultureCount);
+        // Ganadería
+        const stockbreadingCount = $('#stockbreadingCategories .av-preferences-option.selected').length;
+        $('#countStockbreading').text(stockbreadingCount);
+        // Otros
+        const otherCount = $('#otherCategories .av-preferences-option.selected').length;
+        $('#countOther').text(otherCount);
+    }
+
+</script>
+
+<!-- Script para simular con divs el comportamiento del select -->
+<script>
+    $(document).ready(function () {
+
+        // Inicializo los campos ocultos
+        updateHiddenFields();
+
+        $('.av-preferences-select-container').on('click', '.av-preferences-option', function () {
+            $(this).toggleClass('selected'); // Alterna la clase 'selected'
+            // Obtener el ID del contenedor
+            var container = $(this).closest('.av-preferences-select-container');
+            var selectId = container.data('select-id');
+
+            if (!selectId) {
+                console.error('No se pudo obtener el ID del contenedor.');
+                return;
+            }
+
+            // Crear el ID del campo oculto
+            var hiddenFieldId = 'hidden' + selectId.charAt(0).toUpperCase() + selectId.slice(1);
+            var hiddenFieldName = '<portlet:namespace/>' + container.data('select-id').replace('selectContainer', 'selected') + 'Categories';
+
+            // Obtener los valores seleccionados
+            var selectedValues = container.find('.av-preferences-option.selected').map(function () {
+                return $(this).attr('data-value');
+            }).get();
+
+            // Actualizar el campo oculto con los valores seleccionados
+            var hiddenField = $('#' + hiddenFieldId);
+            if (hiddenField.length) {
+                hiddenField.val(selectedValues.join(','));
+            } else {
+                console.error('Elemento oculto con ID ' + hiddenFieldId + ' no encontrado');
+            }
+            updateCounters();
+            //console.log('Selected values for ' + selectId + ':', selectedValues);
+        });
+
+    });
+
+    // Actualizo los campos ocultos al inicio, así no se pierden aunque no interactuemos con ellos :)
+    function updateHiddenFields() {
+        $('.av-preferences-select-container').each(function () {
+            var container = $(this);
+            var selectId = container.data('select-id');
+            var hiddenFieldId = 'hidden' + selectId.charAt(0).toUpperCase() + selectId.slice(1);
+            var selectedValues = container.find('.av-preferences-option.selected').map(function () {
+                return $(this).attr('data-value');
+            }).get();
+            var hiddenField = $('#' + hiddenFieldId);
+            if (hiddenField.length) {
+                hiddenField.val(selectedValues.join(','));
+            } else {
+                console.error('Elemento oculto con ID ' + hiddenFieldId + ' no encontrado');
+            }
+        });
+    }
+
+    // Ocultar/mostrar el icono de cerrar en las casillas
+    function toggleIcon(element) {
+        element.classList.toggle('show-icon');
+    }
+
+</script>

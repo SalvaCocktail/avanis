@@ -1,0 +1,4 @@
+Bundle-Name: avanis-buscador-portlet
+Bundle-SymbolicName: avanis.buscador.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.buscador.portlet.constants

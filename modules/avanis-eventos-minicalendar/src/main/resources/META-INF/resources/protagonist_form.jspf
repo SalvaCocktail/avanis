@@ -1,0 +1,65 @@
+<%@ page import="avanis.calendarbooking.sb.model.Protagonist" %>
+<%@ page import="java.util.List" %>
+<%@ page import="avanis.calendarbooking.sb.service.ProtagonistLocalServiceUtil" %>
+<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+
+<portlet:resourceURL var="addProtagonistURL" id="addProtagonist">
+</portlet:resourceURL>
+<portlet:resourceURL var="removeProtagonistURL" id="removeProtagonist">
+</portlet:resourceURL>
+
+<div id="protagonista-form">
+    <aui:input name="protagonistName" type="text"/>
+    <aui:input name="protagonistRol" type="text"/>
+    <aui:input type="file" name="protagonistPhoto" multiple="true">
+    </aui:input>
+
+    <aui:button type="button" value="Añadir Protagonista" onClick="addProtagonist();"/>
+</div>
+
+
+<%@ include file="/protagonist_list.jspf" %>
+
+<script>
+    function addProtagonist() {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        fetch("${addProtagonistURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            const divProtagonists = document.getElementById("protagonist-list");
+            divProtagonists.innerHTML += html;
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+    function removeProtagonist(id) {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        formData.set("<portlet:namespace />protagonistId", id)
+
+        fetch("${removeProtagonistURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            const divProtagonist = document.getElementById(`protagonist-resource-\${id}`);
+            divProtagonist.remove();
+        }).catch(error => {
+
+            console.error(error)
+        })
+        return false;
+    }
+
+
+</script>
+
+

@@ -1,0 +1,71 @@
+<div class="card-body message-attachments">
+    <%
+        if (message != null && Validator.isNotNull(message.getAttachmentsFileEntries())) {
+            boolean encontradoDocumento = false;
+            boolean encontradaImagen = false;
+            int imageCount = 0; // Contador de imágenes
+
+            for (FileEntry fileEntry : message.getAttachmentsFileEntries()) {
+                if (fileEntry.getMimeType().contains("image")) {
+                    encontradaImagen = true;
+                } else {
+                    encontradoDocumento = true;
+                }
+            }
+
+            if (encontradaImagen) {
+    %>
+    <div class="image-attachment-container">
+        <%
+
+            for (FileEntry fileEntry : message.getAttachmentsFileEntries()) {
+                if (fileEntry.getMimeType().contains("image")) {
+                    String urlFile = PortletFileRepositoryUtil.getDownloadPortletFileEntryURL(themeDisplay, fileEntry, "status=" + WorkflowConstants.STATUS_APPROVED);
+                    imageCount++;
+        %>
+        <div class="image-attachment image-attachment<%=imageCount%><%= (imageCount > 3) ? " img-extra" : "" %>" style="background-image: url('<%=urlFile%>');"></div>
+        <%
+                }
+            }
+        %>
+    </div>
+    <%
+        }
+
+        if (encontradoDocumento) {
+    %>
+    <div><liferay-ui:message key="downloads"/>:</div>
+    <div class="image-attachment-container">
+        <%
+            for (FileEntry fileEntry : message.getAttachmentsFileEntries()) {
+                if (!fileEntry.getMimeType().contains("image")) {
+                    StringBundler sb = new StringBundler(5);
+                    sb.append(fileEntry.getTitle());
+                    sb.append(StringPool.SPACE);
+                    sb.append(StringPool.OPEN_PARENTHESIS);
+                    sb.append(LanguageUtil.formatStorageSize(fileEntry.getSize(), locale));
+                    sb.append(StringPool.CLOSE_PARENTHESIS);
+                    AssetRendererFactory<?> assetRendererFactory = AssetRendererFactoryRegistryUtil.getAssetRendererFactoryByClassName(DLFileEntry.class.getName());
+
+                    AssetRenderer<?> assetRenderer = assetRendererFactory.getAssetRenderer(fileEntry.getFileEntryId());
+        %>
+        <div class="message-attachment">
+            <liferay-ui:icon
+                    icon="<%= assetRenderer.getIconCssClass() %>"
+                    label="<%= true %>"
+                    markupView="lexicon"
+                    message="<%= HtmlUtil.escape(sb.toString()) %>"
+                    method="get"
+                    url="<%= PortletFileRepositoryUtil.getDownloadPortletFileEntryURL(themeDisplay, fileEntry, StringPool.BLANK) %>"
+            />
+        </div>
+        <%
+                }
+            }
+        %>
+    </div>
+    <%
+            }
+        }
+    %>
+</div>

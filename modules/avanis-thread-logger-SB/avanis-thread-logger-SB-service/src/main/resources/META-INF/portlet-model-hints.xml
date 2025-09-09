@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="avanis.thread.logger.sb.model.ThreadLog">
+		<field name="threadLogId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="threadName" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="stackTrace" type="String">
+			<hint name="max-length">10000</hint>
+		</field>
+		<field name="threadState" type="String" />
+		<field name="lockName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="lockOwnerName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="lockOwnerId" type="long" />
+	</model>
+</model-hints>

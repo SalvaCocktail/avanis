@@ -1,0 +1,351 @@
+<style>
+    .user-avatar-link .personal-menu-dropdown.lfr-tooltip-scope {
+        display: none;
+    }
+
+    .navbar__cta .user-personal-bar-fragment {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+
+<div class="header">
+    <div class="header-container">
+        <nav class="navbar">
+            <div class="navbar__logo-cta-menu">
+                <div class="navbar__logo">
+                    <a href="/">
+                        <img
+                                src="/documents/d/guest/logo-avanis"
+                                alt="Logo Avanis"
+                                class="navbar__logo-complete"
+                        />
+                        <img
+                                src="/documents/d/guest/logo-avanis-small"
+                                alt="Logo Avanis Small"
+                                class="navbar__logo-small"
+                        />
+                    </a>
+                </div>
+                <div class="navbar__cta-menu">
+                    <div class="navbar__cta navbar__cta--top">
+                        [#if themeDisplay.isSignedIn()]
+                            <img
+                                    src="/documents/d/guest/icon-bell"
+                            />
+                            <div
+                                    class="user-personal-bar-fragment user-personal-bar-fragment--first"
+                            >
+                                [@liferay.user_personal_bar /]
+                                <!--*********************** MENU CUSTOM ******************** -->
+                                <nav class="masterclass-private-header">
+                                    <div id="navbarSupportedContent">
+                                        <ul class="masterclass-navbar-user navbar-nav">
+                                            [#if themeDisplay.isSignedIn()]
+
+                                                <li class="dropdown nav-item">
+
+                                                    [#-- Obtener la URL de la imagen de perfil --]
+                                                    [#assign portraitURL = user.getPortraitURL(themeDisplay)]
+                                                    [#-- Verificar si la URL corresponde a la imagen de perfil por defecto --]
+                                                    [#if portraitURL?contains("/image/user_portrait?img_id=0")]
+                                                    <button aria-expanded="false" aria-haspopup="true" class="initials-profile btn btn-unstyled rounded-circle dropdown-toggle nav-link" data-toggle="liferay-dropdown" id="unmm_dropdown_menu" type="button">
+                                                        [#-- Muestro INICIAL --]
+                                                        [#assign fullName = user.getFullName()]
+														[#assign lastName = user.getLastName()]
+                                                        [#assign firstLetter = fullName?substring(0, 1)?upper_case]
+														[#assign secondLetter = lastName?substring(0, 1)?upper_case]
+                                                        ${firstLetter}${secondLetter}
+                                                        [#else]
+                                                        [#-- Muestro imagen personalizada --]
+                                                        <button aria-expanded="false" aria-haspopup="true" class="btn btn-unstyled rounded-circle dropdown-toggle nav-link" data-toggle="liferay-dropdown" id="${fragmentEntryLinkNamespace}_dropdown_menu" type="button">
+                                                            <span class="sticker sticker-user-icon sticker-lg">
+                                                <span class="sticker user-icon-color-2 sticker-circle sticker-lg">
+                                                    <span class="sticker-overlay">
+                                                        <img alt="${user.getFullName()}" class="sticker-img" src="${portraitURL}">
+                                                    </span>
+                                                </span>
+																								</span>
+                                                            [/#if]
+                                                        </button>
+                                                        <ul aria-labelledby="_dropdown_menu" class="dropdown-menu right">
+                                                            <div class="av-user-box">
+                                                                <div>[#if themeDisplay.isSignedIn()]
+                                                                    [#assign fullName = user.getFullName()]
+																	[#assign lastName = user.getLastName()]
+
+                                                                    [#assign firstLetter = fullName?substring(0, 1)?upper_case]
+																	[#assign secondLetter = lastName?substring(0, 1)?upper_case]
+																	
+                                                                    [#-- Obtener la URL de la imagen de perfil --]
+                                                                    [#assign portraitURL = user.getPortraitURL(themeDisplay)]
+                                                                    [#-- Verificar si la URL corresponde a la imagen de perfil por defecto --]
+                                                                    [#if portraitURL?contains("/image/user_portrait?img_id=0")]
+                                                                        <div class="av-user-photo">${firstLetter}${secondLetter}</div>
+                                                                    [#else]
+                                                                        <span class="sticker sticker-user-icon sticker-lg"> 
+                                                                    <span class="sticker user-icon-color-2 sticker-circle sticker-lg"> 
+                                                                        <span class="sticker-overlay"> 
+                                                                            <img alt="${fullName}" class="sticker-img" src="${portraitURL}">
+                                                                        </span> 
+                                                                    </span> 
+                                                                </span>
+                                                                    [/#if]
+                                                                </div>[/#if]
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Hola ${user.getFirstName()} </strong>
+                                                                    </div>
+                                                                    <div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-publico">
+                                                                    Mi perfil público
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado">
+                                                                    Sobre mí
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=preferences">
+                                                                    Mis preferencias
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=plots">
+                                                                    Gestión de mis parcelas
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=notifications">
+                                                                    Notificaciones
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=security">
+                                                                    Seguridad de mi cuenta
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=account">
+                                                                    Administra tu cuenta
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="${htmlUtil.escape(themeDisplay.getURLSignOut())}">
+                                                                    Cerrar sesión
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                            [#else]
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="${publicFriendlyURL}/sign-in">
+                                                        <img alt="" class="btn btn-monospaced p-1" src="[resources:icon_user_not_logged.svg]" />
+                                                        <span class="small text-uppercase">Sign In</span>
+                                                    </a>
+                                                </li>
+                                            [/#if]
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                                <!------------------------------------- FIN MENU CUSTOM --------------------------------------->
+                            </div>
+
+                        [/#if] [#if !themeDisplay.isSignedIn()]
+                            <a
+                                    href="/login"
+                                    class="navbar__btn navbar__btn--outline"
+                                    aria-label="Ingresa a tu cuenta"
+                            >Entrar</a
+                            >
+                            <a
+                                    href="/tipo-registro"
+                                    class="navbar__btn navbar__btn--primary"
+                                    aria-label="Date de alta"
+                            >Crear cuenta gratis</a
+                            >
+                        [/#if]
+                    </div>
+                    <div class="navbar__menu-icons-mobile">
+                  <span
+                          class="navbar__menu-icons-mobile-icon navbar__menu-icons-mobile-burger"
+                  >Menú
+                  <img
+                          src="/documents/d/guest/icon-burger-menu"
+                          alt="Burger Menu Icon"
+                          class="navbar__icon-burger"
+                  />
+                  </span>
+                        <span
+                                class="navbar__menu-icons-mobile-icon navbar__menu-icons-mobile-close"
+                        >Menú
+                  <img
+                          src="/documents/d/guest/icon-close"
+                          alt="Close Icon"
+                          class="navbar__icon-x-close"
+                  />
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__menu-list">
+                [#if themeDisplay.isSignedIn()]
+                    <lfr-widget-nav id="avNavbarMenu001"></lfr-widget-nav>
+
+                [/#if] [#if !themeDisplay.isSignedIn()]
+                    <lfr-widget-nav id="avNavbarMenu002"></lfr-widget-nav>
+                [/#if]
+            </div>
+            <div class="navbar__cta navbar__cta-bottom">
+                [#if themeDisplay.isSignedIn()]
+                    <img
+                            src="/documents/d/guest/icon-bell"
+                            class="navbar__cta-bottom-bell-icon"
+                    />
+                    <div
+                            class="user-personal-bar-fragment user-personal-bar-fragment--second"
+                    >
+                        [@liferay.user_personal_bar /]
+                        <nav class="masterclass-private-header">
+                            <div class="align-items-center d-flex">
+                            </div>
+                            <div id="navbarSupportedContent">
+                                <ul class="masterclass-navbar-user navbar-nav">
+                                    [#if themeDisplay.isSignedIn()]
+                                        <li class="dropdown nav-item">
+                                            [#assign user = themeDisplay.getUser()]
+                                            [#-- Obtener la URL de la imagen de perfil --]
+                                            [#assign portraitURL = user.getPortraitURL(themeDisplay)]
+                                            [#-- Verificar si la URL corresponde a la imagen de perfil por defecto --]
+                                            [#if portraitURL?contains("/image/user_portrait?img_id=0")]
+                                            [#-- Muestro INICIAL --]
+                                            [#assign fullName = user.getFullName()]											
+											[#assign lastName = user.getLastName()]
+
+                                            [#assign firstLetter = fullName?substring(0, 1)?upper_case]
+											[#assign secondLetter = lastName?substring(0, 1)?upper_case]
+                                            
+
+                                            <button aria-expanded="false" aria-haspopup="true" class="initials-profile btn btn-unstyled rounded-circle dropdown-toggle nav-link" data-toggle="liferay-dropdown" id="unmm_dropdown_menu" type="button">
+                                                ${firstLetter}${secondLetter}
+                                                [#else]
+                                                [#-- Muestro imagen personalizada --]
+                                                <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle rounded-circle btn btn-unstyled" data-toggle="liferay-dropdown" id="${fragmentEntryLinkNamespace}_dropdown_menu" type="button">
+                                            <span class="sticker sticker-user-icon sticker-lg">
+                                                <span class="sticker user-icon-color-2 sticker-circle sticker-lg">
+                                                    <span class="sticker-overlay">
+                                                        <img alt="${user.getFullName()}" class="sticker-img" src="${portraitURL}">
+                                                    </span>
+                                                </span>
+                                            </span>
+                                                    [/#if]
+                                                </button>
+                                                <ul aria-labelledby="_dropdown_menu" class="dropdown-menu right">
+                                                    <div class="av-user-box">
+                                                        <div>[#if themeDisplay.isSignedIn()]
+                                                            [#assign fullName = user.getFullName()]
+                                                            [#assign firstLetter = fullName?substring(0, 1)?upper_case]
+                                                            [#-- Obtener la URL de la imagen de perfil --]
+                                                            [#assign portraitURL = user.getPortraitURL(themeDisplay)]
+                                                            [#-- Verificar si la URL corresponde a la imagen de perfil por defecto --]
+                                                            [#if portraitURL?contains("/image/user_portrait?img_id=0")]
+                                                                <div class="av-user-photo">${firstLetter}${secondLetter}</div>
+                                                            [#else]
+                                                                <span class="sticker sticker-user-icon sticker-lg"> 
+                                                                    <span class="sticker user-icon-color-2 sticker-circle sticker-lg"> 
+                                                                        <span class="sticker-overlay"> 
+                                                                            <img alt="${fullName}" class="sticker-img" src="${portraitURL}">
+                                                                        </span> 
+                                                                    </span> 
+                                                                </span>
+                                                            [/#if]
+                                                        </div>[/#if]
+                                                        <div>
+                                                            <div>
+                                                                <strong>Hola ${user.getFirstName()}</strong>
+                                                            </div>
+                                                            <div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-publico">
+                                                            Mi perfil público
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado">
+                                                            Sobre mí
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=preferences">
+                                                            Mis preferencias
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=plots">
+                                                            Gestión de mis parcelas
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=notifications">
+                                                            Notificaciones
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=security">
+                                                            Seguridad de mi cuenta
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="${themeDisplay.getURLHome()}/mi-perfil-privado?focusedTab=account">
+                                                            Administra tu cuenta
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item cerrar-sesion-mpb" href="${htmlUtil.escape(themeDisplay.getURLSignOut())}">
+                                                            Cerrar sesión
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                        </li>
+                                    [#else]
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="${publicFriendlyURL}/sign-in">
+                                                <img alt="" class="btn btn-monospaced p-1" src="[resources:icon_user_not_logged.svg]" />
+                                                <span class="small text-uppercase">Sign In</span>
+                                            </a>
+                                        </li>
+                                    [/#if]
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                [/#if] [#if !themeDisplay.isSignedIn()]
+                    <a
+                            href="/login"
+                            class="navbar__btn navbar__btn--outline"
+                            aria-label="Ingresa a tu cuenta"
+                    >Entrar</a
+                    >
+                    <a
+                            href="/tipo-registro"
+                            class="navbar__btn navbar__btn--primary"
+                            aria-label="Date de alta"
+                    >Crear cuenta gratis</a
+                    >
+                [/#if]
+            </div>
+        </nav>
+    </div>
+</div>

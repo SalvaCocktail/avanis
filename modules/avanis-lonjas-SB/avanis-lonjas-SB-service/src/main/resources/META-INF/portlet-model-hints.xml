@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="avanis.lonjas.model.Area">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="areaId" type="long" />
+		<field name="subGrupoId" type="long" />
+		<field name="grupoId" type="long" />
+		<field name="nombre" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.FechaLonja">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="lonjaId" type="long" />
+		<field name="fecha" type="Date" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.Grupo">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="grupoId" type="long" />
+		<field name="nombre" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.Lonja">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="lonjaId" type="long" />
+		<field name="nombre" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="pais" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.PrecioLonja">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="productoId" type="long" />
+		<field name="lonjaId" type="long" />
+		<field name="grupoId" type="long" />
+		<field name="subGrupoId" type="long" />
+		<field name="areaId" type="long" />
+		<field name="fecha" type="Date" />
+		<field name="nombreProducto" type="String" />
+		<field name="precioAnterior" type="String" />
+		<field name="precioUltimo" type="String" />
+		<field name="precioMaximo" type="String" />
+		<field name="precioMedio" type="String" />
+		<field name="precioMinimo" type="String" />
+		<field name="precioOrigen" type="String" />
+		<field name="anteriorEuros" type="String" />
+		<field name="ultimoEuros" type="String" />
+		<field name="unidadMedida" type="String" />
+		<field name="unidadLarga" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.ProductoExplot">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="lonjaId" type="long" />
+		<field name="productoId" type="long" />
+		<field name="precioLonjaId" type="long" />
+		<field name="explotacionId" type="long" />
+		<field name="orden" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.ProductoUser">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="lonjaId" type="long" />
+		<field name="productoId" type="long" />
+		<field name="precioLonjaId" type="long" />
+		<field name="userId" type="long" />
+		<field name="orden" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.lonjas.model.SubGrupo">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="subGrupoId" type="long" />
+		<field name="grupoId" type="long" />
+		<field name="nombre" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>

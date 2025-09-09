@@ -1,0 +1,110 @@
+/*CSS Modal no logado*/
+.modal-seguidores .av-te-ma-modal {
+  background-color: rgba(39, 48, 47, 0.6);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 111;
+  display: none;
+}
+
+.modal-seguidores .av-te-ma-modal__panel
+{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 688px;
+  max-width: 608px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 0em 0em 1em 1em;
+}
+
+.modal-seguidores .av-te-ma-modal__header{
+  align-items: center;
+  background-color: #EFF0E8;
+  border-radius: 16px 16px 0 0;
+  color: #101717;
+  display: flex
+;
+  font-size: 16px;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+#content .modal-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: #101717;
+}
+.modal-seguidores .av-te-ma-modal .av-icon-close {
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.modal-seguidores .av-te-ma-modal__content {
+  background-color: #FFFFFF;
+  padding: 32px;
+  text-align: left;
+  border-radius: 0em 0em 1em 1em;
+}
+
+.modal-seguidores .av-te-ma-modal__text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal-seguidores .av-te-ma-modal__text .av-te-ma-modal__text-title {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+#modal-description {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+#iniciar-sesion-link, .politicas-link {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  color: #107E3E;
+}
+
+.modal-seguidores .av-te-ma-modal__content .av-form-content {
+  margin-top: 2em !important;
+}
+
+.av-buttons-tipo-registro.js-btn-register-email .av-theme__btn.av-theme__btn--primary.btn-100x100.btn-secondary{
+  max-width: 100%;
+
+}
+.modal-seguidores .seguir-politicas {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #646B6B;
+}

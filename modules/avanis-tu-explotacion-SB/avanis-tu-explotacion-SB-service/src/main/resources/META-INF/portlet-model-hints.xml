@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="avanis.tu.explotacion.sb.model.Alertas">
+		<field name="uuid" type="String" />
+		<field name="alertaId" type="long" />
+		<field name="explotacionId" type="long" />
+		<field name="userId" type="long" />
+		<field name="description" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="endDate" type="String" />
+		<field name="startDate" type="String" />
+		<field name="risk" type="String" />
+		<field name="phenomenom" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="scope" type="String" />
+		<field name="probability" type="String" />
+		<field name="type" type="String" />
+		<field name="readed" type="boolean" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="externalCodeReference" type="String" />
+	</model>
+	<model name="avanis.tu.explotacion.sb.model.Explotacion">
+		<field name="uuid" type="String" />
+		<field name="explotacionId" type="long" />
+		<field name="provincia" type="String" />
+		<field name="longitude" type="Double" />
+		<field name="height" type="Integer" />
+		<field name="location" type="String" />
+		<field name="name" type="String" />
+		<field name="latitude" type="Double" />
+		<field name="meteoredid" type="String" />
+		<field name="size" type="Integer" />
+		<field name="sizeUnit" type="String" />
+		<field name="isMain" type="boolean" />
+		<field name="allowNotifications" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="readed" type="boolean" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="externalCodeReference" type="String" />
+	</model>
+</model-hints>

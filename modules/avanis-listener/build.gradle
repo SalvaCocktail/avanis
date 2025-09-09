@@ -1,0 +1,26 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	compileInclude group: "org.apache.commons", name: "commons-imaging", version: "1.0-alpha3"
+	implementation 'org.apache.commons:commons-imaging:1.0-alpha3'
+
+	compileInclude 'com.drewnoakes:metadata-extractor:2.18.0'
+	compileOnly 'com.drewnoakes:metadata-extractor:2.18.0'
+
+	compileOnly project(path: ':modules:avanis-tu-explotacion-SB:avanis-tu-explotacion-SB-api')
+	implementation project(':modules:avanis-ayudas-subvenciones')
+
+	testImplementation 'junit:junit:4.13.2'
+	testImplementation 'org.hamcrest:hamcrest:2.2'
+	testImplementation 'commons-io:commons-io:2.11.0'
+	testImplementation group: "com.liferay.portal", name: "release.portal.api"
+}
+
+test {
+	useJUnit()
+
+	testLogging {
+		events "passed", "failed", "skipped"
+		showStandardStreams = true
+	}
+}

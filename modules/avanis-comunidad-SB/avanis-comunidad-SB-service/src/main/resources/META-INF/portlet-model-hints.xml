@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="avanis.comunidad.model.Answers">
+		<field name="uuid" type="String" />
+		<field name="answerId" type="long" />
+		<field name="surveyId" type="long" />
+		<field name="answer" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="counterAnswer" type="int" />
+		<field name="createDate" type="Date" />
+	</model>
+	<model name="avanis.comunidad.model.AnswersUser">
+		<field name="uuid" type="String" />
+		<field name="answerUserId" type="long" />
+		<field name="answerId" type="long" />
+		<field name="userId" type="long" />
+		<field name="surveyId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="avanis.comunidad.model.Surveys">
+		<field name="uuid" type="String" />
+		<field name="surveyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="assetId" type="long" />
+		<field name="question" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="expireHours" type="int" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="expireDate" type="Date" />
+		<field name="notified" type="Boolean" />
+	</model>
+</model-hints>

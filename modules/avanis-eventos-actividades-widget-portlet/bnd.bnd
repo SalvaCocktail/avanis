@@ -1,0 +1,15 @@
+Bundle-Name: avanis-eventos-actividades-widget-portlet
+Bundle-SymbolicName: avanis.eventos.actividades.widget.portlet
+Bundle-Version: 1.0.0
+Export-Package: \
+    avanis.eventos.widget.eventos.actividades.constants,\
+	 avanis.eventos.widget.eventos.actividades.resource
+Import-Package: \
+	*;resolution:=optional
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
+-includeresource: lib/jsoup.jar=jsoup-1.18.1.jar;lib:=true
+-fixupmessages "Classes found in the wrong directory"; restrict:=error; is:=warning
+
+

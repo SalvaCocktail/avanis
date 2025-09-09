@@ -1,0 +1,12 @@
+dependencies {
+	api project(":modules:avanis-thread-logger-SB:avanis-thread-logger-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-thread-logger-SB-api/src/main/java"
+	testDir = "../avanis-thread-logger-SB-test/src/testIntegration/java"
+}
+
+group = "avanis.thread.logger.sb"

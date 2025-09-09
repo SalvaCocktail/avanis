@@ -1,0 +1,5 @@
+Bundle-Name: avanis-eventos-admin-portlet
+Bundle-SymbolicName: avanis.eventos.admin.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.eventos.admin.portlet.constants
+-dsannotations-options: inherit

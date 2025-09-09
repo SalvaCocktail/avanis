@@ -1,0 +1,4 @@
+Bundle-Name: avanis-comunidad-encuesta-portlet
+Bundle-SymbolicName: avanis.comunidad.encuesta
+Bundle-Version: 1.0.0
+Export-Package: avanis.comunidad.encuesta.constants

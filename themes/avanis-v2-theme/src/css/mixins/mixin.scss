@@ -1,0 +1,316 @@
+@import "../commons/variables";
+
+@mixin h1 {
+  font-size: 40px;
+  line-height: 48px;
+
+  @media (min-width: 769px) {
+      font-size: 48px;
+      line-height: 56px;
+  }
+}
+
+@mixin h2 {
+  font-size: 32px;
+  line-height: 48px;
+
+  @media (min-width: 769px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+@mixin h3 {
+  font-size: 20px;
+  line-height: 32px;
+
+  @media (min-width: 769px) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@mixin h4 {
+  font-size: 16px;
+  line-height: 24px;
+
+  @media (min-width: 769px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+@mixin h5 {
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: 769px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+h1, .av-h1 {
+  @include h1;
+}
+
+h2, .av-h2 {
+  @include h2;
+}
+
+h3, .av-h3 {
+  @include h3;
+}
+
+h4, .av-h4 {
+  @include h4;
+}
+
+h5, .av-h5 {
+  @include h5;
+}
+
+
+/* Buttons */
+// 01 - BTN default
+// 01 + 1 - Invert
+// 02 - BTN SECONDARY
+// 03 - BTN INPUT
+// 04 - BTN ICONS
+// 05 - BTN LINK
+// 06 - FIXED BUTTONS in mobile version
+// 07 - Floating Button
+// ZZ - BUTTONS - WRAPPER
+//  --------------------------------
+
+// 01 - BTN default
+@mixin button {
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: $size-body-m;
+  color: $color-button-content-active;
+  background-color: $color-button-background-active;
+  padding: 8px 16px;
+  border: 1px solid $color-button-background-active;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  line-height: 24px;
+
+  a {
+    color: $color-button-content-active;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $color-button-content-hover;
+    background-color: $color-button-background-hover;
+    border: 1px solid $color-button-background-hover;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:disabled,
+  &.av-disabled {
+    color: $color-button-content-disabled;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    cursor: default;
+    opacity: 0.4;
+  
+    a {
+      color: $color-button-content-disabled;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin button-small {
+  @include button;
+  font-size: $size-body-s;
+  padding: 0 16px;
+  line-height: 30px;
+}
+// 01 + 1 - Invert
+@mixin button-invert {
+  @include button;
+  background-color: $color-surface-active-inverse;
+
+  a {
+    color: $color-content-01;
+  }
+}
+
+// 02 - BTN SECONDARY
+@mixin button-secondary {
+  @include button;
+  color: $color-content-active;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid $color-content-active;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  a {
+    color: $color-content-active;
+    text-decoration: none;
+  }
+  
+  &:hover {
+    color: $color-primary-100;
+    border-color: $color-primary-100;
+    background-color: transparent;
+  }
+  
+  &:disabled,
+  &.av-disabled {
+    color: rgba($color-content-active, 0.4);
+  }
+}
+
+// 03 - BTN INPUT
+@mixin button-input {
+  @include button-secondary;
+
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 100%;
+  // font-family: $font-family-regular;
+}
+
+// 04 - BTN LINK
+@mixin button-link {
+  @include button-secondary();
+  color: $color-content-active;
+  border: none;
+  border-radius: 0;
+  padding: 0 0.5em;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.8em;
+  gap: 16px;
+  background-color: transparent;
+  
+  a {
+    color: $color-content-active;
+    text-decoration: none;
+  }
+  
+  &:hover,
+  &:focus {
+    border: none;
+    background-color: transparent;
+  }
+  
+  &:disabled {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+// 05 - FIXED BUTTONS in mobile version
+@mixin media-max($max-size) {
+  @media (max-width: $max-size) {
+    @content;
+  }
+}
+@mixin button-fixed {
+  @include media-max($max-M) {
+    // only in mobile version
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 24px 16px;
+    background-color: $colorW;
+  }
+}
+// 06 - Floating Button
+@mixin button-floating {
+  @include button-invert();
+  line-height: 36px;
+  border: none;
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  bottom: 20px;
+  width: calc(100% - 48px);
+  margin: auto;
+  
+  a {
+    color: $color-content-01;
+    text-decoration: none;
+  }
+  @include media-max($max-M) {
+    display: block;
+    box-shadow: 0px -4px 12px 0px #0000001a;
+  }
+}
+
+.av-btn {
+  @include button;
+
+  &-small {
+    @include button-small;
+  }
+
+  &-invert {
+    @include button-invert;
+  }
+
+  &-secondary {
+    @include button-secondary;
+  }
+
+  &-input {
+    @include button-input;
+  }
+
+  &-link {
+    @include button-link;
+  }
+
+  &-fixed {
+    @include button-fixed;
+  }
+
+  &-floating {
+    @include button-floating;
+  }
+}
+
+/* General Elements */
+@mixin input {
+  align-items: center;
+  display: flex;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #101717;
+  background: #ffffff;
+}
+
+input, select, option {
+  @include input;
+}
+
+option {
+  border: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  padding: 0;
+  min-height: 24px;
+}
+

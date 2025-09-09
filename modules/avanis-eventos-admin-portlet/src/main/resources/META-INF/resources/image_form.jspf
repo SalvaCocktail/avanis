@@ -1,0 +1,116 @@
+<%@ page import="com.liferay.expando.kernel.model.ExpandoBridge" %>
+<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+<portlet:resourceURL var="updateEventImageURL" id="updateEventImage"/>
+
+<div id="image-form">
+    <aui:input type="file" name="eventImageFile" id="eventImageFile" label="Imagel principal del evento"
+               multiple="false">
+        <aui:validator name="acceptFiles">'jpg,png'</aui:validator>
+    </aui:input>
+
+    <aui:button type="button" value="Actualizar imagen" onClick="validateImage() && updateImage();"/>
+</div>
+
+<%
+    ExpandoBridge expandoBridge = calendarBooking.getExpandoBridge();
+
+    String eventImageUrl = (String) expandoBridge.getAttribute("event_image_url");
+
+    if (eventImageUrl != null && !eventImageUrl.isBlank()) {
+%>
+<br>
+Url Imagen principal del evento: <%= eventImageUrl%>
+<% } %>
+
+
+<script>
+    function updateImage() {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        fetch("${updateEventImageURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            window.location.reload();
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+    function validateImage() {
+        let inputFile = document.getElementById('<portlet:namespace/>eventImageFile');
+
+        const file = inputFile.files[0];
+
+        if (file == null) return true;
+
+        const allowedExtensions = ['png', 'jpg'];
+        const maxFileSize = 5 * 1024 * 1024; // 5 MB
+
+        let errorMessages = [];
+
+        let fileName = file.name;
+        let fileSize = file.size;
+        let fileExtension = fileName.split('.').pop().toLowerCase();
+
+        if (allowedExtensions.indexOf(fileExtension) === -1) {
+            errorMessages.push('Archivo ' + fileName + ' no tiene una extensi\u00F3n v\u00E1lida. Las extensiones permitidas son: png, jpg.');
+        }
+
+        if (fileSize > maxFileSize) {
+            errorMessages.push('Archivo ' + fileName + ' excede el tamaño m\u00E1ximo de 5 MB.');
+        }
+
+
+        showEventImageError(errorMessages)
+
+        const thereIsErrors = errorMessages.length > 0
+
+        if (thereIsErrors) {
+            const errorContainer = document.getElementById('relatedAssetErrors');
+            errorContainer.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+
+        return !thereIsErrors
+
+    }
+
+    function showEventImageError(errorMessages) {
+        const errorContainer = document.getElementById('relatedAssetErrors');
+
+        errorContainer.innerHTML = '';
+
+        errorMessages.forEach((error) => {
+            const errorHtml = `
+            <div class="alert alert-dismissible alert-danger" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="liferay-alert" type="button">
+                    <span class="c-inner" tabindex="-1">
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-times" focusable="false">
+                            <use href="/o/theme-avanis/images/clay/icons.svg#times"></use>
+                        </svg>
+                    </span>
+                    <span class="sr-only">Close</span>
+                </button>
+
+                <span class="alert-indicator">
+                    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-exclamation-full">
+                        <use xlink:href="/o/theme-avanis/images/clay/icons.svg#exclamation-full"></use>
+                    </svg>
+                </span>
+
+                <strong class="lead">Error:</strong> \${error}
+            </div>
+        `;
+
+            // Añadimos el HTML al contenedor de errores
+            errorContainer.insertAdjacentHTML('beforeend', errorHtml);
+        });
+
+
+    }
+</script>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN"
+		"http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="avanis.comunidad">
+	<namespace>AVANIS_COMUNIDAD</namespace>
+
+	<entity local-service="true" name="Surveys" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="surveyId" primary="true" type="long" />
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="assetId" type="long" />
+		<column name="question" type="String" />
+		<column name="expireHours" type="int" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="expireDate" type="Date" />
+		<column name="notified" type="Boolean" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="assetId" return-type="Collection">
+			<finder-column name="assetId" />
+		</finder>
+
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="Answers" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="answerId" primary="true" type="long" />
+		<!-- Audit fields -->
+		<column name="surveyId" type="long" />
+		<column name="answer" type="String" />
+		<column name="counterAnswer" type="int" />
+		<column name="createDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="answerId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="surveyId" return-type="Collection">
+			<finder-column name="surveyId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="AnswersUser" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="answerUserId" primary="true" type="long" />
+		<column name="answerId" type="long" />
+		<column name="userId" type="long" />
+		<!-- Audit fields -->
+		<column name="surveyId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="surveyId" return-type="Collection">
+			<finder-column name="surveyId" />
+		</finder>
+
+		<finder name="surveyIdUserId" return-type="Collection">
+			<finder-column name="surveyId" />
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="answerIdUserId" return-type="Collection">
+			<finder-column name="answerId" />
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+</service-builder>

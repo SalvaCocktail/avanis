@@ -1,0 +1,136 @@
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        $("#<portlet:namespace />fm").submit(function(e) {
+            e.preventDefault();
+            alert();
+            alert("this.name " + this.<portlet:namespace />subject);
+        });
+    });
+
+    function <portlet:namespace />submitMBForm() {
+        const data = $("#myform").serialize()
+        const replyToMessageId = this._replyToMessageId;
+
+        this._updateMultipleMBMessageAttachments();
+
+        const bodyInput = document.getElementById(`${namespace}body`);
+
+        if (replyToMessageId) {
+            bodyInput.value = window[
+                `${namespace}replyMessageBody${replyToMessageId}`
+                ].getHTML();
+
+            submitForm(
+                document[`${namespace}addQuickReplyFm${replyToMessageId}`]
+            );
+        } else {
+            bodyInput.value = window[`${namespace}bodyEditor`].getHTML();
+
+            submitForm(document[`${namespace}fm`]);
+        }
+    }
+
+</script>
+
+<aui:script require="frontend-js-web/index as frontendJsWeb">
+    var {runScriptsInElement} = frontendJsWeb;
+
+    window['<portlet:namespace />addReplyToMessage'] = function (messageId, quote) {
+    var addQuickReplyContainer = document.querySelector(
+    '#<portlet:namespace />addReplyToMessage' + messageId + ' .panel'
+    );
+
+    if (addQuickReplyContainer) {
+    <liferay-portlet:resourceURL copyCurrentRenderParameters="<%= false %>" id="/message_boards/get_edit_message_quick" var="editMessageQuickURL">
+        <portlet:param name="redirect" value="<%= currentURL %>" />
+    </liferay-portlet:resourceURL>
+
+    var editMessageQuickURL = Liferay.Util.addParams(
+    '<portlet:namespace />messageId=' + messageId,
+    '<%= editMessageQuickURL.toString() %>'
+    );
+
+    if (quote) {
+    editMessageQuickURL = Liferay.Util.addParams(
+    '<portlet:namespace />quote=true',
+    editMessageQuickURL
+    );
+    }
+
+    var addQuickReplyLoadingMask = document.querySelector(
+    '#<portlet:namespace />addReplyToMessage' +
+    messageId +
+    ' .loading-animation'
+    );
+
+    addQuickReplyContainer.classList.add('hide');
+    addQuickReplyLoadingMask.classList.remove('hide');
+
+    Liferay.Util.fetch(editMessageQuickURL)
+    .then((response) => {
+    return response.text();
+    })
+    .then((response) => {
+    addQuickReplyContainer.innerHTML = response;
+
+    runScriptsInElement(addQuickReplyContainer);
+
+    addQuickReplyContainer.classList.remove('hide');
+    addQuickReplyLoadingMask.classList.add('hide');
+
+    var parentMessageIdInput = addQuickReplyContainer.querySelector(
+    '#<portlet:namespace />parentMessageId'
+    );
+
+    if (parentMessageIdInput) {
+    parentMessageIdInput.value = messageId;
+    }
+
+    var editorName =
+    '<portlet:namespace />replyMessageBody' + messageId;
+
+    Liferay.componentReady(editorName).then((editor) => {
+    editor.focus();
+    });
+
+    if (addQuickReplyContainer) {
+    addQuickReplyContainer.scrollIntoView(true);
+    }
+
+    Liferay.Util.toggleDisabled(
+    '#<portlet:namespace />replyMessageButton' + messageId,
+    true
+    );
+    });
+    }
+    };
+</aui:script>
+
+<aui:script>
+    function <portlet:namespace />hideReplyMessage(messageId) {
+    var addQuickReplyContainer = document.querySelector(
+    '#<portlet:namespace />addReplyToMessage' + messageId + ' .panel'
+    );
+
+    if (addQuickReplyContainer) {
+    addQuickReplyContainer.classList.add('hide');
+    }
+
+    Liferay.Util.toggleDisabled(
+    '#<portlet:namespace />replyMessageButton' + messageId,
+    false
+    );
+    }
+
+    <c:if test="<%= thread.getRootMessageId() != message.getMessageId() %>">
+        var message = document.getElementById(
+        '<portlet:namespace />message_' + <%= message.getMessageId() %>
+        );
+
+        if (message) {
+        message.scrollIntoView(true);
+        }
+    </c:if>
+</aui:script>
+

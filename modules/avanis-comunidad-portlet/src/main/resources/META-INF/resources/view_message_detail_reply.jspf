@@ -1,0 +1,149 @@
+
+    <div class="panel-heading">
+        <clay:content-row cssClass="card-body" padded="<%= true %>">
+            <%
+                String userInitials = "";
+
+                if (!message.isAnonymous()) {
+                    long userId = message.getUserId();
+                    user = UserLocalServiceUtil.getUserById(userId);
+
+                    // Obtener el nombre y el apellido
+                    String firstName = user.getFirstName();
+                    String lastName = user.getLastName();
+
+                    // Generar las iniciales
+                    userInitials = firstName.substring(0, 1).toUpperCase() + lastName.substring(0, 1).toUpperCase();
+                }
+            %>
+            <clay:content-col>
+                <div class="list-group-card-icon">
+                    <a class="ASD" href="<%= messageUserPerfilPublicoURL %>">
+                        <%
+                            // Verificar si el usuario tiene una foto de perfil
+                            if (!message.isAnonymous() && user.getPortraitId() > 0) {
+                        %>
+                        <!-- Mostrar la foto del usuario si existe -->
+                        <liferay-user:user-portrait userId="<%= message.getUserId() %>" />
+                        <%
+                        } else {
+                        %>
+                        <!-- Mostrar las iniciales si el usuario no tiene foto -->
+                        <div class="user-initials-avatar">
+                            <%= userInitials %>
+                        </div>
+                        <%
+                            }
+                        %>
+                    </a>
+                </div>
+                <div></div>
+            </clay:content-col>
+            <clay:content-col expand="<%= true %>">
+                <div class="panel-body reply-body">
+                    <%
+                        // usuario actual
+                        long currentUserId = themeDisplay.getUserId();
+
+                        // creador del mensaje
+                        long messageCreatorId = message.getUserId();
+
+                        boolean isMessageOwner = (currentUserId == messageCreatorId);
+                    %>
+        <%-- INICIO menú 3 puntitos modificar eliminar --%>
+                    <% if (isMessageOwner) { %>
+            <div id="menu-de-acciones-3-puntos_<%= message.getMessageId() %>" class="menu-de-acciones-3-puntos">
+                <div class="btn-group">
+                    <div class="dropdown lfr-icon-menu comunidad-action-menu open">
+                        <a aria-expanded="true" aria-haspopup="true" class="component-action direction-left-side dropdown-toggle "  id="_avanisComunidadPortlet_AvanisComunidadPortlet_zqdt_menu" role="button" title="Acciones">
+            <div class="c-inner" tabindex="-1" id="plba">
+               <img class="left-arrow" src="<%=request.getContextPath()%>/icons/3puntitos.svg" alt="acciones" />
+                  <use href="o/avanis-v2-theme/images/clay/icons.svg#ellipsis-v"></use>
+               </svg>
+            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    <% } %>
+
+            <div class="open lfr-icon-menu-open" id="menu-abierto_<%= message.getMessageId() %>">
+                <ul class="dropdown-menu dropdown-menu-left-side "  >
+                    <li>
+                        <a class="dropdown-item lfr-icon-item taglib-icon eliminar" >
+                            <span class="taglib-text-icon">Modificar</span>
+                        </a>
+                    </li>
+
+                    <li class="item-remove last" >
+                        <a aria-haspopup="dialog" tabindex="-1" class="btn_eliminar dropdown-item lfr-icon-item taglib-icon focus" id="btn-eliminar_<%= message.getMessageId() %>">
+                            <span class="taglib-text-icon">Eliminar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <%-- FIN menú 3 puntitos modificar eliminar --%>
+
+                    <span class="message-user-display text-default" title="<%= HtmlUtil.escapeAttribute(messageUserName) %>">
+                        <a href="<%=messageUserPerfilPublicoURL%>"><%= HtmlUtil.escape(messageUserName) %></a>
+                    </span>
+                    <div class="message-content"><%= msgBody %></div>
+                    <span class="h5 text-default counter-icons">
+                    <span title="<%=userNameList.toString()%>" class="like-counter_<%= message.getMessageId() %>">
+                        <liferay-ui:icon
+                                icon="heart"
+                                label="<%= true %>"
+                                markupView="lexicon"
+                                message="<%= String.valueOf(countLikes) %>"
+                                method="get"
+                                alt="<%=userNameList.toString()%>"
+                        />
+                    </span>
+                    <liferay-ui:icon
+                            icon="message"
+                            label="<%= true %>"
+                            markupView="lexicon"
+                            message="<%= String.valueOf(posts) %>"
+                            method="get"
+                    />
+                </span>
+                </div>
+                <div class="social-interaction hide detail-reply">
+                    <span class="message-user-display-date text-default text-date" title="<%= HtmlUtil.escapeAttribute(rootDateDisplayText) %>">
+                        <%= HtmlUtil.escape(agoDisplayText) %>
+                    </span>
+                <c:if test="<%= themeDisplay.isSignedIn() %>">
+                    <liferay-ui:icon
+                            icon="heart"
+                            label="<%= true %>"
+                            markupView="lexicon"
+                            message="i-like-this"
+                            method="get"
+                            url="<%=functionLike%>"
+                            cssClass="i-like-this ilike hide"
+                            id="<%=iLikeId%>"
+                    />
+                    <liferay-ui:icon
+                            icon="heart-full"
+                            label="<%= true %>"
+                            markupView="lexicon"
+                            message="i-like-this"
+                            method="get"
+                            url="<%=functionLikeDelete%>"
+                            cssClass="i-like-this idelete hide"
+                            id="<%=iLikeDeleteId%>"
+                    />
+                    <c:if test='<%= thread.isApproved() && !thread.isLocked() && !thread.isDraft() && (message.getTreePath().split("/").length < 5) %>'>
+                        <span class="">
+                            <a href="<%= taglibReplyToMessageURL %>" target="_self" class=" lfr-icon-item taglib-icon" id="<portlet:namespace />_<%=message.getMessageId()%>">
+                                <span class="taglib-text "><liferay-ui:message key="to-respond" /></span>
+                            </a>
+                        </span>
+                    </c:if>
+                </c:if>
+                </div>
+            </clay:content-col>
+        </clay:content-row>
+    </div>
+
+

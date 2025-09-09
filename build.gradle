@@ -1,0 +1,10 @@
+
+tasks.register("buildApplication"){
+        dependsOn 'buildFragments'
+        finalizedBy 'buildDockerImage'
+}
+tasks.register("buildFragments", Zip){
+        from 'fragments'
+        archiveFileName = "avanis-fragments.zip"
+        destinationDirectory = (layout.buildDirectory.dir('docker/deploy'))
+}

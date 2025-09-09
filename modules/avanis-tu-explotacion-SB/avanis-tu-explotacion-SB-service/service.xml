@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="avanis.tu.explotacion.sb">
+    <namespace>AVANIS_EXPLOTACION</namespace>
+    <!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+    <entity local-service="true" name="Explotacion" remote-service="true" uuid="true">
+
+        <column name="explotacionId" type="long" primary="true"/>
+        <column name="provincia" type="String"/>
+        <column name="longitude" type="Double"/>
+        <column name="height" type="Integer"/>
+        <column name="location" type="String"/>
+        <column name="name" type="String"/>
+        <column name="latitude" type="Double"/>
+        <column name="meteoredid" type="String"/>
+        <column name="size" type="Integer"/>
+        <column name="sizeUnit" type="String"/>
+        <column name="isMain" type="boolean"/>
+        <column name="allowNotifications" type="boolean"/>
+        <column name="userId" type="long"/>
+        <column name="userName" type="String"/>
+        <column name="readed" type="boolean"/>
+        <column name="createDate" type="Date"/>
+        <column name="modifiedDate" type="Date"/>
+        <column name="externalCodeReference" type="String"/>
+
+        <!-- Order -->
+
+        <order by="asc">
+            <order-column name="explotacionId"/>
+        </order>
+
+        <!-- Finder methods -->
+
+        <finder name="userId" return-type="Collection">
+            <finder-column name="userId"/>
+        </finder>
+
+        <finder name="userIdReaded" return-type="Collection">
+            <finder-column name="userId"/>
+            <finder-column name="readed"/>
+        </finder>
+
+        <finder name="externalCodeReferenceAndUserId" return-type="Explotacion">
+            <finder-column name="externalCodeReference"/>
+            <finder-column name="userId"/>
+        </finder>
+
+        <finder name="isMainAndUser" return-type="Collection">
+            <finder-column name="isMain"/>
+            <finder-column name="userId"/>
+        </finder>
+
+        <finder name="idAndUserId" return-type="Explotacion">
+            <finder-column name="explotacionId"/>
+            <finder-column name="userId"/>
+        </finder>
+
+        <finder name="readed" return-type="Collection">
+            <finder-column name="readed"/>
+        </finder>
+
+        <!-- References -->
+
+        <reference entity="AssetEntry" package-path="com.liferay.portlet.asset"/>
+        <reference entity="AssetTag" package-path="com.liferay.portlet.asset"/>
+    </entity>
+
+    <entity local-service="true" name="Alertas" remote-service="true" uuid="true">
+
+        <column name="alertaId" type="long" primary="true" />
+        <column name="explotacionId" type="long"/>
+        <column name="userId" type="long"/>
+        <column name="description" type="String" />
+        <column name="endDate" type="String"/>
+        <column name="startDate" type="String"/>
+        <column name="risk" type="String"/>
+        <column name="phenomenom" type="String"/>
+        <column name="scope" type="String"/>
+        <column name="probability" type="String"/>
+        <column name="type" type="String"/>
+        <column name="readed" type="boolean"/>
+        <column name="createDate" type="Date"/>
+        <column name="modifiedDate" type="Date"/>
+        <column name="externalCodeReference" type="String"/>
+
+        <!-- Order -->
+
+        <order by="desc">
+            <order-column name="alertaId"/>
+        </order>
+
+        <!-- Finder methods -->
+
+        <finder name="userId" return-type="Collection">
+            <finder-column name="userId"/>
+        </finder>
+
+        <finder name="userIdReaded" return-type="Collection">
+            <finder-column name="userId"/>
+            <finder-column name="readed"/>
+        </finder>
+    </entity>
+
+</service-builder>

@@ -1,0 +1,31 @@
+.custom-success,
+.custom-error {
+  border-radius: 8px;
+  /*left: 50%;*/
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  /*transform: translateX(-50%);*/
+  width: 100%;
+  z-index: 9;
+}
+
+.alert-success { color: #101717; background-color: #34C695;
+  .lead { display: none; }
+  .lexicon-icon { display: none; }
+}
+
+.alert-danger { color: #101717; background-color: #EE606F;
+  .lead { display: none; }
+  .lexicon-icon { display: none; }
+}
+
+.alert-success,
+.alert-danger {
+  /* font-family: Body S; */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 16px;
+}

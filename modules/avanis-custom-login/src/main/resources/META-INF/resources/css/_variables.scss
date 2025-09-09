@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+// #region Colors
+
+// Basic
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Content
+$color-content-01: #101717;
+$color-content-01-inverse: #ffffff;
+$color-content-02: #646B6B;
+$color-content-active: #107E3E;
+$color-content-active-inverse: #C6E75A;
+$color-content-hover: #122C1F;
+$color-content-hover-02: #329c5e;
+$color-content-alert-title: #262626;
+
+
+// Borders
+$color-border-active: #107E3E;
+$color-border-01: #101717;
+$color-border-02: #BFC7C6;
+
+// Background
+$color-bg-01: #ffffff;
+$color-bg-02: #EFF0E8;
+$color-bg-02-light: #EDF0E8;
+$color-bg-03: #122C1F;
+$color-bg-04: #C6E75A;
+
+// Buttons
+$color-btn-bg-active: #053C1C;
+$color-btn-content-active: #ffffff;
+
+// Warnings, Alerts & Errors
+$color-semantic-warning-02: #FED257;
+$color-semantic-severe-02: #FFA14D;
+$color-semantic-error-02: #EE606F;
+// #endregion Colors
+
+// #region Texts
+
+// Texts
+$text-family: 'Inter', sans-serif;
+
+// #endregion Texts

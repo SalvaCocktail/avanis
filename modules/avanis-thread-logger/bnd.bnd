@@ -1,0 +1,7 @@
+Bundle-Name: avanis-thread-logger
+Bundle-SymbolicName: avanis.thread.logger
+Bundle-Version: 1.0.0
+Export-Package: avanis.thread.logger.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

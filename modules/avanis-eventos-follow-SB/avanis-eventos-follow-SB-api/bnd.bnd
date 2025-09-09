@@ -1,0 +1,10 @@
+Bundle-Name: avanis-eventos-follow-SB-api
+Bundle-SymbolicName: avanis.eventos.follow.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	avanis.eventos.follow.sb.exception,\
+	avanis.eventos.follow.sb.model,\
+	avanis.eventos.follow.sb.service,\
+	avanis.eventos.follow.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../avanis-eventos-follow-SB-service/service.xml

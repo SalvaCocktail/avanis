@@ -1,0 +1,40 @@
+.portal-popup:not(.article-preview) #main-content {
+  overflow: unset!important;
+}
+
+.av-ac-mp__email{
+  width: 100%;
+}
+#emailForm #tagsInput .form-group.input-text-wrapper{
+  order: 0;
+  width: 100%;
+}
+.av-ac-modal-partial.av-ac-mp .av-ac-mp__buttons {
+  box-shadow: 0px -4px 12px 0px #0000001A;
+}
+
+.av-ac-mp__form {
+  align-items: center;
+  overflow-x: clip;
+}
+
+.av-ac-mp__share{
+  width: 100%;
+  .emailForm  {
+    width: 100%;
+    .tags-input {
+      width: 100%;
+      .form-group.input-text-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.av-ac-mp__message .av-ac-mp__message-text{
+  display: none;
+}
+
+.portlet-boundary_avanis_compartir_email_portlet_AvanisCompartirEmailPortlet_ {
+  height: auto!important;
+}

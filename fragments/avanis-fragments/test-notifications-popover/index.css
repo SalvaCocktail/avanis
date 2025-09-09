@@ -1,0 +1,215 @@
+.av-nf-popover {
+  display: none;
+}
+.avnfVisible.av-nf-popover {
+  position: fixed;
+  top: 136px;
+  width: 100%;
+  padding: 0;
+  display: block !important;
+  overflow: scroll;
+  z-index: 100;
+}
+@media (min-width: 769px) {
+  .avnfVisible.av-nf-popover {
+    position: relative;
+    top: -15px;
+    width: auto;
+    overflow: inherit;
+    left: 22px;
+  }
+}
+
+.av-nf-popover > div {
+  width: 100%;
+  height: calc(100vh - 136px); /*/ Cambiar 136 por 80 px /*/
+  overflow-y: scroll;
+  background-color: #fff;
+}
+@media (min-width: 769px) {
+  .av-nf-popover > div {
+    position: absolute;
+    right: 74px;
+    top: 0px;
+    width: 360px;
+    max-width: 100%;
+    height: 662px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    background-color: #fff;
+    border-radius: 16px;
+  }
+}
+
+.av-nf-container {
+  display: none;
+}
+.avnfVisible .av-nf-container {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .av-nf-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+}
+
+.av-nf-modal-backdrop {
+  display: none;
+}
+@media (min-width: 769px) {
+  .avnfVisible .av-nf-modal-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(39, 48, 47, 0.12);
+    z-index: -1;
+  }
+}
+
+.av-nf-popover .lfr-tooltip-scope .navigation-bar {
+  display: none;
+}
+
+.av-nf-popover .lfr-tooltip-scope {
+  display: none;
+}
+
+.av-nf-popover .av-nf-title {
+  width: 100%;
+  padding: 16px;
+  margin: 0;
+}
+
+.av-nf-popover .list-group.list-group-notification.show-quick-actions-on-hover {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.av-nf-popover .container-view.lfr-search-container-wrapper,
+.av-nf-popover .autofit-float.autofit-row.portlet-header {
+  padding: 0;
+  margin: 0;
+}
+
+.av-nf-popover .list-group-item.list-group-item-flex {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border-radius: 8px;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 16px;
+  color: #101717;
+
+  box-shadow: none !important;
+}
+.av-nf-popover .list-group-item.list-group-item-flex:not(.list-group-item-primary) {
+  background-color: #fff;
+}
+.av-nf-popover .list-group-item.list-group-item-flex {
+  background-color: #fff5e6;
+}
+
+.av-nf-popover .unread-notification {
+  position: absolute;
+  top: 16px;
+  left: calc(16px + 48px - 12px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #107e3e;
+}
+
+.av-nf-popover
+  .list-group-item.list-group-item-flex
+  .autofit-col.autofit-col-expand {
+  position: relative;
+  top: 0px;
+  left: calc(16px + 48px);
+  width: calc(100% - 16px - 48px);
+  height: fit-content;
+  padding: 0;
+}
+
+.av-nf-popover
+  .lfr-search-container-wrapper
+  a:not(.btn):not(.component-action):not(.page-link) {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  color: #101717;
+}
+
+.av-nf-popover .list-group-item.list-group-item-flex {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #646b6b;
+}
+
+.av-nf-popover .list-group-item.list-group-item-flex span.text-default {
+  margin-top: 6px;
+}
+
+.av-nf-popover .list-group-item.list-group-item-flex .autofit-col .checkbox {
+  display: none;
+}
+
+.av-nf-popover
+  .list-group-item.list-group-item-flex
+  .autofit-col
+  .user-info
+  span.sticker-primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+/* #region liferay styles */
+.av-nf-popover .pagination-items-per-page > a,
+.av-nf-popover .pagination-items-per-page > button,
+.av-nf-popover .page-link,
+.av-nf-popover .pagination .page-link {
+  color: #107e3e !important;
+}
+.av-nf-popover .page-item.active .page-link {
+  background-color: #107e3e !important;
+  border-color: #107e3e !important;
+  color: #ffffff !important;
+}
+
+.av-nf-popover .pagination-items-per-page > button:active,
+.av-nf-popover .dropdown-item.active {
+  background-color: #107e3e !important;
+  border-color: #107e3e !important;
+  color: #ffffff !important;
+}
+
+/* #endregion liferay styles */

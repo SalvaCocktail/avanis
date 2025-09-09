@@ -1,0 +1,510 @@
+/* Variables */
+@import "commons/variables";
+@import "commons/style-guide";
+@import "commons/overwrites";
+@import "commons/commons";
+@import "commons/desplegables";
+@import "commons/buttons";
+@import "commons/modals";
+@import "commons/notifications";
+@import "commons/multiselect";
+/*@import "commons/reset"; Lo eliminamos temporalmente porque afecta a tu explotación */
+
+/* Mixins */
+@import "mixins/mixin";
+
+/* Components */
+@import "components/global";
+@import "components/aboutUsHeroAbout";
+@import "components/breadcrumb";
+@import "components/comunidad";
+@import "components/home3Columns";
+@import "components/home3ColumnsOpinion";
+@import "components/homeActualidad";
+@import "components/homeHero";
+@import "components/homeHeroPartners";
+@import "components/homeHeroRegister";
+@import "components/homeHeroShare";
+@import "components/legalPages/legalPages";
+@import "components/legalPages/cookiePage";
+@import "components/login";
+@import "components/footer";
+@import "components/eventDetail";
+@import "components/markets";
+@import "components/alertMsgs";
+
+/* Components */
+@import "portlets/avanisUserProfile";
+
+@font-face {
+  font-family: "icomoon";
+  src: url("icon-font/icomoon.eot?xmxq80");
+  src: url("icon-font/icomoon.eot?xmxq80#iefix")
+  format("embedded-opentype"),
+  url("icon-font/icomoon.woff?xmxq80") format("woff"),
+  url("icon-font/icomoon.ttf?xmxq80") format("truetype"),
+  url("icon-font/icomoon.svg?xmxq80#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.portlet-decorate .portlet-content {
+  background: transparent !important;
+  border-color: transparent !important;
+  border-style: unset !important;
+  border-width: 0px !important;
+  padding: 0rem !important;
+  word-wrap: break-word !important;
+}
+
+a:focus {
+  outline: none;
+}
+
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 500px;
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: #00449e;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+}
+
+.modal__header .modal__close:before { content: "\2715"; }
+
+.modal__content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: rgba(0,0,0,.8);
+  .av-micro_modal--menu-text{
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: right;
+      color: #101717;
+    vertical-align: middle;
+  }
+}
+
+.modal__btn {
+  font-size: .875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #e6e6e6;
+  color: rgba(0,0,0,.8);
+  border-radius: .25rem;
+  border-style: none;
+  border-width: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform .25s ease-out;
+  transition: transform .25s ease-out;
+  transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+}
+
+.modal__btn:focus, .modal__btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.modal__btn-primary {
+  background-color: #00449e;
+  color: #fff;
+}
+
+
+
+/**************************\
+  Micromodal
+\**************************/
+@keyframes mmfadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: flex;
+  overflow: auto;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+/**************************\
+  av-modal
+\**************************/
+.av-modal {
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background-color: #fff;
+  overflow: hidden;
+
+  @media (min-width: 769px) {
+    width: 400px;
+    height: auto;
+    justify-content: flex-start;
+    border-radius: 16px;
+  }
+  &--menu {
+      position: absolute;
+      top: 50px;
+      right: 12px;
+      z-index: 1;
+      width: fit-content;
+      height: 56px;
+      padding: 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      background-color: #fff;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    &--menu-text {
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      color: #101717;
+    }
+  }
+
+
+
+.av-modal-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+.av-modal-header {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eff0e8;
+}
+
+.av-modal-header-h5 {
+  margin: 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: #101717;
+}
+
+.av-modal-header-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.av-modal-title {
+  width: 100%;
+  padding: 0 16px;
+
+  @media (min-width: 769px) {
+    padding: 0 32px;
+  }
+}
+
+.av-modal-title-h4 {
+  width: 100%;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  color: #101717;
+}
+
+.av-modal-plot-selection {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @media (min-width: 769px) {
+    padding: 0 32px;
+  }
+}
+
+.av-modal-bottom {
+  width: 100%;
+  padding: 16px 16px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 769px) {
+    padding: 8px 32px 32px 32px;
+    flex-direction: row-reverse;
+    gap: 16px;
+  }
+}
+
+.av-hidden {
+  display: none !important;
+}
+
+/**************************\
+  av-widget
+\**************************/
+
+.av-widget--title{
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  flex-basis: 415px;
+ }
+.av-widget--icon{
+  float: right;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+}
+
+/**************************\
+  collapsible
+\**************************/
+
+.nav-link-toggle[data-toggle].collapsed:after {
+  position: absolute;
+  right: 10px;
+}
+.nav-link-toggle[data-toggle]:not(.collapsed):after {
+   position: absolute;
+  right: 10px;
+}
+
+
+.alert.alert-dismissible.alert-danger, .alert.alert-dismissible.alert-success {
+  padding-left: 1em !important;
+  width: auto;
+  min-height: 56px;
+  background-color: #EE606F;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed!important;
+    top: 20px!important;
+    left: 50%!important;
+    transform: translate(-50%, 0%)!important;
+    max-width: 602px!important;
+    z-index: 526;
+
+    .alert{
+      color:#101717!important;
+    }
+    .close{
+      color: #101717;
+      top: 0.6rem;
+      .lexicon-icon.lexicon-icon-times{
+        display: unset;
+      }
+      use{
+        fill: black;
+      }
+    }
+
+    use{
+      fill: none;
+
+    }
+.alert-indicator{
+  display: none;
+}
+
+  .alert-autofit-row.autofit-row .autofit-col.autofit-col-expand .autofit-section div{
+    color: #101717!important;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 2em;
+  }
+}
+.alert.alert-dismissible.alert-danger{
+  background-color: #EE606F!important;
+}
+
+.alert.alert-dismissible.alert-success{
+  background-color: #34C695!important;
+}
+
+.alert.alert-danger .autofit-col-expand .autofit-section div strong + span,
+.alert.alert-danger .autofit-col-expand .autofit-section div strong + text {
+  color: #101717;
+}
+
+
+/*Separar x de close del texto en login */
+.alert.alert-dismissible {
+  display: flex; /* Asegura que los elementos internos estén alineados horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Coloca la X a la derecha y el texto a la izquierda */
+}
+
+.alert.alert-dismissible .close {
+  margin-left: 16px; /* Añade un margen izquierdo al botón de cierre */
+}
+
+
+/* Cambiar el color del texto en todas las notificaciones */
+.alert {
+  color: #101717; /* Color del texto principal */
+}
+
+/* Cambiar el color del botón de cierre ("X") */
+.alert .close {
+  color: #101717; /* Color del icono de cierre */
+  opacity: 1; /* Asegura que sea completamente visible */
+}
+
+.alert .close:hover {
+  color: #101717; /* Mantén el mismo color al pasar el cursor */
+  text-decoration: none; /* Evita subrayados o decoraciones adicionales */
+}
+/* Cambiar el color del texto en notificaciones de éxito */
+.alert.alert-success {
+  color: #101717; /* Cambia el color del texto principal a negro */
+}
+
+/* Cambiar el color del texto dentro del strong (por ejemplo, "Éxito:") */
+.alert.alert-success .lead {
+  color: #101717; /* Cambia el color del texto destacado (strong) */
+}
+
+/* Cambiar el color del botón de cierre ("X") */
+.alert.alert-success .close {
+  color: #101717; /* Cambia el color del icono de cierre */
+}
+
+.alert.alert-success .close:hover {
+  color: #101717; /* Mantén el mismo color al pasar el cursor */
+}
+div.input-container[aria-label="Login"] {
+  /* Tus estilos aquí */
+
+}

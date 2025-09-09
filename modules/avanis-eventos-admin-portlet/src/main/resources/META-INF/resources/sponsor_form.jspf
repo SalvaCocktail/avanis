@@ -1,0 +1,91 @@
+<%@ page import="java.util.List" %>
+<%@ page import="avanis.calendarbooking.sb.model.Sponsor" %>
+<%@ page import="avanis.calendarbooking.sb.service.SponsorLocalServiceUtil" %>
+<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+
+<portlet:resourceURL var="addSponsorURL" id="addSponsor">
+</portlet:resourceURL>
+<portlet:resourceURL var="removeSponsorURL" id="removeSponsor">
+</portlet:resourceURL>
+<portlet:resourceURL var="getAllSponsorURL" id="getAllSponsor">
+</portlet:resourceURL>
+
+<div id="sponsor-form">
+    <aui:input name="sponsorName" type="text"/>
+    <aui:input type="file" name="sponsorPhoto" multiple="true">
+    </aui:input>
+
+    <aui:button type="button" value="Añadir Patrocinador" onClick="addSponsor();"/>
+</div>
+<%
+    List<Sponsor> sponsors = SponsorLocalServiceUtil.getSponsorsByCalendarBookingId(calendarBookingId, 0, 15);
+    pageContext.setAttribute("sponsors", sponsors);
+    Integer sponsorCount = SponsorLocalServiceUtil.countSponsorsByCalendarBookingId(calendarBookingId);
+    pageContext.setAttribute("sponsorCount", sponsorCount);
+    pageContext.setAttribute("calendarBookingId", calendarBookingId);
+
+%>
+<h3>Patrocinadores Añadidos</h3>
+<%@ include file="/sponsor_list.jsp" %>
+
+<script>
+    function addSponsor() {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        fetch("${addSponsorURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            const divSponsors = document.getElementById("sponsor-list");
+            divSponsors.innerHTML = html + divSponsors.innerHTML;
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+    function removeSponsor(id) {
+        const form = document.getElementById("<portlet:namespace />fm")
+        const formData = new FormData(form);
+
+        formData.set("<portlet:namespace />sponsorId", id)
+
+        fetch("${removeSponsorURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            const divSponsor = document.getElementById(`sponsor-resource-\${id}`);
+            divSponsor.remove();
+        }).catch(error => {
+
+            console.error(error)
+        })
+        return false;
+    }
+
+    function getAllSponsor(calendarBookingId) {
+        const formData = new FormData();
+        formData.set("<portlet:namespace />calendarBookingId", calendarBookingId)
+
+        fetch("${getAllSponsorURL}", {
+            method: "post",
+            body: formData,
+        }).then(response => {
+            return response.text();
+        }).then(html => {
+            const divSponsors = document.getElementById("sponsor-container");
+            divSponsors.innerHTML = html;
+        }).catch(error => {
+            console.error(error)
+        })
+        return false;
+    }
+
+
+</script>
+
+

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@media (min-width: 769px) {
+  .back-icon img {
+    display: none !important;
+  }
+}
+.back-icon{
+  display: flex;
+  align-items: baseline;
+  img{
+
+    text-align: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    --control-menu-height: 56px;
+    font-family: Inter;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-right: 0.5rem !important;
+    width: 24px;
+    height: 24px;
+  }
+}
+.hidden{
+  display: none !important;
+}
+
+body {
+  background-color: #fff;
+}
+
+.fcl {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (min-width: 800px) {
+  .fcl {
+    max-width: min(calc(100% - 24px) , 800px)
+  }
+}
+@media (min-width: 1000px) {
+  .fcl {
+    max-width: 100%;
+  }
+}
+
+.fcl-container {
+  width: 100%;
+  height: fit-content;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fcl__title {
+  width: 100%;
+  padding: 16px 0;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: left;
+}
+
+.fcl #myTabContent {
+  width: 100%;
+}
+
+.fcl__tab-container{
+  position: relative;
+  width: 100%;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+
+}
+
+.fcl__tab-container-gradient{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fcl__tabs {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fcl__tabs li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fcl__tabs li button,
+.fcl__tabs .active,
+.nav-tabs .nav-link {
+  padding: 8px 8px 16px 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #101717;
+  background-color: transparent;
+  border: none;
+}
+.nav-tabs .nav-link.active {
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link.hover {
+  border: none;
+}
+
+.fcl__tabs li:has(.active) {
+  margin-top: 4px;
+  border-bottom: 4px solid #107e3e;
+}
+
+.fcl-container ul.fcl__tabs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;
+  border: none;
+  overflow: scroll !important;
+}
+
+.fcl__tab-question {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  border-bottom: 1px solid #bfc7c6;
+}
+.fcl__tab-question:hover {
+  cursor: pointer;
+}
+
+.fcl__tab-question-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.fcl__question {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  color: #101717;
+}
+
+.fcl__question-arrow {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  margin-left: 16px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+
+  transition: all 0.3s;
+}
+
+.fcl__question-arrow--more {
+  background-image: url('/documents/d/guest/faq-more');
+}
+
+.fcl__question-arrow--minus {
+  background-image: url('/documents/d/guest/faq-minus');
+}
+
+.fcl__answer {
+  width: 100%;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.fcl__answer.fcl__answer--collapsed {
+  display: none;
+}
+
+.fcl__answer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #101717;
+}
+
+div:has(>.faqs-container-lfr){
+  display: flex;
+  justify-content: center;
+}
+
+.av-faqs-home{
+  width: 100%;
+  margin-bottom: 62px;
+}

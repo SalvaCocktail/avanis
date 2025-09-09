@@ -1,0 +1,32 @@
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
+<%@ page import="com.liferay.portal.kernel.editor.Editor" %>
+<%@ page import="com.liferay.portal.kernel.util.HashMapBuilder" %>
+<%@ page import="com.liferay.taglib.ui.InputEditorTag" %><%--
+/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+--%>
+
+<%
+Editor editor = InputEditorTag.getEditor(request, "ckeditor_classic");
+%>
+
+<liferay-editor:editor
+	allowBrowseDocuments="<%= false %>"
+	contents="<%= body %>"
+	editorName="<%= editor.getName() %>"
+	fileBrowserParams='<%=
+		HashMapBuilder.put(
+			"categoryId", String.valueOf(categoryId)
+		).build()
+	%>'
+	name="bodyEditor"
+	placeholder="body"
+/>
+
+<aui:script>
+	function <portlet:namespace />getHTML() {
+		return window.<portlet:namespace />bodyEditor.getHTML();
+	}
+</aui:script>

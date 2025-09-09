@@ -1,0 +1,11 @@
+dependencies {
+	api project(":modules:avanis-social-follow-SB:avanis-social-follow-SB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../avanis-social-follow-SB-api/src/main/java"
+}
+
+group = "avanis.social.follow.sb"

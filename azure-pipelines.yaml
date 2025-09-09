@@ -1,0 +1,328 @@
+#Pipeline made by TCK
+---
+  trigger:
+    branches:
+      include:
+        - main
+        - preproduction
+        - develop
+  
+  pr:
+    autoCancel: true
+    branches:
+      include:
+        - main
+        - release/*
+  
+  variables:
+    - group: "teams"
+    - ${{ if eq(variables['build.SourceBranchName'],'main') }}:
+        - group: "liferay-pro"
+    - ${{ if eq(variables['build.SourceBranchName'],'preproduction') }}:
+        - group: "liferay-pre"
+    - ${{ if eq(variables['build.SourceBranchName'],'develop') }}:
+        - group: "liferay-dev"
+    - ${{ if not(or(eq(variables['build.SourceBranchName'],'develop'), eq(variables['build.SourceBranchName'],'preproduction'), eq(variables['build.SourceBranchName'],'main'))) }}:
+        - group: "liferay-default"
+
+    - name: REPO_NAME
+      value: 'avanis-liferay'
+      
+  pool:
+    vmImage: $(vmImageName)
+  
+  stages:
+    - stage: Preparations
+      jobs:
+        - job: Preparations
+          steps:
+            - bash: |
+                if [[ "$SYSTEM_PULLREQUEST_TARGETBRANCH" == "main" && ( "$SYSTEM_PULLREQUEST_SOURCEBRANCH" == release/* || "$SYSTEM_PULLREQUEST_SOURCEBRANCH" == hotfix/* ) ]]; then
+                    devsecops=true
+                    echo "##vso[task.setvariable variable=devsecops;isOutput=true]true"
+                elif [[ "$SYSTEM_PULLREQUEST_TARGETBRANCH" == release/* ]]; then
+                    devsecops=true
+                    echo "##vso[task.setvariable variable=devsecops;isOutput=true]true"
+                else
+                    devsecops=false
+                    echo "##vso[task.setvariable variable=devsecops;isOutput=true]false"
+                fi
+                if [[ (-z "${SYSTEM_PULLREQUEST_SOURCEBRANCH}" && ("$BUILD_SOURCEBRANCHNAME" == "preproduction" || "$BUILD_SOURCEBRANCHNAME" == "main" || "$BUILD_SOURCEBRANCHNAME" == "develop") || "${devsecops}" == "true") ]]; then
+                    blockpipeline="false"
+                    echo "##vso[task.setvariable variable=blockpipeline;isOutput=true]false"
+                else
+                    blockpipeline="true"
+                    echo "##vso[task.setvariable variable=blockpipeline;isOutput=true]true"
+                fi
+                echo "Source = ${BUILD_SOURCEBRANCHNAME}"
+                echo "PR Target = ${SYSTEM_PULLREQUEST_TARGETBRANCH}"
+                echo "PR Source = ${SYSTEM_PULLREQUEST_SOURCEBRANCH}"
+                echo "blockpipeline = ${blockpipeline}"
+                echo "devsecops = ${devsecops}"
+              displayName: "Set Variables"
+              name: Setvariables
+
+    - stage: Notifications
+      dependsOn: Preparations
+      variables:
+        devsecops: $[ stageDependencies.Preparations.Preparations.outputs['Setvariables.devsecops'] ]
+        blockpipeline: $[ stageDependencies.Preparations.Preparations.outputs['Setvariables.blockpipeline'] ]
+      displayName: Notifications
+      jobs:
+        - job: Notifications
+          condition: succeeded()
+          steps:
+            - task: DownloadSecureFile@1
+              displayName: Teams File
+              name: "teamsfile"
+              inputs:
+                secureFile: "teams.sh"
+            - script: |
+                if [[ "$(blockpipeline)" == "true" ]]; then
+                  echo "Out of Gitflow"
+                  export COLOR=$(TEAMS_COLOR_DANGER)
+                  export REASON="<font color="$COLOR">OUT of Gitflow</font>"
+                  export TEAMS_WEBHOOK=$(teams.webhook)
+                  chmod +x $(teamsfile.secureFilePath)
+                  bash $(teamsfile.secureFilePath)
+                  exit 1 # Salir con un código de error 1
+                else
+                  echo "STARTED"
+                  export COLOR=$(TEAMS_COLOR_INFO)
+                  export REASON="<font color="$COLOR">STARTED</font>"
+                  export TEAMS_WEBHOOK=$(teams.webhook)
+                  chmod +x $(teamsfile.secureFilePath)
+                  bash $(teamsfile.secureFilePath)
+                fi
+              continueOnError: true
+              displayName: Notify teams
+    - stage: DevSecOps
+      dependsOn:
+        - Preparations
+        - Notifications
+      condition: in(dependencies.Notifications.result, 'Succeeded', 'SucceededWithIssues')
+      displayName: "DevSecOps"
+      jobs:
+        - job: DevSecOps
+          variables:
+            devsecops: $[ stageDependencies.Preparations.Preparations.outputs['Setvariables.devsecops'] ]
+          condition: eq(variables['devsecops'], 'true')
+          steps:
+            - bash: |
+                echo "No DevSecOps for this build"
+            - task: DownloadSecureFile@1
+              displayName: Teams File
+              name: "teamsfile"
+              inputs:
+                secureFile: "teams.sh"
+            - bash: |
+                export COLOR=$(TEAMS_COLOR_DANGER)
+                export REASON="<font color="$COLOR">DevSecOps FAILED</font>"
+                export TEAMS_WEBHOOK=$(teams.webhook)
+                chmod +x $(teamsfile.secureFilePath)
+                bash $(teamsfile.secureFilePath)
+              displayName: Notify TEAMS FAILED
+              condition: failed()
+      
+    - stage: BuildAndPush
+      dependsOn: Notifications
+      displayName: "BuildAndPush"
+      condition: and(in(dependencies.Notifications.result, 'Succeeded', 'SucceededWithIssues'), in(variables['Build.SourceBranchName'], 'main', 'preproduction', 'develop'), not(in(variables['System.PullRequest.SourceBranch'], 'main', 'preproduction', 'develop')))
+      jobs:
+        - job: BuildAndPush
+          steps:
+            - script: cp configs/server.xml $(Build.SourcesDirectory)/server.xml
+            - task: Gradle@3
+              displayName: Gradle buildDockerImage
+              inputs:
+                gradleWrapperFile: 'gradlew'
+                tasks: 'buildApplication -Pliferay.workspace.environment=$(LIFERAY_ENV)'
+                publishJUnitResults: true
+                testResultsFiles: '**/TEST-*.xml'
+                javaHomeOption: 'JDKVersion'
+                jdkVersionOption: '1.11'
+                sonarQubeRunAnalysis: false
+                spotBugsAnalysis: false
+            - task: CmdLine@2
+              inputs:
+                script: |
+                  docker tag s-liferay:7.4.3.107-ga107 $(ECR_REPOSITORY):$(Build.SourceVersion)
+              displayName: Docker Images Tags
+            - task: ECRPushImage@1
+              inputs:
+                awsCredentials: '$(AWS_SERVICE_CONNECTION)'
+                regionName: '$(AWS_REGION)'
+                imageSource: 'imagename'
+                sourceImageName: '$(ECR_REPOSITORY)'
+                sourceImageTag: '$(Build.SourceVersion)'
+                repositoryName: '$(ECR_REPOSITORY)'
+                pushTag: 'latest'
+            - task: ECRPushImage@1
+              inputs:
+                awsCredentials: '$(AWS_SERVICE_CONNECTION)'
+                regionName: '$(AWS_REGION)'
+                imageSource: 'imagename'
+                sourceImageName: '$(ECR_REPOSITORY)'
+                sourceImageTag: '$(Build.SourceVersion)'
+                repositoryName: '$(ECR_REPOSITORY)'
+                pushTag: '$(Build.SourceVersion)'
+            - task: ArchiveFiles@2
+              displayName: Zip build folder
+              inputs:
+                rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
+                includeRootFolder: false
+                archiveType: 'zip'
+                archiveFile: '$(System.DefaultWorkingDirectory)/avanis-liferay.zip'
+                verbose: true
+              continueOnError: true
+            - task: PublishBuildArtifacts@1
+              displayName: publish to artifact
+              inputs:
+                pathToPublish: '$(System.DefaultWorkingDirectory)/avanis-liferay.zip'
+                artifactName: liferay-feed
+              continueOnError: true
+            - task: DownloadSecureFile@1
+              displayName: Teams File
+              name: "teamsfile"
+              inputs:
+                secureFile: "teams.sh"
+            - bash: |
+                export COLOR=$(TEAMS_COLOR_DANGER)
+                export REASON="<font color="$COLOR">Build And Push FAILED</font>"
+                export TEAMS_WEBHOOK=$(teams.webhook)
+                chmod +x $(teamsfile.secureFilePath)
+                bash $(teamsfile.secureFilePath)
+              displayName: Notify TEAMS FAILED
+              condition: failed()
+
+
+    - stage: ApprovalDeploy
+      displayName: "Approval Deploy"
+      dependsOn: BuildAndPush
+      condition: and(in(dependencies.BuildAndPush.result, 'Succeeded'), eq(variables['Build.SourceBranchName'], 'main'))
+      jobs:
+        - job: ApprovalDeploy
+          steps:
+            - task: DownloadSecureFile@1
+              displayName: Teams File
+              name: "teamsfile"
+              inputs:
+                secureFile: "teams.sh"
+            - bash: |
+                export COLOR=$(TEAMS_COLOR_WARNING)
+                export REASON="<font color="$COLOR">Deploy Need Approval</font>"
+                export TEAMS_WEBHOOK=$(teams.webhook)
+                chmod +x $(teamsfile.secureFilePath)
+                bash $(teamsfile.secureFilePath)
+              continueOnError: true
+              displayName: Notify TEAMS Need Approval
+                
+    - stage: Deploy
+      displayName: "Deploy"
+      dependsOn:
+        - BuildAndPush
+        - ApprovalDeploy
+      condition: and(in(variables['Build.SourceBranchName'], 'main', 'preproduction', 'develop'), in(dependencies.BuildAndPush.result, 'Succeeded'), in(dependencies.ApprovalDeploy.result, 'Succeeded', 'Skipped', 'SucceededWithIssues'), not(in(variables['System.PullRequest.SourceBranch'], 'main', 'preproduction', 'develop')))
+      jobs:
+        - job: DB_Backup
+          steps:     
+            - task: Kubernetes@1
+              displayName: Run Backup Cronjob
+              inputs:
+                connectionType: 'Kubernetes Service Connection'
+                kubernetesServiceEndpoint: '$(K8S_SERVICE_CONNECTION)'
+                namespace: 'cron'
+                command: 'create'
+                arguments: 'job --from=cronjob/dbbackup azure-pipelines'
+            - task: Kubernetes@1
+              displayName: Wait for Job Completion
+              inputs:
+                connectionType: 'Kubernetes Service Connection'
+                kubernetesServiceEndpoint: '$(K8S_SERVICE_CONNECTION)'
+                namespace: 'cron'
+                command: 'wait'
+                arguments: '--for=condition=complete --timeout=180s job/azure-pipelines'
+                checkLatest: true
+            - task: Kubernetes@1
+              displayName: CronJob Logs
+              inputs:
+                connectionType: "Kubernetes Service Connection"
+                kubernetesServiceEndpoint: "$(K8S_SERVICE_CONNECTION)"
+                namespace: cron
+                command: logs
+                arguments: -l job-name=azure-pipelines --tail=-1
+            - task: Kubernetes@1
+              displayName: Delete Job
+              inputs:
+                connectionType: 'Kubernetes Service Connection'
+                kubernetesServiceEndpoint: '$(K8S_SERVICE_CONNECTION)'
+                namespace: 'cron'
+                command: 'delete'
+                arguments: 'job azure-pipelines'
+        
+        - deployment: Deploy
+          dependsOn: DB_Backup
+          condition: succeeded()
+          environment: $(ENVIRONMENT)
+          strategy:
+            runOnce:
+              deploy:
+                steps:   
+                  - task: Kubernetes@1
+                    displayName: Set Image
+                    inputs:
+                      connectionType: Kubernetes Service Connection
+                      kubernetesServiceEndpoint: '$(K8S_SERVICE_CONNECTION)'
+                      namespace: '$(K8S_NAMESPACE)'
+                      command: 'set'
+                      arguments: 'image deployment/$(REPO_NAME) $(REPO_NAME)=$(ECR_REGISTRY)/$(ECR_REPOSITORY):$(Build.SourceVersion)'
+                      secretType: 'dockerRegistry'
+                      containerRegistryType: 'Container Registry'
+                      versionSpec: '$(KUBECTL_VERSION)'
+                      outputFormat: 'yaml'
+                  - task: Kubernetes@1
+                    displayName: Check succesfuly deploy image to kubernetes
+                    inputs:
+                      connectionType: "Kubernetes Service Connection"
+                      kubernetesServiceEndpoint: "$(K8S_SERVICE_CONNECTION)"
+                      namespace: $(K8S_NAMESPACE)
+                      command: rollout
+                      arguments: status deployment/$(REPO_NAME) -w
+                  - task: Kubernetes@1
+                    displayName: Failure pod log
+                    condition: failed()
+                    inputs:
+                      connectionType: "Kubernetes Service Connection"
+                      kubernetesServiceEndpoint: "$(K8S_SERVICE_CONNECTION)"
+                      namespace: $(K8S_NAMESPACE)
+                      command: logs
+                      arguments: -l service=app -c $(REPO_NAME) --tail=-1
+
+    - stage: notification_final
+      dependsOn:
+        - DevSecOps
+        - Deploy
+        - BuildAndPush
+        - Notifications
+        - Preparations
+      condition: and(in(dependencies.Notifications.result, 'Succeeded', 'SucceededWithIssues'), in(dependencies.BuildAndPush.result, 'Succeeded'), in(dependencies.Deploy.result, 'Succeeded', 'Skipped'), in(dependencies.DevSecOps.result, 'Succeeded', 'Skipped'))
+      jobs:
+        - job: Plan
+          variables:
+            blockpipeline: $[ stageDependencies.Preparations.Preparations.outputs['Setvariables.blockpipeline'] ]
+          condition: eq(variables['blockpipeline'], 'false')
+          displayName: "notification final"
+          steps:
+            - task: DownloadSecureFile@1
+              displayName: Teams File
+              name: "teamsfile"
+              inputs:
+                secureFile: "teams.sh"
+            - bash: |
+                export COLOR=$(TEAMS_COLOR_GOOD)
+                export REASON="<font color="$COLOR">SUCCESS</font>"
+                export TEAMS_WEBHOOK=$(teams.webhook)
+                chmod +x $(teamsfile.secureFilePath)
+                bash $(teamsfile.secureFilePath)
+              continueOnError: true
+              displayName: Notify TEAMS SUCCESS

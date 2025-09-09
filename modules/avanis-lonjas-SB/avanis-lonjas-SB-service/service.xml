@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="avanis.lonjas">
+	<namespace>AVANIS_LONJAS</namespace>
+
+	<entity local-service="true" name="Grupo" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="grupoId" type="long" />
+		<column name="nombre" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="grupoId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="nombre" return-type="Collection">
+			<finder-column name="nombre" />
+		</finder>
+
+		<finder name="grupoId" return-type="Grupo">
+			<finder-column name="grupoId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="SubGrupo" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="subGrupoId" type="long" />
+		<column name="grupoId" type="long" />
+		<column name="nombre" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="grupoId" />
+			<order-column name="subGrupoId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="nombre" return-type="Collection">
+			<finder-column name="nombre" />
+		</finder>
+
+		<finder name="subGrupoId" return-type="SubGrupo">
+			<finder-column name="subGrupoId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="Area" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="areaId" type="long" />
+		<column name="subGrupoId" type="long" />
+		<column name="grupoId" type="long" />
+		<column name="nombre" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="grupoId" />
+			<order-column name="subGrupoId" />
+			<order-column name="areaId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="nombre" return-type="Collection">
+			<finder-column name="nombre" />
+		</finder>
+
+		<finder name="areaId" return-type="Area">
+			<finder-column name="areaId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="Lonja" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="lonjaId" type="long" />
+		<column name="nombre" type="String" />
+		<column name="pais" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="lonjaId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="lonjaId" return-type="Collection">
+			<finder-column name="lonjaId" />
+		</finder>
+		<finder name="nombre" return-type="Collection">
+			<finder-column name="nombre" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="FechaLonja" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="lonjaId" type="long" />
+		<column name="fecha" type="Date" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="lonjaId" order-by="asc" />
+			<order-column name="fecha" order-by="desc" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="lonjaId" return-type="Collection">
+			<finder-column name="lonjaId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="PrecioLonja" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="productoId" type="long" />
+		<column name="lonjaId" type="long" />
+		<column name="grupoId" type="long" />
+		<column name="subGrupoId" type="long" />
+		<column name="areaId" type="long" />
+		<column name="fecha" type="Date" />
+		<column name="nombreProducto" type="String" />
+
+		<column name="precioAnterior" type="String" />
+		<column name="precioUltimo" type="String" />
+		<column name="precioMaximo" type="String" />
+		<column name="precioMedio" type="String" />
+		<column name="precioMinimo" type="String" />
+		<column name="precioOrigen" type="String" />
+
+		<column name="anteriorEuros" type="String" />
+		<column name="ultimoEuros" type="String" />
+		<column name="unidadMedida" type="String" />
+		<column name="unidadLarga" type="String" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="lonjaId" />
+			<order-column name="fecha" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="lonjaId" return-type="Collection">
+			<finder-column name="lonjaId" />
+		</finder>
+		<finder name="productoId" return-type="Collection">
+			<finder-column name="productoId" />
+		</finder>
+		<finder name="lonjaIdProductoId" return-type="Collection">
+			<finder-column name="lonjaId" />
+			<finder-column name="productoId" />
+		</finder>
+		<finder name="lonjaIdFecha" return-type="Collection">
+			<finder-column name="lonjaId" />
+			<finder-column name="fecha" />
+		</finder>
+		<finder name="lonjaIdGrupoIdFecha" return-type="Collection">
+			<finder-column name="lonjaId" />
+			<finder-column name="grupoId" />
+			<finder-column name="fecha" />
+		</finder>
+		<finder name="lonjaIdGrupoIdSubGrupoIdFecha" return-type="Collection">
+			<finder-column name="lonjaId" />
+			<finder-column name="grupoId" />
+			<finder-column name="subGrupoId" />
+			<finder-column name="fecha" />
+		</finder>
+		<finder name="lonjaIdGrupoIdSubGrupoIdAreaIdFecha" return-type="Collection">
+			<finder-column name="lonjaId" />
+			<finder-column name="grupoId" />
+			<finder-column name="subGrupoId" />
+			<finder-column name="areaId" />
+			<finder-column name="fecha" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="ProductoExplot" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="lonjaId" type="long" />
+		<column name="productoId" type="long" />
+		<column name="precioLonjaId" type="long" />
+		<column name="explotacionId" type="long" />
+		<column name="orden" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="explotacionId" />
+			<order-column name="orden" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="explotacionId" return-type="Collection">
+			<finder-column name="explotacionId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="ProductoUser" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="entityId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+		<column name="lonjaId" type="long" />
+		<column name="productoId" type="long" />
+		<column name="precioLonjaId" type="long" />
+		<column name="userId" type="long" />
+		<column name="orden" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="userId" />
+			<order-column name="orden" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="userId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="userIdlonjaIdproductoId" return-type="ProductoUser">
+			<finder-column name="userId" />
+			<finder-column name="lonjaId" />
+			<finder-column name="productoId" />
+		</finder>
+
+		<!-- References -->
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+</service-builder>

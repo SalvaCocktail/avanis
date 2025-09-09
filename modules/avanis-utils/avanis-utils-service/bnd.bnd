@@ -1,0 +1,7 @@
+Bundle-Name: Avanis Utils Impl
+Bundle-SymbolicName: avanis.utils.service
+Bundle-Version: 1.0.0
+-dsannotations-options: inherit
+Import-Package: *;resolution:=optional
+Export-Package:\
+    avanis.utils.*

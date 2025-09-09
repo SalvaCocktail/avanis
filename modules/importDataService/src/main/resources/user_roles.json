@@ -1,0 +1,59 @@
+{
+"user_roles": [
+	{
+		"id" : "90ca5233-356d-4dba-9392-ce411323fe03",
+		"authority" : "ROLE_SUPER_ADMIN"
+	},
+	{
+		"id" : "13e04e5e-bebf-4a6b-a4b4-8e437f96d606",
+		"authority" : "ROLE_ADMIN"
+	},
+	{
+		"id" : "a0838339-75cb-45f9-b35b-63c55d58283f",
+		"authority" : "ROLE_MODERATOR"
+	},
+	{
+		"id" : "13069ee3-037c-449c-a6a5-0dd75923110a",
+		"authority" : "ROLE_MANAGER"
+	},
+	{
+		"id" : "af66da91-b085-4b50-b848-539161c8cf2a",
+		"authority" : "ROLE_ADMIN"
+	},
+	{
+		"id" : "3f726e52-25df-4910-b528-9d0a2e4c9644",
+		"authority" : "ROLE_USER"
+	},
+	{
+		"id" : "34d81f09-6812-4d2c-9276-3d40274ffbcc",
+		"authority" : "ROLE_ADMIN"
+	},
+	{
+		"id" : "57387b7a-8912-4555-a855-ab0c3f89eb04",
+		"authority" : "ROLE_SUPER_MANAGER"
+	},
+	{
+		"id" : "7166dcea-9203-461d-8d24-8d5401165c8f",
+		"authority" : "ROLE_SUPER_WEATHER"
+	},
+	{
+		"id" : "2059df31-1576-49f3-9bdd-0c8fc8f65121",
+		"authority" : "ROLE_WEATHER"
+	},
+	{
+		"id" : "f9fcbcbe-0e7b-4cc5-b7f7-12a7b2b875d8",
+		"authority" : "ROLE_MANAGER"
+	},
+	{
+		"id" : "8f7934bb-5a83-4719-b896-e4314d0a041e",
+		"authority" : "ROLE_MODERATOR"
+	},
+	{
+		"id" : "edafc57a-0218-410a-bce8-54c857fe3e66",
+		"authority" : "ROLE_USER"
+	},
+	{
+		"id" : "e9f68ddd-b420-4f47-99cb-0468d31b38cb",
+		"authority" : "ROLE_SEO"
+	}
+]}

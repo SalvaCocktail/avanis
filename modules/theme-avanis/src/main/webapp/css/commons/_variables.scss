@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// #region Texts
+
+// Texts
+$text-family: 'Inter', sans-serif;
+
+/* COLORS */
+
+$color-primary-10: #e8f2ed;
+$color-primary-20: #deefe5;
+$color-primary-30: #cde5d7;
+$color-primary-40: #b7d6c4;
+$color-primary-50: #74b58f;
+$color-primary-60: #329c5e;
+$color-primary-70: #107e3e;
+$color-primary-80: #065025;
+$color-primary-90: #053c1c;
+$color-primary-100: #122c1f;
+
+$color-secondary-10: #f5f6ee;
+$color-secondary-20: #eff0e8;
+$color-secondary-30: #eef2df;
+$color-secondary-40: #ecf4cf;
+$color-secondary-50: #e5f3b7;
+$color-secondary-60: #d6ee88;
+$color-secondary-70: #c6e75a;
+$color-secondary-80: #acc94a;
+$color-secondary-90: #8fac31;
+$color-secondary-100: #76911d;
+
+$color-neutral-10: #ffffff;
+$color-neutral-20: #f4f7f7;
+$color-neutral-30: #dbe1e0;
+$color-neutral-40: #bfc7c6;
+$color-neutral-50: #9da5a5;
+$color-neutral-60: #828b8b;
+$color-neutral-70: #646b6b;
+$color-neutral-80: #464a4a;
+$color-neutral-90: #27302f;
+$color-neutral-100: #101717;
+
+$color-info-10: #aed4ff;
+$color-info-20: #8abfff;
+$color-info-30: #033b87;
+
+$color-success-10: #a8e0c4;
+$color-success-20: #34c695;
+$color-success-30: #00381d;
+
+$color-warning-10: #ffeb68;
+$color-warning-20: #fed257;
+$color-warning-30: #fed257;
+
+$color-severe-20: #ffa14d;
+$color-severe-30: #ffa14d;
+
+$color-error-10: #ea8993;
+$color-error-20: #db5462;
+$color-error-30: #ee606f;
+
+$color-alert-10: #262626;
+
+$color-legal-pages-text: #000000;
+
+$colorW: $color-neutral-10;
+$colorK: $color-neutral-100;
+
+$color-background-01: $color-neutral-10;
+$color-background-02: $color-secondary-20;
+$color-background-03: $color-primary-100;
+$color-background-04: $color-secondary-70;
+$color-background-overlay-1: rgba($color-neutral-90, 0.6);
+$color-background-overlay-2: rgba($color-neutral-90, 0.12);
+
+$color-surface-01: $color-neutral-10;
+$color-surface-active: $color-primary-70;
+$color-surface-active-inverse: $color-secondary-70;
+$color-surface-disabled: rgba($color-neutral-10, 0.4);
+$color-surface-inactive: rgba($color-primary-70, 0.4);
+$color-surface-inactive-inverse: rgba($color-secondary-70, 0.4);
+
+$color-content-01: $color-neutral-100;
+$color-content-01-inverse: $color-neutral-10;
+$color-content-02: $color-neutral-60;
+$color-content-inverse-01: $color-neutral-10;
+$color-content-inverse-02: $color-neutral-70;
+$color-content-active: $color-primary-70;
+$color-content-disabled: rgba($color-primary-70, 0.4);
+$color-content-hover: $color-primary-10;
+$color-content-hover-02: $color-primary-60;
+$color-content-active-inverse: $color-secondary-70;
+$color-content-disabled-inverse: rgba($color-secondary-70, 0.4);
+$color-content-hover-inverse: $color-primary-10;
+$color-content-alert-title: $color-alert-10;
+$color-border-01: $color-neutral-100;
+$color-border-02: $color-neutral-40;
+$color-border-inverse: $color-neutral-70;
+$color-border-active: $color-primary-70;
+$color-border-disabled: rgba($color-primary-70, 0.4);
+$color-border-hover: $color-primary-100;
+$color-border-active-inverse: $color-secondary-70;
+$color-border-disabled-inverse: rgba($color-secondary-70, 0.4);
+$color-border-hover-inverse: $color-primary-10;
+
+$color-semantic-info-01: $color-info-20;
+$color-semantic-info-02: $color-info-30;
+
+$color-semantic-success-01: $color-success-20;
+$color-semantic-success-02: $color-success-30;
+
+$color-semantic-warning-01: $color-warning-20;
+$color-semantic-warning-02: $color-warning-30;
+
+$color-semantic-severe-01: $color-severe-20;
+$color-semantic-severe-02: $color-severe-30;
+
+$color-semantic-error-01: $color-error-20;
+$color-semantic-error-02: $color-error-30;
+
+$color-semantic-neutral-01: $color-neutral-40;
+$color-semantic-neutral-02: $color-neutral-100;
+
+$color-button-background-active: $color-primary-90;
+$color-button-background-disabled: rgba($color-primary-90, 0.5);
+$color-button-background-hover: $color-primary-60;
+$color-button-background-active_inverse: $color-primary-70;
+
+$color-button-content-active: $color-neutral-10;
+$color-button-content-disabled: rgba($color-neutral-10, 0.4);
+$color-button-content-hover: $color-neutral-10;
+$color-button-content-active_inverse: $color-primary-100;
+
+// Basic
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Background
+$color-bg-01: #ffffff;
+$color-bg-02: #eff0e8;
+$color-bg-02-light: #edf0e8;
+$color-bg-03: #122c1f;
+$color-bg-04: #c6e75a;
+$color-bg-05: #F5F6F1;
+
+
+// Buttons
+$color-btn-bg-active: #053c1c;
+$color-btn-content-active: #ffffff;
+
+// GENERAL
+$max-width-page: 100%;
+$max-width-content: 1280px;
+
+$line-height: 1.5em;
+
+// BORDER-RADIUS
+$border-radius: 8px;
+$border-radius-s: 4px;
+$border-radius-m: 24px;
+
+// TYPOGRAPHY
+$size-h1: 48px;
+$size-h2: 32px;
+$size-h3: 24px;
+$size-h4: 20px;
+$size-h5: 16px;
+$size-body-l: 20px;
+$size-body-m: 16px;
+$size-body-s: 14px;
+$size-body-xs: 12px;
+$size-link-l: 16px;
+$size-link-s: 14px;
+$size-label: 14px;
+
+// Mobile
+$size-h1-m: 40px;
+$size-h2-m: 32px;
+$size-h3-m: 20px;
+$size-h4-m: 16px;
+$size-h5-m: 16px;
+$size-body-l-m: 20px;
+$size-body-m-m: 16px;
+$size-body-s-m: 14px;
+$size-body-xs-m: 12px;
+$size-link-l-m: 16px;
+$size-link-s-m: 14px;
+$size-label-m: 14px;
+
+/* Media Query */
+$min-S: 601px;
+$min-M: 768px;
+$min-ML: 1000px;
+$min-L: 1201px;
+$min-XL: 1281px;
+
+$max-S: 600px;
+$max-M: 769px;
+$max-ML: 1000px;
+$max-L: 1200px;
+$max-XL: 1280px;
+
+// #region Colors
+
+// Basic
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Content
+$color-content-01: #101717;
+$color-content-01-inverse: #ffffff;
+$color-content-02: #646b6b;
+$color-content-active: #107e3e;
+$color-content-active-inverse: #c6e75a;
+$color-content-hover: #122c1f;
+$color-content-hover-02: #329c5e;
+$color-content-alert-title: #262626;
+
+// Semantic
+$color-semantic-success-01: #e6fff7;
+$color-semantic-success-03: #228262;
+$color-semantic-error-01: #FFE8EB;
+$color-semantic-error-03: #C93747;
+$color-semantic-neutral-01: #F4F4F4;
+$color-semantic-neutral-02: #101717;
+
+// Borders
+$color-border-active: #107e3e;
+$color-border-01: #101717;
+$color-border-02: #bfc7c6;
+$color-border-black-20: rgba(0, 0, 0, 0.2);
+
+// Background
+$color-bg-01: #ffffff;
+$color-bg-02: #eff0e8;
+$color-bg-02-light: #edf0e8;
+$color-bg-03: #122c1f;
+$color-bg-04: #c6e75a;
+
+// Buttons
+$color-btn-bg-active: #053c1c;
+$color-btn-content-active: #ffffff;
+
+// Warnings, Alerts & Errors
+$color-semantic-warning-02: #fed257;
+$color-semantic-severe-02: #ffa14d;
+$color-semantic-error-02: #ee606f;
+// #endregion Colors
+
+// #endregion Texts

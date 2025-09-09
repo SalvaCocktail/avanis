@@ -1,0 +1,4 @@
+Bundle-Name: avanis-my-account-portlet
+Bundle-SymbolicName: avanis.my.account.portlet
+Bundle-Version: 1.0.0
+Export-Package: avanis.my.account.portlet.constants

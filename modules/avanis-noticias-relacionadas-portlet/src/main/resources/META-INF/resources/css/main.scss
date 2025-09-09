@@ -1,0 +1,58 @@
+.avanis-noticias-relacionadas-portlet {
+
+}
+
+  .asset-entries-group-label.h3 {
+    display: none;
+  }
+
+  a.asset-abstract {
+    color: black;
+    text-decoration: none;
+  }
+
+  a.asset-abstract:hover {
+    color: #107e3e;
+  }
+
+  .asset-content {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .asset-content-section {
+    width: 50%;
+  }
+
+  .asset-content-section figure {
+    height: 100%;
+    margin: 0;
+  }
+
+  .asset-content-section picture {
+    display: block;
+    height: 100%;
+  }
+
+  .asset-content-section img {
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h5.asset-summary {
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-weight: 600;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .asset-content-section span {
+    color: #828b8b;
+    font-size: 14px;
+    font-weight: 400;
+  }

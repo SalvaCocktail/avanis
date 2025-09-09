@@ -1,0 +1,3 @@
+#main-content:has(.bg-color-code) {
+background-color: #EFF0E8;
+}

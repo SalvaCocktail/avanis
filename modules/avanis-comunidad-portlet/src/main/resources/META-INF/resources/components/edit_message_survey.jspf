@@ -1,0 +1,110 @@
+<%@ page import="static avanis.comunidad.portlet.constants.AvanisComunidadPortletConstants.SURVEY_ID" %>
+<%@ page import="static avanis.comunidad.portlet.constants.AvanisComunidadPortletConstants.ANSWERS" %>
+<%@ page import="static avanis.comunidad.portlet.constants.AvanisComunidadPortletConstants.*" %>
+
+
+<div class="form-group" style="display: none" id="<portlet:namespace />survey">
+    <div style="display: none" id="<portlet:namespace />actionsSurvey">
+        <a href="javascript:void(0);" onClick="deleteSurvey();"><span>Delete</span></a>
+        <c:if test="${empty answersUsers}">
+            <a href="javascript:void(0);" onClick="editSurvey();"><span>Editar</span></a>
+        </c:if>
+    </div>
+    <span for="<portlet:namespace /><%= SURVEY_ID%>"><liferay-ui:message key="your-survey"/></span>
+    <div id="<portlet:namespace />surveyForm">
+        <aui:input name="<%= SURVEY_ID%>" type="hidden" value="${survey.surveyId}" />
+        <aui:input name="<%= QUESTION%>" value="${survey.question}" label="title-of-the-survey" required="true" disabled="true"  />
+        <aui:field-wrapper>
+            <span><liferay-ui:message key="answers"/></span>
+            <div id="${renderResponse.namespace}addOptionsSurveyGroup">
+                 <c:forEach var="answer" items="${answers}" varStatus="loop">
+                    <aui:input name="<%= ANSWERS%>" id="answers${loop.count}" labelCssClass="<%= renderResponse.getNamespace() + ANSWERS%>" cssClass="<%= renderResponse.getNamespace() + ANSWERS%>" label="" value="${answer.answer}" disabled="true" />
+                </c:forEach>
+                <c:if test="${empty answers}">
+                    <aui:input name="<%= ANSWERS%>" id='<%= ANSWERS + "1"%>' labelCssClass="<%= renderResponse.getNamespace() + ANSWERS%>" cssClass="<%= renderResponse.getNamespace() + ANSWERS%>" label="option-one-survey" disabled="true" />
+                </c:if>
+            </div>
+            <a href="javascript:void(0);" id="<portlet:namespace />addOptionsSurvey"><span class="taglib-text">+ <liferay-ui:message key="add-options-survey"/></span></a>
+        </aui:field-wrapper>
+        <aui:fieldset>
+            <label for="<portlet:namespace /><%= EXPIRE_HOURS%>"><liferay-ui:message key="survey-expire-gap"/></label>
+            <aui:select name="<%= EXPIRE_HOURS%>" required="true" label=""  disabled="${empty survey.question}" >
+                <aui:option value="0">Selecciona:</aui:option>
+                <aui:option value="12"  selected="${survey.expireHours == 12}">12h</aui:option>
+                <aui:option value="24"  selected="${survey.expireHours == 24}">24h</aui:option>
+                <aui:option value="48"  selected="${survey.expireHours == 48}">48h</aui:option>
+                <aui:option value="72"  selected="${survey.expireHours == 72}">72h</aui:option>
+                <aui:option value="168"  selected="${survey.expireHours == 168}">1 semana</aui:option>
+            </aui:select>
+        </aui:fieldset>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#<portlet:namespace />addOptionsSurvey').on('click' , function (e) {
+            e.preventDefault();
+            appendOption();
+        });
+        checkViewSurvey();
+    });
+
+    function checkViewSurvey(){
+        if ($("#<portlet:namespace /><%= SURVEY_ID %>").val().length !== 0) {
+            $('#<portlet:namespace />actionsSurvey').fadeIn("fast");
+            $("#<portlet:namespace />survey").fadeIn("fast");
+        }
+    }
+    function openSurvey(){
+        $("#<portlet:namespace />surveyForm").fadeOut("fast");
+        resetSurvey();
+        enableSurveyForm();
+        $("#<portlet:namespace />surveyForm").fadeIn("fast");
+        if($("#<portlet:namespace />survey").is(":hidden")){
+            $("#<portlet:namespace />survey").fadeIn("fast");
+        }
+    }
+    function appendOption(){
+        let index = $(".<portlet:namespace /><%= ANSWERS %>").siblings('input').length;
+        let option = '<label class="<%= renderResponse.getNamespace() + ANSWERS%> control-label disabled" for="_avanisComunidadPortlet_AvanisComunidadPortlet_answers' + (index + 1) +'"><liferay-ui:message key="opcion-survey" /> ' + (index + 1) +'</label><input name="<portlet:namespace /><%= ANSWERS %>" id="<portlet:namespace /><%= ANSWERS %>' + (index + 1) +'" type="text" style="display: none" class="<portlet:namespace /><%= ANSWERS %> field form-control" title="<liferay-ui:message key="<%= ANSWERS %>"/>" ></input>'
+        $('#<portlet:namespace />addOptionsSurveyGroup').append(option);
+        $("#<portlet:namespace /><%= ANSWERS %>" + (index + 1)).fadeIn("fast");
+    }
+    function editSurvey(){
+        enableSurveyForm();
+    }
+    function deleteSurvey(){
+        $("#<portlet:namespace />surveyForm").fadeOut("fast");
+        resetSurvey();
+        disableSurveyForm();
+        $("#<portlet:namespace /><%= SURVEY_ID %>").val('');
+        $("#<portlet:namespace />surveyForm").fadeIn("fast");
+    }
+    function resetSurvey(){
+        $("#<portlet:namespace /><%= QUESTION%>").val('');
+        $("#<portlet:namespace /><%= EXPIRE_HOURS%>").val("0");
+        $(".<portlet:namespace /><%= ANSWERS %>").remove();
+        appendOption();
+    }
+    function enableSurveyForm(){
+        $("#<portlet:namespace /><%= QUESTION%>").prop('disabled', false);
+        $(".<portlet:namespace /><%= ANSWERS%>").prop('disabled', false);
+        $("#<portlet:namespace /><%= EXPIRE_HOURS%>").prop('disabled', false);
+        $("#<portlet:namespace /><%= QUESTION%>").removeClass('disabled');
+        $(".<portlet:namespace /><%= ANSWERS%>").removeClass('disabled');
+        $("#<portlet:namespace /><%= EXPIRE_HOURS%>").removeClass('disabled');
+
+        if($("#<portlet:namespace />addOptionsSurvey").is(":hidden")){
+            $("#<portlet:namespace />addOptionsSurvey").fadeIn("fast");
+        }
+    }
+    function disableSurveyForm(){
+        $("#<portlet:namespace /><%= QUESTION%>").prop('disabled', true);
+        $(".<portlet:namespace /><%= ANSWERS%>").prop('disabled', true);
+        $("#<portlet:namespace /><%= EXPIRE_HOURS%>").prop('disabled', true);
+        if(!$("#<portlet:namespace />addOptionsSurvey").is(":hidden")){
+            $("#<portlet:namespace />addOptionsSurvey").fadeOut("fast");
+        }
+    }
+
+</script>

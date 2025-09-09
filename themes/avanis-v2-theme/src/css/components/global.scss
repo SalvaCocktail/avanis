@@ -1,0 +1,40 @@
+@import '../commons/variables';
+
+* {
+  font-family: Inter;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+.av-public-layout__content p a,
+.av-public-layout__content p a:hover {
+  font-weight: 600;
+  color: #107e3e;
+}
+
+strong {
+  font-weight: 600 !important;
+}
+
+.circulo-contador-verde {
+	position: absolute;
+  right: 56px;
+  width: fit-content;
+  min-width: 24px;
+  height: 24px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $text-family;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  color: $color-content-01;
+
+  border-radius: 12px;
+  background-color: #c6e75a;
+}

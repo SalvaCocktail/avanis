@@ -1,0 +1,12 @@
+Bundle-Name: avanis-social-follow-SB-service
+Bundle-SymbolicName: avanis.social.follow.sb.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+Export-Package: \
+    	avanis.social.follow.sb.model.impl,\
+    	avanis.social.follow.sb.service.base, \
+    	avanis.social.follow.sb.service.http,\
+    	avanis.social.follow.sb.service.impl,\
+    	avanis.social.follow.sb.service.persistence.impl
+-dsannotations-options: inherit

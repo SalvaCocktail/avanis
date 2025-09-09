@@ -1,0 +1,7 @@
+Bundle-Name: avanis-lonjas
+Bundle-SymbolicName: avanis.lonjas
+Bundle-Version: 1.0.0
+Export-Package: avanis.lonjas.constants
+Provide-Capability: \
+    	liferay.language.resources;\
+    		resource.bundle.base.name="content.Language"

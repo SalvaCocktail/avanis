@@ -1,0 +1,64 @@
+{
+  "likes": [
+    {
+      "id": "5aba14b6-a78b-41ff-8928-3586c5ea8364",
+      "version": 0,
+      "date_created": "2024-06-24T10:29:05.134Z",
+      "target_id": "48586026-9e08-4834-a2ab-f3dd71df0546",
+      "last_updated": "2024-06-24T10:29:05.134Z",
+      "deleted": false,
+      "target_type": "MESSAGE",
+      "type": "LIKE",
+      "deleted_by_id": null,
+      "created_by_id": "e9f68ddd-b420-4f47-99cb-0468d31b38cb"
+    },
+    {
+      "id": "a86f77d6-433a-472d-aef7-589f236dc6b6",
+      "version": 0,
+      "date_created": "2024-06-24T10:29:05.135Z",
+      "target_id": "48586026-9e08-4834-a2ab-f3dd71df0546",
+      "last_updated": "2024-06-24T10:29:05.135Z",
+      "deleted": false,
+      "target_type": "MESSAGE",
+      "type": "LIKE",
+      "deleted_by_id": null,
+      "created_by_id": "e9f68ddd-b420-4f47-99cb-0468d31b38cb"
+    },
+    {
+      "id": "8780ea62-f5e2-430a-ba26-cfa3eab42f6d",
+      "version": 0,
+      "date_created": "2024-06-24T10:29:05.135Z",
+      "target_id": "48586026-9e08-4834-a2ab-f3dd71df0546",
+      "last_updated": "2024-06-24T10:29:05.135Z",
+      "deleted": false,
+      "target_type": "MESSAGE",
+      "type": "LIKE",
+      "deleted_by_id": null,
+      "created_by_id": "e9f68ddd-b420-4f47-99cb-0468d31b38cb"
+    },
+    {
+      "id": "b7b434b9-ed03-4c4c-9257-4da7951100b5",
+      "version": 0,
+      "date_created": "2024-06-24T10:29:05.136Z",
+      "target_id": "48586026-9e08-4834-a2ab-f3dd71df0546",
+      "last_updated": "2024-06-24T10:29:05.136Z",
+      "deleted": false,
+      "target_type": "MESSAGE",
+      "type": "LIKE",
+      "deleted_by_id": null,
+      "created_by_id": "e9f68ddd-b420-4f47-99cb-0468d31b38cb"
+    },
+    {
+      "id": "4e7324bd-e42c-44ba-a0f3-4d0b83dd3a70",
+      "version": 0,
+      "date_created": "2024-06-24T10:29:05.136Z",
+      "target_id": "48586026-9e08-4834-a2ab-f3dd71df0546",
+      "last_updated": "2024-06-24T10:29:05.136Z",
+      "deleted": false,
+      "target_type": "MESSAGE",
+      "type": "LIKE",
+      "deleted_by_id": null,
+      "created_by_id": "e9f68ddd-b420-4f47-99cb-0468d31b38cb"
+    }
+  ]
+}

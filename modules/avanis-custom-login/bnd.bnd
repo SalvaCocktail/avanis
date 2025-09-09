@@ -1,0 +1,8 @@
+Bundle-Name: avanis-custom-login
+Bundle-SymbolicName: avanis.custom.login
+Bundle-Version: 1.0.0
+Export-Package:\
+ avanis.custom.login.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

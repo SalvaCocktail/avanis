@@ -1,0 +1,311 @@
+.modal-seguidores{
+    .av-te-ma-modal__content{
+        .av-about-form-control-buttons{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+    }
+
+}
+.seguridad-cuenta{
+
+    btn-modal{
+        width: 192px!important;
+    }
+    .reference-mark{
+        color: black !important;
+        font-size: 0.5em;
+    }
+    .profile__button--edit {
+        background: none;
+        border: none;
+        font-weight: 600;
+        color: #107e3e;
+        cursor: pointer;
+        display: flex;
+    }
+    .profile__icon--edit {
+        background-image: url(../../images/icon-edit.svg);
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        height: 24px;
+        margin-right: 8px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    hr{
+        margin-bottom: 2.4em;
+    }
+    h5{
+        font-size: 16px;
+        font-weight: 600;
+        /* line-height: 24px; */
+    }
+
+
+    .seguridad-cuenta-azul{
+        background-color: #8ABFFF;
+        display: flex;
+        padding: 16px 24px 16px 24px;
+
+        img{
+            width: 68px;
+            height: 68px;
+        }
+    }
+    .seguridad-seccion{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 6px;
+        .title{
+            flex-basis: 100%;
+        }
+        .content{
+            flex-basis: 100%;
+
+            .seguridad-redes-sociales{
+
+            }
+        }
+        .foot{
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+            .av-about-form-control-buttons {
+                justify-content: end;
+                background-color: unset;
+                .btn-primary{
+                    width: auto;
+                }
+            }
+            .boton{flex-basis: 50%;}
+            .contenedor-google{
+                display: flex;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                h5{
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    margin-left: 0.5em;
+                }
+            }
+        }
+        .foot-perfiles-sociales{
+            align-items: unset;
+        }
+        .foot-navegador{
+            align-items: flex-end;
+        }
+    }
+    .actividad-inicio-sesion{
+        background-color: #EFF0E8;
+        padding: 11px;
+        margin-top: 20px;
+        border-radius: 10px;
+        margin-bottom: 1.5em;
+    }
+
+    .btn-cerrar-sesiones{
+        width: auto!important;
+    }
+}
+
+
+
+.input-pass{
+    width: 100%!important;
+}
+
+/*modal editar pass y crear pass*/
+.modal-seguidores,.modal-cancelar-peticion{
+    /* av-te-ma Avanis Tu Explotación Meteo Alert MODAL */
+    .btn-editar-pass{
+        width: 192px!important;
+    }
+    .av-te-ma-modal {
+        background-color: rgba(39, 48, 47, 0.6);
+        height: 100%;
+        left: 0;
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 111;
+        display: none;
+
+        &__panel {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            left: 50%;
+            max-height: 688px;
+            max-width: 608px; /* Máximo ancho */
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            border-radius: 0em 0em 1em 1em;
+        }
+
+        &__header {
+            align-items: center;
+            background-color: #EFF0E8;
+            border-radius: 16px 16px 0 0;
+            color: #101717;
+            display: flex;
+            font-size: 16px;
+            justify-content: space-between;
+            padding: 12px 16px;
+
+            &--yellow {
+                background-color: #FED257;
+            }
+
+            &--orange {
+                background-color: #FFA14D;
+            }
+
+            &--red {
+                background-color: #EE606F;
+            }
+
+            div {
+                align-items: center;
+                display: flex;
+                flex-grow: 1;
+                justify-content: center;
+            }
+        }
+
+        /* .av-icon-alert {
+          background-image: url('/o/theme-avanis/images/icons/assets-icons/...');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          content: '';
+          height: 12px;
+          margin-left: 8px;
+          width: 12px;
+        } */
+
+        &__heading {
+            color: #1B1B1B;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            margin: 0 0 0 6px;
+            text-align: center;
+        }
+
+        .av-icon-close {
+            font-size: 32px;
+            font-weight: 200;
+            margin-left: auto;
+        }
+
+        &__content {
+            background-color: #FFFFFF;
+            padding: 32px;
+            text-align: center;
+            border-radius: 0em 0em 1em 1em;
+
+        }
+
+        &__title {
+            color: #1B1B1B;
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 32px;
+
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+
+        &__footer {
+            background-color: #FFFFFF;
+            border-radius: 0 0 16px 16px;
+            display: flex;
+            justify-content: center;
+            padding: 0 24px 24px;
+            width: 100%;
+        }
+
+        &__accept-btn {
+            background-color: #053C1C;
+            border-radius: 8px;
+            border: 1px solid #053C1C;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 8px 16px;
+        }
+
+        .modal-title{
+            text-align: center!important;
+        }
+        .btn-dejar-de-seguir-modal{
+            width: 140px;
+        }
+        .left-arrow,.av-icon-close{
+            cursor: pointer;
+
+        }
+    }
+
+}
+/* Password security */
+.av-security {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 0;
+    text-align: left;
+
+    div {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+    }
+
+    span {
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #101717;
+        display: flex;
+        font-size: 12px;
+        height: 16px;
+        justify-content: center;
+        vertical-align: center;
+        width: 16px;
+    }
+
+    .av-icon-check {
+        background-color: #34c695;
+        border-color: #34c695;
+        color: #fff;
+        font-family: "icomoon" !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    }
+
+    .av-icon-check:before {
+        content: "\e908";
+    }
+}

@@ -1,0 +1,764 @@
+
+
+
+<div id="uploadFilesUser" class="form-group pt-1">
+    <!-- Contenedor de acciones -->
+    <div class="d-flex justify-content-between mt-2">
+        <div class="font-weight-bold">
+            Imag&eacute;nes
+        </div>
+
+        <div class="botonera-acciones-drag-and-drop d-none" style="display: none;">
+            <a href="#" target="_self" class="d-flex align-items-center justify-content-center p-1" id="EliminarUploadedFile">
+                <span class="c-inner" tabindex="-1" id="fehs____13">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.44091 1.33322C7.47287 1.33327 7.50511 1.33332 7.53762 1.33332H8.46238C8.49489 1.33332 8.52713 1.33327 8.55909 1.33322C9.01474 1.33254 9.41466 1.33195 9.771 1.47209C10.0826 1.59464 10.3584 1.79345 10.5732 2.0503C10.8189 2.34404 10.9448 2.72362 11.0882 3.1561C11.0983 3.18644 11.1084 3.21703 11.1187 3.24788L11.1472 3.33332H13.3333C13.7015 3.33332 14 3.6318 14 3.99999C14 4.36818 13.7015 4.66665 13.3333 4.66665H12.6667V10.8275C12.6667 11.3642 12.6667 11.8071 12.6372 12.1679C12.6066 12.5426 12.5409 12.8871 12.376 13.2106C12.1204 13.7124 11.7124 14.1203 11.2106 14.376C10.8871 14.5409 10.5426 14.6066 10.1679 14.6372C9.80709 14.6667 9.36419 14.6667 8.82755 14.6667H7.17245C6.63581 14.6667 6.19291 14.6667 5.83212 14.6372C5.45738 14.6066 5.11292 14.5409 4.78936 14.376C4.28759 14.1203 3.87965 13.7124 3.62398 13.2106C3.45912 12.8871 3.39341 12.5426 3.3628 12.1679C3.33332 11.8071 3.33332 11.3642 3.33333 10.8275L3.33333 4.66665H2.66667C2.29848 4.66665 2 4.36818 2 3.99999C2 3.6318 2.29848 3.33332 2.66667 3.33332H4.85283L4.88131 3.24788C4.89159 3.21704 4.90174 3.18644 4.9118 3.15611C5.05524 2.72362 5.18114 2.34404 5.42678 2.0503C5.64157 1.79345 5.91741 1.59464 6.229 1.47209C6.58534 1.33195 6.98526 1.33254 7.44091 1.33322ZM5.31796 4.66665C5.3283 4.66689 5.33861 4.66689 5.34889 4.66665H10.6511C10.6614 4.66689 10.6717 4.66689 10.682 4.66665H11.3333V10.8C11.3333 11.371 11.3328 11.7592 11.3083 12.0593C11.2844 12.3516 11.2411 12.501 11.188 12.6053C11.0602 12.8562 10.8562 13.0602 10.6053 13.188C10.5011 13.2411 10.3516 13.2844 10.0593 13.3083C9.75925 13.3328 9.37105 13.3333 8.8 13.3333H7.2C6.62895 13.3333 6.24075 13.3328 5.94069 13.3083C5.64842 13.2844 5.49895 13.2411 5.39468 13.188C5.1438 13.0602 4.93982 12.8562 4.81199 12.6053C4.75887 12.501 4.71558 12.3516 4.6917 12.0593C4.66719 11.7592 4.66667 11.371 4.66667 10.8V4.66665H5.31796ZM9.73958 3.33332H6.26042C6.36282 3.04052 6.40261 2.96184 6.4496 2.90565C6.5212 2.82003 6.61314 2.75376 6.71701 2.71291C6.80614 2.67786 6.92782 2.66665 7.53762 2.66665H8.46238C9.07218 2.66665 9.19386 2.67786 9.28299 2.71291C9.38686 2.75376 9.4788 2.82003 9.5504 2.90565C9.59739 2.96184 9.63718 3.04052 9.73958 3.33332ZM6.66667 5.99999C7.03486 5.99999 7.33333 6.29846 7.33333 6.66665V11.3333C7.33333 11.7015 7.03486 12 6.66667 12C6.29848 12 6 11.7015 6 11.3333V6.66665C6 6.29846 6.29848 5.99999 6.66667 5.99999ZM9.33333 5.99999C9.70152 5.99999 10 6.29846 10 6.66665V11.3333C10 11.7015 9.70152 12 9.33333 12C8.96514 12 8.66667 11.7015 8.66667 11.3333V6.66665C8.66667 6.29846 8.96514 5.99999 9.33333 5.99999Z" fill="#107E3E"/>
+                    </svg>
+                </span>
+                <span class="taglib-text font-weight-bold">Eliminar</span>
+            </a>
+
+            <a href="#" target="_self" class="d-flex align-items-center justify-content-center p-1" id="EditarUploadedFile">
+                <span class="c-inner" tabindex="-1" id="fehs____12">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.022 2.86404C12.7617 2.6037 12.3396 2.6037 12.0792 2.86405L11.2766 3.66663L12.2194 4.60944L13.022 3.80685C13.2824 3.5465 13.2824 3.12439 13.022 2.86404ZM13.9648 4.74966C14.7459 3.96861 14.7459 2.70228 13.9648 1.92124C13.1838 1.14019 11.9175 1.14019 11.1364 1.92124L9.86257 3.19508L3.37108 9.68657C3.35465 9.703 3.33841 9.71923 3.32235 9.73529C2.80904 10.2485 2.48629 10.5712 2.23361 10.9466C2.00975 11.2793 1.8297 11.6394 1.6979 12.0181C1.54913 12.4455 1.48464 12.8973 1.38207 13.6159C1.37886 13.6383 1.37561 13.6611 1.37233 13.6841L1.34069 13.9055C1.31007 14.1199 1.38548 14.3358 1.54293 14.4845C1.70037 14.6332 1.92023 14.6961 2.13251 14.6533L2.51886 14.5753C3.16459 14.4451 3.57065 14.3632 3.95415 14.2123C4.294 14.0785 4.61697 13.9053 4.91643 13.6962C5.25436 13.4603 5.54721 13.1674 6.01294 12.7016C6.02746 12.687 6.04216 12.6723 6.05702 12.6575L13.9648 4.74966ZM11.2766 5.55225L10.3338 4.60944L4.31389 10.6294C3.73628 11.207 3.51167 11.4356 3.33979 11.691C3.17989 11.9287 3.05128 12.1859 2.95714 12.4564C2.8932 12.64 2.85044 12.8342 2.79849 13.1561C3.11126 13.0885 3.29367 13.0394 3.4658 12.9716C3.70855 12.8761 3.93925 12.7523 4.15315 12.603C4.38305 12.4425 4.59027 12.2386 5.11421 11.7147L11.2766 5.55225Z" fill="#107E3E"/>
+                    </svg>
+                </span>
+                <span class="taglib-text font-weight-bold">Editar</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenedor de área de subida -->
+    <aui:input
+            type="file"
+            id="attachments"
+            name="attachments"
+            multiple="true"
+            label=""
+            max="4"
+            cssClass="position-absolute w-100 h-100"
+            accept="image/png, image/jpeg, image/jpg, application/pdf, video/mp4"
+            style="opacity: 0; top: 0; left: 0; cursor: pointer;"
+    />
+    <div class="upload-area position-relative d-flex align-items-center justify-content-center flex-column my-2" id="uploadArea" onclick="document.getElementById('<portlet:namespace />attachments').click();">
+        <div id="dragContainerItems" class="">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M36 4C37.1046 4 38 4.89543 38 6V10H42C43.1046 10 44 10.8954 44 12C44 13.1046 43.1046 14 42 14H38V18C38 19.1046 37.1046 20 36 20C34.8954 20 34 19.1046 34 18V14H30C28.8954 14 28 13.1046 28 12C28 10.8954 28.8954 10 30 10H34V6C34 4.89543 34.8954 4 36 4ZM14.3229 6H22C23.1046 6 24 6.89543 24 8C24 9.10457 23.1046 10 22 10H14.4C13.2469 10 12.5024 10.0016 11.9357 10.0479C11.3924 10.0922 11.1909 10.1676 11.092 10.218C10.7157 10.4097 10.4097 10.7157 10.218 11.092C10.1676 11.1909 10.0923 11.3923 10.0479 11.9357C10.0016 12.5023 10 13.2469 10 14.4V31.7559L14.6733 27.0491L14.7278 26.9951C15.4707 26.2584 16.1118 25.6226 16.6829 25.1416C17.2859 24.6337 17.9403 24.1837 18.7436 23.9242C19.9428 23.5368 21.2335 23.5368 22.4327 23.9242C23.236 24.1837 23.8904 24.6337 24.4934 25.1416C25.0645 25.6226 25.7057 26.2584 26.4485 26.9951L28.5306 29.0599C29.0134 28.5868 29.4508 28.1717 29.8538 27.8329C30.4675 27.3167 31.1343 26.8598 31.9528 26.6016C33.1726 26.2168 34.4835 26.2319 35.6941 26.6446C36.5065 26.9216 37.1626 27.3937 37.7643 27.9238C37.8416 27.9919 37.9201 28.063 38 28.1368V26C38 24.8954 38.8954 24 40 24C41.1046 24 42 24.8954 42 26V33.6771C42.0001 34.7314 42.0001 35.6409 41.9389 36.3901C41.8743 37.1807 41.7316 37.9672 41.3461 38.7239C40.7708 39.8529 39.8529 40.7708 38.724 41.346C38.0491 41.6899 37.353 41.8397 36.6516 41.9144C35.8454 42.0001 34.8562 42.0001 33.703 42L14.3229 42C13.2686 42 12.3591 42.0001 11.61 41.9389C10.8193 41.8743 10.0328 41.7316 9.27607 41.346C8.1471 40.7708 7.22921 39.8529 6.65397 38.7239C6.32752 38.0833 6.17608 37.4239 6.09763 36.7586C5.99982 35.929 5.99991 34.9076 6.00001 33.7149L6.00001 14.3229C5.99997 13.2686 5.99994 12.3591 6.06115 11.6099C6.12575 10.8193 6.26839 10.0328 6.65397 9.27606C7.22921 8.14708 8.1471 7.2292 9.27607 6.65396C10.0328 6.26837 10.8193 6.12574 11.61 6.06114C12.3591 5.99993 13.2686 5.99996 14.3229 6ZM38 33.8198L36.8878 32.6905C36.0774 31.849 35.5525 31.3062 35.1202 30.9252C34.7051 30.5596 34.5087 30.4665 34.4033 30.4306C33.9998 30.293 33.5628 30.288 33.1562 30.4163C33.0501 30.4498 32.8515 30.5383 32.4282 30.8943C32.1326 31.1428 31.7938 31.4632 31.3527 31.895L37.0557 37.6987C37.3645 37.5068 37.616 37.2338 37.782 36.908C37.8324 36.8091 37.9078 36.6077 37.9522 36.0643C37.9955 35.5345 37.9996 34.8492 38 33.8198ZM31.7438 38L27.1119 33.2863L23.6864 29.8894C22.8737 29.0835 22.3482 28.5645 21.9166 28.201C21.5031 27.8528 21.3084 27.7645 21.203 27.7305C20.8033 27.6014 20.373 27.6014 19.9733 27.7305C19.8679 27.7645 19.6732 27.8528 19.2597 28.201C18.8291 28.5637 18.305 29.0811 17.4954 29.8839L10.3301 37.1006C10.5201 37.3889 10.7822 37.6241 11.092 37.782C11.1909 37.8324 11.3924 37.9078 11.9357 37.9521C12.5024 37.9984 13.2469 38 14.4 38H31.7438Z" fill="#101717"/>
+            </svg>
+            <div class="pt-3" style="font-weight: 400;">
+                <span style="color: #198754; font-weight: bold; cursor: pointer;">Haz clic</span> para a&ntilde;adir tus fotos o arr&aacute;stralas aqu&iacute;
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de archivos adjuntos existentes -->
+    <div class="<%= (existingAttachmentsFileEntries.size() == 0) ? "d-none" : StringPool.BLANK %>" id="<portlet:namespace />fileAttachments">
+        <liferay-ui:search-container
+                emptyResultsMessage="this-message-does-not-have-file-attachments"
+                headerNames="file-name,action"
+                id="messageAttachments"
+                total="<%= existingAttachmentsFileEntries.size() %>">
+
+            <liferay-ui:search-container-results results="<%= existingAttachmentsFileEntries %>" />
+
+            <liferay-ui:search-container-row
+                    className="com.liferay.portal.kernel.repository.model.FileEntry"
+                    escapedModel="<%= true %>"
+                    keyProperty="fileEntryId"
+                    modelVar="fileEntry">
+
+                <liferay-ui:search-container-column-text
+                        href='<%= PortletFileRepositoryUtil.getDownloadPortletFileEntryURL(themeDisplay, fileEntry, "status=" + WorkflowConstants.STATUS_APPROVED) %>'
+                        name="file-name"
+                        value="<%= fileEntry.getTitle() %>"
+                />
+
+                <liferay-ui:search-container-column-text cssClass="entry-action" name="action">
+                    <portlet:actionURL name="deleteAttachment" var="deleteURL">
+                        <portlet:param name="cmd" value="deleteAttachment" />
+                        <portlet:param name="messageId" value="${message.messageId}" />
+                        <portlet:param name="fileName" value="<%= HtmlUtil.unescape(fileEntry.getTitle()) %>" />
+                    </portlet:actionURL>
+
+                    <liferay-ui:icon-menu
+                            direction="left-side"
+                            icon="<%= StringPool.BLANK %>"
+                            markupView="lexicon"
+                            message="actions">
+
+                        <div class="delete-attachment" data-rowid="<%= fileEntry.getFileEntryId() %>" data-url="<%= deleteURL.toString() %>">
+                            <%--<liferay-ui:icon-delete
+                                    cssClass="deleteAttachmentButtonUI"
+                                    trash="<%= trashHelper.isTrashEnabled(scopeGroupId) %>"
+                                    url="javascript:void(0);"
+                            />--%>
+                            <a href="#" class="deleteAttachmentButtonUI dropdown-item lfr-icon-item taglib-icon">
+                                <svg width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.44091 1.33322C7.47287 1.33327 7.50511 1.33332 7.53762 1.33332H8.46238C8.49489 1.33332 8.52713 1.33327 8.55909 1.33322C9.01474 1.33254 9.41466 1.33195 9.771 1.47209C10.0826 1.59464 10.3584 1.79345 10.5732 2.0503C10.8189 2.34404 10.9448 2.72362 11.0882 3.1561C11.0983 3.18644 11.1084 3.21703 11.1187 3.24788L11.1472 3.33332H13.3333C13.7015 3.33332 14 3.6318 14 3.99999C14 4.36818 13.7015 4.66665 13.3333 4.66665H12.6667V10.8275C12.6667 11.3642 12.6667 11.8071 12.6372 12.1679C12.6066 12.5426 12.5409 12.8871 12.376 13.2106C12.1204 13.7124 11.7124 14.1203 11.2106 14.376C10.8871 14.5409 10.5426 14.6066 10.1679 14.6372C9.80709 14.6667 9.36419 14.6667 8.82755 14.6667H7.17245C6.63581 14.6667 6.19291 14.6667 5.83212 14.6372C5.45738 14.6066 5.11292 14.5409 4.78936 14.376C4.28759 14.1203 3.87965 13.7124 3.62398 13.2106C3.45912 12.8871 3.39341 12.5426 3.3628 12.1679C3.33332 11.8071 3.33332 11.3642 3.33333 10.8275L3.33333 4.66665H2.66667C2.29848 4.66665 2 4.36818 2 3.99999C2 3.6318 2.29848 3.33332 2.66667 3.33332H4.85283L4.88131 3.24788C4.89159 3.21704 4.90174 3.18644 4.9118 3.15611C5.05524 2.72362 5.18114 2.34404 5.42678 2.0503C5.64157 1.79345 5.91741 1.59464 6.229 1.47209C6.58534 1.33195 6.98526 1.33254 7.44091 1.33322ZM5.31796 4.66665C5.3283 4.66689 5.33861 4.66689 5.34889 4.66665H10.6511C10.6614 4.66689 10.6717 4.66689 10.682 4.66665H11.3333V10.8C11.3333 11.371 11.3328 11.7592 11.3083 12.0593C11.2844 12.3516 11.2411 12.501 11.188 12.6053C11.0602 12.8562 10.8562 13.0602 10.6053 13.188C10.5011 13.2411 10.3516 13.2844 10.0593 13.3083C9.75925 13.3328 9.37105 13.3333 8.8 13.3333H7.2C6.62895 13.3333 6.24075 13.3328 5.94069 13.3083C5.64842 13.2844 5.49895 13.2411 5.39468 13.188C5.1438 13.0602 4.93982 12.8562 4.81199 12.6053C4.75887 12.501 4.71558 12.3516 4.6917 12.0593C4.66719 11.7592 4.66667 11.371 4.66667 10.8V4.66665H5.31796ZM9.73958 3.33332H6.26042C6.36282 3.04052 6.40261 2.96184 6.4496 2.90565C6.5212 2.82003 6.61314 2.75376 6.71701 2.71291C6.80614 2.67786 6.92782 2.66665 7.53762 2.66665H8.46238C9.07218 2.66665 9.19386 2.67786 9.28299 2.71291C9.38686 2.75376 9.4788 2.82003 9.5504 2.90565C9.59739 2.96184 9.63718 3.04052 9.73958 3.33332ZM6.66667 5.99999C7.03486 5.99999 7.33333 6.29846 7.33333 6.66665V11.3333C7.33333 11.7015 7.03486 12 6.66667 12C6.29848 12 6 11.7015 6 11.3333V6.66665C6 6.29846 6.29848 5.99999 6.66667 5.99999ZM9.33333 5.99999C9.70152 5.99999 10 6.29846 10 6.66665V11.3333C10 11.7015 9.70152 12 9.33333 12C8.96514 12 8.66667 11.7015 8.66667 11.3333V6.66665C8.66667 6.29846 8.96514 5.99999 9.33333 5.99999Z" fill="#107E3E"></path>
+                            </svg> Eliminar</a>
+                        </div>
+                    </liferay-ui:icon-menu>
+                </liferay-ui:search-container-column-text>
+            </liferay-ui:search-container-row>
+
+            <liferay-ui:search-iterator markupView="lexicon" paginate="<%= false %>" />
+        </liferay-ui:search-container>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/piexifjs"></script>
+<script type="text/javascript">
+    function clickAttachmentFiles() {
+        /*const attachmentInput = document.getElementById('<portlet:namespace />attachments');
+        if (attachmentInput) {
+            attachmentInput.click();
+            console.log('clickAttachmentFiles');
+        }*/
+        $('#uploadArea').click();
+    }
+
+    const botoneraAccionesDragAndDrop = $('.botonera-acciones-drag-and-drop');
+    const eliminarBtn = $('#EliminarUploadedFile');
+    const editarBtn = $('#EditarUploadedFile');
+    const dragContainer = $('#dragContainerItems');
+    const uploadArea = $('#uploadArea');
+    const attachmentInput = $('#<portlet:namespace />attachments');
+    const overlay = $('<div></div>').attr('id', 'dragOverlay').css({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 5,
+        background: 'transparent',
+    }).appendTo(uploadArea);
+
+    const fileList = $('<div></div>')
+        .attr('id', 'fileList')
+        .css({
+            marginTop: '10px',
+            paddingTop: '10px',
+            display: 'none',
+        })
+        .insertAfter(uploadArea);
+
+    let images = []; //imágenes (nombre y base64)
+    let files = [];
+    let allFiles = [];
+    let preventChangeTrigger = false;
+
+    eliminarBtn.on('click', function (e) {
+        e.preventDefault();
+        images = [];
+        files = [];
+        allFiles = [];
+        updateFileList();
+        updateUploadArea();
+        toggleDragContainer();
+        updateInputFiles();
+    });
+
+    editarBtn.on('click', function (e) {
+        e.preventDefault();
+        uploadArea.find('.file-item button').css('display', 'block');
+    });
+
+    function arrangeGrid(items) {
+        const totalItems = items.length;
+        if (totalItems === 1) {
+            uploadArea.css('grid-template-columns', '1fr');
+        } else if (totalItems === 2) {
+            uploadArea.css('grid-template-columns', '1fr 1fr');
+        } else if (totalItems === 3) {
+            uploadArea.css('grid-template-columns', '1fr 1fr');
+            $(items[2]).css('grid-column', 'span 2');
+        } else if (totalItems >= 4) {
+            uploadArea.css('grid-template-columns', '1fr 1fr');
+        }
+    }
+
+    function updateUploadArea() {
+        uploadArea.children().not('#dragContainerItems, #dragOverlay, #fileList').remove();
+
+        images.forEach(function (img) {
+            const fileItem = $('<div></div>')
+                .addClass('file-item')
+                .css('background-image', 'url(' + img.base64 + ')')
+                .css('position', 'relative');
+
+            const deleteBtn = $('<button></button>')
+                .text('Eliminar')
+                .addClass('btn btn-sm btn-danger delete-btn-image d-none')
+                .css('zIndex', 11)
+                .css('display', 'none')
+                .on('click', function (e) {
+                    e.stopPropagation();
+                    removeFile(img.file);
+                });
+
+            fileItem.append(deleteBtn);
+            uploadArea.append(fileItem);
+        });
+
+        const totalItems = uploadArea.find('.file-item').length;
+        if (totalItems > 0) {
+            botoneraAccionesDragAndDrop.css('display', 'flex');
+            uploadArea[0].style.cssText = 'display: grid !important; grid-template-columns: repeat(2, 1fr) !important; padding: 0rem !important; position: relative;';
+        } else {
+            botoneraAccionesDragAndDrop.css('display', 'none');
+            uploadArea[0].style.cssText = 'display: flex !important; padding: 2rem !important; position: relative;';
+        }
+
+        arrangeGrid(uploadArea.find('.file-item').toArray());
+    }
+
+    function updateFileList() {
+        fileList.empty();
+
+        images.forEach(function (img) {
+            const fileItem = $('<div></div>')
+                .addClass('file-item-non-image')
+                .text(img.name);
+
+            const deleteBtn = $('<a></a>')
+                .text('Eliminar')
+                .addClass('delete-btn-file')
+                .on('click', function () {
+                    removeFile(img.file);
+                });
+
+            const icon = $(`<svg width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.44091 1.33322C7.47287 1.33327 7.50511 1.33332 7.53762 1.33332H8.46238C8.49489 1.33332 8.52713 1.33327 8.55909 1.33322C9.01474 1.33254 9.41466 1.33195 9.771 1.47209C10.0826 1.59464 10.3584 1.79345 10.5732 2.0503C10.8189 2.34404 10.9448 2.72362 11.0882 3.1561C11.0983 3.18644 11.1084 3.21703 11.1187 3.24788L11.1472 3.33332H13.3333C13.7015 3.33332 14 3.6318 14 3.99999C14 4.36818 13.7015 4.66665 13.3333 4.66665H12.6667V10.8275C12.6667 11.3642 12.6667 11.8071 12.6372 12.1679C12.6066 12.5426 12.5409 12.8871 12.376 13.2106C12.1204 13.7124 11.7124 14.1203 11.2106 14.376C10.8871 14.5409 10.5426 14.6066 10.1679 14.6372C9.80709 14.6667 9.36419 14.6667 8.82755 14.6667H7.17245C6.63581 14.6667 6.19291 14.6667 5.83212 14.6372C5.45738 14.6066 5.11292 14.5409 4.78936 14.376C4.28759 14.1203 3.87965 13.7124 3.62398 13.2106C3.45912 12.8871 3.39341 12.5426 3.3628 12.1679C3.33332 11.8071 3.33332 11.3642 3.33333 10.8275L3.33333 4.66665H2.66667C2.29848 4.66665 2 4.36818 2 3.99999C2 3.6318 2.29848 3.33332 2.66667 3.33332H4.85283L4.88131 3.24788C4.89159 3.21704 4.90174 3.18644 4.9118 3.15611C5.05524 2.72362 5.18114 2.34404 5.42678 2.0503C5.64157 1.79345 5.91741 1.59464 6.229 1.47209C6.58534 1.33195 6.98526 1.33254 7.44091 1.33322ZM5.31796 4.66665C5.3283 4.66689 5.33861 4.66689 5.34889 4.66665H10.6511C10.6614 4.66689 10.6717 4.66689 10.682 4.66665H11.3333V10.8C11.3333 11.371 11.3328 11.7592 11.3083 12.0593C11.2844 12.3516 11.2411 12.501 11.188 12.6053C11.0602 12.8562 10.8562 13.0602 10.6053 13.188C10.5011 13.2411 10.3516 13.2844 10.0593 13.3083C9.75925 13.3328 9.37105 13.3333 8.8 13.3333H7.2C6.62895 13.3333 6.24075 13.3328 5.94069 13.3083C5.64842 13.2844 5.49895 13.2411 5.39468 13.188C5.1438 13.0602 4.93982 12.8562 4.81199 12.6053C4.75887 12.501 4.71558 12.3516 4.6917 12.0593C4.66719 11.7592 4.66667 11.371 4.66667 10.8V4.66665H5.31796ZM9.73958 3.33332H6.26042C6.36282 3.04052 6.40261 2.96184 6.4496 2.90565C6.5212 2.82003 6.61314 2.75376 6.71701 2.71291C6.80614 2.67786 6.92782 2.66665 7.53762 2.66665H8.46238C9.07218 2.66665 9.19386 2.67786 9.28299 2.71291C9.38686 2.75376 9.4788 2.82003 9.5504 2.90565C9.59739 2.96184 9.63718 3.04052 9.73958 3.33332ZM6.66667 5.99999C7.03486 5.99999 7.33333 6.29846 7.33333 6.66665V11.3333C7.33333 11.7015 7.03486 12 6.66667 12C6.29848 12 6 11.7015 6 11.3333V6.66665C6 6.29846 6.29848 5.99999 6.66667 5.99999ZM9.33333 5.99999C9.70152 5.99999 10 6.29846 10 6.66665V11.3333C10 11.7015 9.70152 12 9.33333 12C8.96514 12 8.66667 11.7015 8.66667 11.3333V6.66665C8.66667 6.29846 8.96514 5.99999 9.33333 5.99999Z" fill="#107E3E"></path>
+                        </svg>`);
+
+            fileItem.append(deleteBtn);
+            deleteBtn.append(icon);
+            fileList.append(fileItem);
+        });
+
+        files.forEach(function (file) {
+            const fileItem = $('<div></div>')
+                .addClass('file-item-non-image')
+                .text(file.name);
+
+            const deleteBtn = $('<a></a>')
+                .text('Eliminar')
+                .addClass('delete-btn-file')
+                .on('click', function () {
+                    removeFile(file);
+                });
+
+            const icon = $(`<svg width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.44091 1.33322C7.47287 1.33327 7.50511 1.33332 7.53762 1.33332H8.46238C8.49489 1.33332 8.52713 1.33327 8.55909 1.33322C9.01474 1.33254 9.41466 1.33195 9.771 1.47209C10.0826 1.59464 10.3584 1.79345 10.5732 2.0503C10.8189 2.34404 10.9448 2.72362 11.0882 3.1561C11.0983 3.18644 11.1084 3.21703 11.1187 3.24788L11.1472 3.33332H13.3333C13.7015 3.33332 14 3.6318 14 3.99999C14 4.36818 13.7015 4.66665 13.3333 4.66665H12.6667V10.8275C12.6667 11.3642 12.6667 11.8071 12.6372 12.1679C12.6066 12.5426 12.5409 12.8871 12.376 13.2106C12.1204 13.7124 11.7124 14.1203 11.2106 14.376C10.8871 14.5409 10.5426 14.6066 10.1679 14.6372C9.80709 14.6667 9.36419 14.6667 8.82755 14.6667H7.17245C6.63581 14.6667 6.19291 14.6667 5.83212 14.6372C5.45738 14.6066 5.11292 14.5409 4.78936 14.376C4.28759 14.1203 3.87965 13.7124 3.62398 13.2106C3.45912 12.8871 3.39341 12.5426 3.3628 12.1679C3.33332 11.8071 3.33332 11.3642 3.33333 10.8275L3.33333 4.66665H2.66667C2.29848 4.66665 2 4.36818 2 3.99999C2 3.6318 2.29848 3.33332 2.66667 3.33332H4.85283L4.88131 3.24788C4.89159 3.21704 4.90174 3.18644 4.9118 3.15611C5.05524 2.72362 5.18114 2.34404 5.42678 2.0503C5.64157 1.79345 5.91741 1.59464 6.229 1.47209C6.58534 1.33195 6.98526 1.33254 7.44091 1.33322ZM5.31796 4.66665C5.3283 4.66689 5.33861 4.66689 5.34889 4.66665H10.6511C10.6614 4.66689 10.6717 4.66689 10.682 4.66665H11.3333V10.8C11.3333 11.371 11.3328 11.7592 11.3083 12.0593C11.2844 12.3516 11.2411 12.501 11.188 12.6053C11.0602 12.8562 10.8562 13.0602 10.6053 13.188C10.5011 13.2411 10.3516 13.2844 10.0593 13.3083C9.75925 13.3328 9.37105 13.3333 8.8 13.3333H7.2C6.62895 13.3333 6.24075 13.3328 5.94069 13.3083C5.64842 13.2844 5.49895 13.2411 5.39468 13.188C5.1438 13.0602 4.93982 12.8562 4.81199 12.6053C4.75887 12.501 4.71558 12.3516 4.6917 12.0593C4.66719 11.7592 4.66667 11.371 4.66667 10.8V4.66665H5.31796ZM9.73958 3.33332H6.26042C6.36282 3.04052 6.40261 2.96184 6.4496 2.90565C6.5212 2.82003 6.61314 2.75376 6.71701 2.71291C6.80614 2.67786 6.92782 2.66665 7.53762 2.66665H8.46238C9.07218 2.66665 9.19386 2.67786 9.28299 2.71291C9.38686 2.75376 9.4788 2.82003 9.5504 2.90565C9.59739 2.96184 9.63718 3.04052 9.73958 3.33332ZM6.66667 5.99999C7.03486 5.99999 7.33333 6.29846 7.33333 6.66665V11.3333C7.33333 11.7015 7.03486 12 6.66667 12C6.29848 12 6 11.7015 6 11.3333V6.66665C6 6.29846 6.29848 5.99999 6.66667 5.99999ZM9.33333 5.99999C9.70152 5.99999 10 6.29846 10 6.66665V11.3333C10 11.7015 9.70152 12 9.33333 12C8.96514 12 8.66667 11.7015 8.66667 11.3333V6.66665C8.66667 6.29846 8.96514 5.99999 9.33333 5.99999Z" fill="#107E3E"></path>
+                        </svg>`);
+
+            fileItem.append(deleteBtn);
+            deleteBtn.append(icon);
+            fileList.append(fileItem);
+        });
+
+        const totalItems = images.length + files.length;
+        fileList.css('display', totalItems > 0 ? 'flex' : 'none');
+    }
+
+    function removeFile(file) {
+        allFiles = allFiles.filter(f => f !== file);
+
+        if (file.type.startsWith('image/')) {
+            images = images.filter(img => img.file !== file);
+        } else {
+            files = files.filter(f => f !== file);
+        }
+
+        updateUploadArea();
+        updateFileList();
+        toggleDragContainer();
+        updateInputFiles();
+    }
+
+    function toggleDragContainer() {
+        const hasFiles = images.length > 0 || files.length > 0;
+        dragContainer.css('display', images.length > 0 ? 'none' : 'block');
+        overlay.css('display', hasFiles ? 'block' : 'none');
+    }
+
+    function updateInputFiles() {
+        const dataTransfer = new DataTransfer();
+        allFiles.forEach(file => dataTransfer.items.add(file));
+        const attachmentInputElement = document.getElementById('<portlet:namespace />attachments');
+        if (attachmentInputElement) {
+            attachmentInputElement.files = dataTransfer.files;
+            console.log('Updated input.files:', attachmentInputElement.files);
+        }
+    }
+    function dataURLtoFile(dataurl, filename) {
+        var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new File([u8arr], filename, {type:mime});
+    }
+
+    function readImageFile(file) {
+        return new Promise((resolve, reject) => {
+            console.log('Archivo a subir:', file);
+            const reader = new FileReader();
+
+
+
+            reader.onload = function (event) {
+                if (event.target.error) {
+                    console.error('Error al leer el archivo:', file.name, event.target.error);
+                    reject(event.target.error);
+                    return;
+                }
+
+                const mimeType = file.type.toLowerCase();
+                let dataUrl = event.target.result;
+                let cleanFile = file;
+
+                if (mimeType === "image/jpeg" || mimeType === "image/jpg") {
+                    try {
+                        dataUrl = piexif.remove(dataUrl);
+                        cleanFile = dataURLtoFile(dataUrl, file.name);
+                    } catch (ex) {
+                        console.warn("No se pudo limpiar EXIF de JPG:", ex);
+                    }
+                }
+
+                if (mimeType === "image/png") {
+                    try {
+                        const base64Data = dataUrl.split(',')[1];
+                        const binary = atob(base64Data);
+                        const bytes = new Uint8Array(binary.length);
+                        for (let i = 0; i < binary.length; i++) {
+                            bytes[i] = binary.charCodeAt(i);
+                        }
+
+                        const cleanedBytes = removePngTextChunks(bytes);
+                        const cleanedBlob = new Blob([cleanedBytes], { type: "image/png" });
+                        cleanFile = new File([cleanedBlob], file.name, { type: "image/png" });
+                        blobToDataURL(cleanedBlob).then((result) => {
+                            resolve({
+                                name: file.name,
+                                base64: result,
+                                file: cleanFile
+                            });
+                        }).catch(reject);
+                        return;
+                    } catch (err) {
+                        console.warn("Error al limpiar metadatos PNG:", err);
+                    }
+                }
+
+                if (mimeType === "image/webp") {
+                    try {
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement("canvas");
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            const ctx = canvas.getContext("2d");
+                            ctx.drawImage(img, 0, 0);
+
+                            const cleanDataUrl = canvas.toDataURL("image/png");
+                            const cleanFile = dataURLtoFile(cleanDataUrl, file.name.replace(/\.webp$/, ".png"));
+                            resolve({
+                                name: cleanFile.name,
+                                base64: cleanDataUrl,
+                                file: cleanFile
+                            });
+                        };
+                        img.onerror = reject;
+                        img.src = dataUrl;
+                    } catch (err) {
+                        console.warn("Error al limpiar WebP:", err);
+                        reject(err);
+                    }
+                    return;
+                }
+
+                resolve({
+                    name: file.name,
+                    base64: dataUrl,
+                    file: cleanFile
+                });
+            };
+
+            reader.onerror = function (event) {
+                console.error('FileReader error for file:', file.name, event);
+                reject(event.target.error);
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+
+    attachmentInput.off('change').on('change', async function (e) {
+        preventChangeTrigger = true;
+        console.log('Processing new change event.');
+
+        const uploadedFiles = Array.from(e.target.files);
+        console.log('Files selected via click:', uploadedFiles);
+
+        const imageFiles = [];
+        const nonImageFiles = [];
+
+        uploadedFiles.forEach(file => {
+            const isDuplicate = allFiles.some(existingFile =>
+                existingFile.name === file.name &&
+                existingFile.size === file.size &&
+                existingFile.type === file.type
+            );
+            if (!isDuplicate) {
+                if (file.type.startsWith('image/')) {
+                    imageFiles.push(file);
+                } else if (['application/pdf', 'video/mp4'].includes(file.type)) {
+                    nonImageFiles.push(file);
+                }
+            } else {
+                console.log('Duplicate file skipped:', file.name);
+            }
+        });
+
+        try {
+            // Procesa imágenes y añade SOLO el archivo limpio a allFiles
+            const imagePromises = imageFiles.map(file => readImageFile(file));
+            const imageResults = await Promise.all(imagePromises);
+
+            imageResults.forEach(imgObj => {
+                images.push(imgObj);
+                allFiles.push(imgObj.file); // El archivo limpio SIN EXIF
+            });
+
+            nonImageFiles.forEach(file => {
+                files.push({
+                    name: file.name,
+                    type: file.type,
+                    file: file
+                });
+                allFiles.push(file);
+            });
+
+            updateUploadArea();
+            updateFileList();
+            toggleDragContainer();
+            updateInputFiles();
+
+            console.log('Finished processing change event.');
+        } catch (error) {
+            console.error('Error processing files:', error);
+        }
+    });
+
+    dragContainer.on('dragover', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragContainer.addClass('dragging');
+    });
+
+    dragContainer.on('dragleave', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragContainer.removeClass('dragging');
+    });
+
+    dragContainer.on('drop', async function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragContainer.removeClass('dragging');
+
+        const uploadedFiles = Array.from(e.originalEvent.dataTransfer.files);
+        console.log('Files dropped:', uploadedFiles);
+
+        const imageFiles = [];
+        const nonImageFiles = [];
+
+        uploadedFiles.forEach(file => {
+            const isDuplicate = allFiles.some(existingFile =>
+                existingFile.name === file.name &&
+                existingFile.size === file.size &&
+                existingFile.type === file.type
+            );
+            if (!isDuplicate) {
+                if (file.type.startsWith('image/')) {
+                    imageFiles.push(file);
+                } else if (['application/pdf', 'video/mp4'].includes(file.type)) {
+                    nonImageFiles.push(file);
+                }
+            } else {
+                console.log('Duplicate file skipped:', file.name);
+            }
+        });
+
+        try {
+            const imagePromises = imageFiles.map(file => readImageFile(file));
+            const imageResults = await Promise.all(imagePromises);
+
+            imageResults.forEach(imgObj => {
+                images.push(imgObj);
+                allFiles.push(imgObj.file); // <-- SOLO el archivo limpio SIN EXIF
+                console.log('Added file to allFiles:', imgObj.file.name);
+            });
+            console.log('Images added:', imageFiles.map(f => f.name));
+
+            nonImageFiles.forEach(file => {
+                files.push({
+                    name: file.name,
+                    type: file.type,
+                    file: file
+                });
+                allFiles.push(file);
+                console.log('Added file to allFiles:', file.name);
+                console.log('Non-image file added:', file.name);
+            });
+
+            updateUploadArea();
+            updateFileList();
+            toggleDragContainer();
+
+            preventChangeTrigger = true;
+            updateInputFiles();
+        } catch (error) {
+            console.error('Error processing files:', error);
+        }
+    });
+
+    toggleDragContainer();
+
+    // Logica eliminar files adjuntos
+    var archivosAEliminar = [];
+
+    $('.deleteAttachmentButtonUI').on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        var select = $(this);
+        var parentDiv = select.closest('.delete-attachment');
+        var fileEntryId = parentDiv.data('rowid');
+        var deleteUrl = parentDiv.data('url');
+
+        var existe = archivosAEliminar.some(function(archivo) {
+            return archivo.fileEntryId === fileEntryId;
+        });
+
+        if (existe) {
+            alert('Este archivo ya está marcado para eliminación.');
+            return;
+        }
+
+        archivosAEliminar.push({
+            fileEntryId: fileEntryId,
+            deleteUrl: deleteUrl,
+            elemento: parentDiv.closest('.search-container-row')
+        });
+
+        select.addClass('eliminado');
+        select.css('pointer-events', 'none').css('cursor', 'not-allowed').css('opacity', '0.5');
+    });
+
+    //Funcion global especifica por @include con jsp en diferentes lineas
+    window.submitPublicar = function() {
+        var $boton = $('.submitPublicar');
+        if (archivosAEliminar.length === 0) {
+            console.log('No hay archivos para eliminar. Procediendo con la publicaci&oacute;n.');
+            return;
+        }
+
+        $boton.prop('disabled', true).text('Publicando...');
+
+        archivosAEliminar.forEach(function(archivo) {
+            $.ajax({
+                url: archivo.deleteUrl,
+                type: 'POST',
+                data: {
+                    fileEntryId: archivo.fileEntryId,
+                },
+                success: function(response) {
+                    archivo.elemento.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                    console.log('Archivo eliminado correctamente: ID ' + archivo.fileEntryId);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error al eliminar el archivo ID ' + archivo.fileEntryId + ':', error);
+                    console.error('Hubo un error al eliminar uno de los archivos. Por favor, intenta de nuevo.');
+                    $boton.prop('disabled', false).text('Publicar');
+                }
+            });
+        });
+
+        archivosAEliminar = [];
+    };
+
+    function blobToDataURL(blob) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+        });
+    }
+
+    function removePngTextChunks(bytes) {
+        const chunksToRemove = ['tEXt', 'iTXt', 'zTXt', 'eXIf'];
+        const output = [];
+
+        let offset = 8; // PNG header
+        output.push(...bytes.slice(0, 8));
+
+        while (offset < bytes.length) {
+            const length = (
+                (bytes[offset] << 24) |
+                (bytes[offset + 1] << 16) |
+                (bytes[offset + 2] << 8) |
+                bytes[offset + 3]
+            ) >>> 0;
+
+            const type = String.fromCharCode(
+                bytes[offset + 4],
+                bytes[offset + 5],
+                bytes[offset + 6],
+                bytes[offset + 7]
+            );
+
+            const chunkTotalLength = 12 + length;
+
+            if (!chunksToRemove.includes(type)) {
+                output.push(...bytes.slice(offset, offset + chunkTotalLength));
+            }
+
+            offset += chunkTotalLength;
+        }
+
+        return new Uint8Array(output);
+    }
+
+
+</script>
+
+
+<style>
+    #<portlet:namespace/>messageAttachmentsSearchContainer{
+        a{
+            font-size: 15px;
+        }
+
+        .deleteAttachmentButtonUI{
+            cursor: pointer;
+            /* background-color: #dc3545; */
+            /* border-color: #dc3545; */
+            color: #107E3E;
+            text-align: left;
+            padding: 0;
+            font-weight: 700;
+            display: flex;
+        }
+
+        .deleteAttachmentButtonUI:hover{
+            background-color: #f8f9fa00;
+            color: #122C1F;
+        }
+    }
+
+    /*.delete-btn-image{
+        cursor: pointer;
+        color: #107E3E;
+        text-align: left;
+    }*/
+
+    .delete-btn-file{
+        cursor: pointer;
+        color: #107E3E;
+        text-align: left;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .delete-btn-file:hover{
+        background-color: #f8f9fa00;
+        color: #122C1F;
+    }
+
+    #uploadFilesUser a:hover span {
+        filter: brightness(0) !important;
+        transition: all 0.15s;
+    }
+
+    .upload-area {
+        border: 2px dashed #dee2e6;
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        /*height: 234px;*/
+    }
+
+    .upload-area:hover, .upload-area.dragging {
+        border-color: #198754;
+        background-color: rgba(25, 135, 84, 0.05);
+    }
+
+    .upload-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+        color: #6c757d;
+    }
+
+    .upload-area span {
+        color: #198754;
+        font-weight: bold;
+    }
+
+
+    .file-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+    }
+
+    .file-item {
+        width: 100%;
+        padding-top: 100%; /* Mantener proporción cuadrada */
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-more-btn {
+        margin-top: 10px;
+    }
+
+    #fileList{
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    .file-item-non-image{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    @media (max-width: 576px) {
+        .upload-area {
+            /*height: 170px;*/
+        }
+    }
+
+</style>
+

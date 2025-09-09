@@ -1,0 +1,6 @@
+Bundle-Name: avanis-carga-masiva
+Bundle-SymbolicName: avanis.carga.masiva
+Bundle-Version: 1.0.0
+Export-Package: avanis.carga.masiva.constants
+Import-Package: *;resolution:=optional
+-fixupmessages "Classes found in the wrong directory"; restrict:=error; is:=warning

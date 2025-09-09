@@ -1,0 +1,85 @@
+
+.dialog-iframe-popup {
+  .columns-max { scrollbar-width: none; margin-bottom: 24px; }
+  .avanis-compartir-widget-portlet {
+    .ayudas-widget-popup, .eventos-widget-popup { width: 100%;
+      .div_left { float: left; margin-right: 16px;
+        img { max-width: 70px;
+          @media (min-width: 550px) {
+            max-width: 108px;
+          }
+        }
+      }
+      .av-ac-nd__right { width: auto; gap: 8px; font-family: Inter; }
+      .av-ac-nd__date { color: #101717;
+        svg {
+          position: relative;
+          bottom: 1.3px;
+          right: 1.3px;
+        }
+      }
+      .ayuda_activa {
+        color: #228262;
+        background-color: #E6FFF7;
+        padding: 6px;
+        border-radius: 8px;
+        line-height: 16px;
+      }
+    }
+    margin-top: 16px;
+    h1 { display: none; }
+    h4 {
+      width: 100%;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      color: #101717;
+    }
+    .share-buttons {
+      a {
+        font-size: 26px;
+        margin: 0;
+        line-height: 24px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        align-content: center;
+        border-radius: 1em;
+      }
+    }
+    .av-ac-mp { padding: 0 16px;
+      @media (min-width: 769px) {
+        border-radius: 32px;
+      }
+    }
+  }
+}
+
+html:not(#__):not(#___) .cadmin .modal-content .yui3-widget-hd.modal-header {
+  background-color: #EFF0E8;
+}
+
+html:not(#__):not(#___) .modal-dialog.modal-full-screen {
+  .modal-content.modal-full-screen-content {
+    @media (min-width: 769px) {
+      border-radius: 16px;
+    }
+    .modal-header {
+      height: 60px;
+      @media (min-width: 769px) {
+        height: 48px;
+      }
+      .btn-toolbar-content {
+        right: 10px;
+        position: absolute;
+      }
+      .modal-title {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+}

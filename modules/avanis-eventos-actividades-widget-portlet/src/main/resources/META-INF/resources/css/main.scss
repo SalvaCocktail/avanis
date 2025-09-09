@@ -1,0 +1,1391 @@
+.modal-s{
+  display: none;
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.avanis-eventos-widget-eventos-actividades-portlet {
+}
+
+.av-widget_event-card {
+  width: 100%;
+  //min-height: 248px;
+  padding: 8px 8px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+}
+
+.av-event-header{
+  width: 100%;
+  display: flex;
+}
+.booking-container{
+  margin-top: 2%;
+  display: flex;
+  width: 100%;
+}
+.booking-date {
+  margin-left: 2em;
+  margin-right: 0.7em;
+}
+.booking-description{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  p{
+    margin: 0px;
+  }
+}
+.booking-date-box {
+  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border: 3px solid #BFC7C6;
+  background-color: #FFF;
+  height: 60px;
+  width: 60px;
+}
+
+.booking-month {
+  border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  border: 5px solid #C5E65A;
+  background-color: #C5E65A;
+  height: 20px;
+  text-align: center;
+  vertical-align: top;
+  padding: 0px;
+  margin: -1px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 13px;
+  width: 55px;
+}
+.booking-day {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.2em;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+}
+
+.booking-duration{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.booking-text {
+  margin-right: 2%;
+  width: 78%;
+  font-size: 0.94em;
+}
+.booking-title {
+  font-weight: bold;
+}
+.booking-date-box{
+  margin-bottom: 20px;
+}
+.av-event.widget.footer{
+
+}
+.span-dots {
+  display: inline-block;
+  width: 5px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.av-modal-preferences-filter {
+  position: relative;
+  top: 50px;
+  right: 12px;
+  z-index: 1;
+  width: fit-content;
+  height: 56px;
+  width: 100%;
+  height: auto;
+  /* padding: 16px; */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/*modal eventos*/
+.desplegable-modal{
+  display: flex;
+  justify-content: space-between;
+}
+.cancel__button{
+  background: none;
+  border: solid 1px #107e3e;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #107e3e;
+  height: 40px;
+  width: 192px;
+  cursor: pointer;
+  margin-right: 0.5em;
+}
+.apply__button{
+  background-color: #053c1c;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 192px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 0.5em;
+
+}
+.av-modal-preferences-filter,.av-modal-all-events-container{
+  /* av-te-ma Avanis Tu Explotación Meteo Alert MODAL */
+  .av-te-ma-modal {
+    background-color: rgba(39, 48, 47, 0.6);
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 411;
+    display: none;
+
+
+    .profile__button--text {
+      margin: 0px;
+      font-weight: 600;
+    }
+    .cancel__button{
+      background: none;
+      border: solid 1px #107e3e;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #107e3e;
+      height: 40px;
+      width: 192px;
+      cursor: pointer;
+      margin-right: 0.5em;
+    }
+    .apply__button{
+      background-color: #053c1c;
+      color: white;
+      border: none;
+      height: 40px;
+      width: 192px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: 0.5em;
+
+    }
+    .filter-empty-state{
+      text-align: left;
+    }
+    @media (max-width: 468px) {
+      .apply__button{
+        margin-left: 0em;
+      }
+      .cancel__button{
+        margin-bottom: 0.5em;
+        margin-right: 0em;
+      }
+
+    }
+
+
+
+    .option.selected {
+      background-color: #EFF0E8;
+      font-weight: 600;
+    }
+    &__panel {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      left: 50%;
+      max-height: 688px;
+      max-width: 608px; /* Máximo ancho */
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      border-radius: 0em 0em 1em 1em;
+    }
+
+    &__header {
+      align-items: center;
+      background-color: #EFF0E8;
+      border-radius: 16px 16px 0 0;
+      color: #101717;
+      display: flex;
+      font-size: 16px;
+      justify-content: space-between;
+      padding: 12px 16px;
+
+      &--yellow {
+        background-color: #FED257;
+      }
+
+      &--orange {
+        background-color: #FFA14D;
+      }
+
+      &--red {
+        background-color: #EE606F;
+      }
+
+      div {
+        align-items: center;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+      }
+    }
+
+    /* .av-icon-alert {
+      background-image: url('/o/theme-avanis/images/icons/assets-icons/...');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 12px;
+      margin-left: 8px;
+      width: 12px;
+    } */
+
+    &__heading {
+      color: #1B1B1B;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 0 0 0 6px;
+      text-align: center;
+    }
+
+    .modal__close {
+      font-size: 32px;
+      font-weight: 200;
+      margin-left: auto;
+    }
+
+
+    &__content {
+      background-color: #FFFFFF;
+      padding: 32px;
+      text-align: center;
+      border-radius: 0em 0em 1em 1em;
+
+    }
+
+    .av-widget--title {
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+      text-align: left;
+      flex-basis: 415px;
+    }
+
+  .c-otros,.c-agricultura,.c-ganaderia{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+  }
+
+    &__title {
+      color: #1B1B1B;
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    &__footer {
+      background-color: #FFFFFF;
+      border-radius: 0 0 16px 16px;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 24px;
+      width: 100%;
+    }
+
+    &__accept-btn {
+      background-color: #053C1C;
+      border-radius: 8px;
+      border: 1px solid #053C1C;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 8px 16px;
+    }
+
+    .modal-title{
+      text-align: center!important;
+    }
+    .btn-dejar-de-seguir-modal{
+      width: 140px;
+    }
+    .left-arrow,.av-icon-close{
+      cursor: pointer;
+
+    }
+  }
+
+}
+.av-event-header-link-span{
+  color: #107e3e;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+.error{
+  display: none;
+  text-align: center;
+  width: 280px;
+  /* font-family: Inter; */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .candado{
+    margin-bottom: 1em;
+  }
+  p{
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+}
+
+
+// Modal all events
+.av-modal-all-events-container{
+  background-color: #EFF0E8;
+  /* width: 99% !important; */
+  /* height: 99% !important; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* left: 50% !important; */
+  position: relative;
+  top: 50% !important;
+  /* transform: translate(-50%, -50%); */
+  width: 100%;
+  border-radius: 0em 0em 1em 1em;
+  flex-wrap: wrap;
+
+  .av-modal-all-events__header {
+    width: 100%;
+    .modal__close{
+      float: right;
+      margin-top: 1em;
+      margin-right: 24px;
+    }
+  }
+  .av-modal-all-events__content{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1em;
+
+  }
+
+  .image-detail-event{
+    width: 191px;
+    height: 115px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  @media (max-width: 992px) {
+    .all-booking-image{width: 100%;
+      .image-detail-event{
+        width: 100%;
+        height: 201px;
+      }
+    }
+
+  }
+
+  @media (max-width: 769px) {
+    .av-modal-all-events__content{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+          .av-list-events-left {
+            position: relative;
+            margin-left: 24px;
+            margin-right: 24px;
+            border-radius: 8px;
+            flex-basis: 100%;
+          }
+      .av-list-events-right{
+
+      }
+
+    }
+  }
+
+  @media (max-width: 992px) {
+    .all-booking-detail{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+
+    }
+  }
+
+  .av-list-events-left{
+    position: relative;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 8px;
+    .lfr-tooltip-scope{
+      display:none;
+    }
+    .modal-left-title{
+      font-size: 32px!important;
+      font-weight: 600!important;
+      line-height: 48px!important;
+      text-align: left!important;
+      margin-top: 40px;
+    }
+  }
+
+  .av-list-events-right{
+    flex-basis: 100%;
+    background-color: white;
+    border-radius: 40px 0px 0px 0px;
+
+    .modal-title{
+      font-size: 24px !important;
+      font-weight: 600 !important;
+      text-align: left !important;
+      margin: 40px 0px 0px 40px !important;
+    }
+  }
+  .all-event-list{
+    width: 100%;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  .all-booking-day{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+  }
+  
+  .all-booking-detail{
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+    .all-booking-title{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+      text-align: left;
+      margin-bottom: 0em;
+    }
+
+    .all-booking-image{
+
+    }
+    .all-booking-text{
+
+      .all-booking-text-font{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: left;
+        svg{
+          margin-right: -12px;
+          vertical-align: text-bottom;
+        }
+      }
+    }
+  }
+}
+
+/*CSS MINICALENDARIO */
+// ---------- YUI calendar ----------
+
+
+// ---------- Extras ----------
+.scheduler-event-recorder-content {
+  background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+  box-shadow: inset 0 1px 2px #ddd;
+
+  // 	@include transition(background 0.3s ease-in, border-color 0.3s ease-out);
+}
+
+.calendar-portlet .yui3-calendar-day,
+.scheduler-event-recorder-content {
+  border-radius: 2px;
+}
+
+.calendar-portlet-wrapper {
+  border-radius: 5px;
+}
+
+.calendar-list-item .calendar-list-item-color,
+.calendar-list-item-arrow,
+.calendar-list-item-arrow .icon-caret-down {
+  border-radius: 3px;
+}
+
+.simple-color-picker-item {
+  border-radius: 1px;
+
+  // 	@include transition(border-color 0.13s);
+}
+
+.simple-menu-content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.simple-menu-item {
+  // 	@include transition(background 0.13s);
+
+  &:hover {
+    // 		@include transition(background 0s);
+  }
+}
+
+.simple-color-picker-item:hover,
+.simple-color-picker-item-selected {
+  // 	@include transition(border-color 0s);
+}
+
+@media (max-width: 1279px) and (min-width: 767px) {
+  .scheduler-base-views {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) and (orientation: landscape)  {
+  .av-modal-all-events-container .all-event-list {
+    max-height: unset;
+  }
+}
+
+
+.div-modal-left-title-mobile{
+  display: none;
+}
+.modal-left-date{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #101717;
+  margin-bottom: 8px;
+}
+.modal-left-link-to-calendar{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+  color: #107E3E;
+  margin: 0px;
+}
+
+.div-left-link-to-calendar{
+  display: flex;
+  gap: 4px;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.next-events-mobile-title{
+  display: none;
+}
+
+.av-list-events-right .modal-right-title{
+  padding-left: 40px;
+  /* padding-right: 1em; */
+  padding-top: 40px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+
+@media (max-width: 767px) {
+  #portlet_avanis_eventos_minicalendar_AvanisEventosMiniCalendar .portlet-body {
+    background-color: white;
+    border-radius: 0px;
+  }
+  #portlet_avanis_eventos_minicalendar_AvanisEventosMiniCalendar .portlet-content .autofit-float.autofit-row.portlet-header{
+    margin-bottom: 0em;
+  }
+  #p_p_id_avanis_eventos_minicalendar_AvanisEventosMiniCalendar_{
+    display: none;
+  }
+
+  .next-events-mobile-title{
+    height: 40px;
+    gap: 28.5px;
+    align-items: center;
+    p{
+      margin-bottom: 0;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      align-items: center;
+
+    }
+    .back-to-allevents {
+      width: 16px;
+      height: auto;
+      /* top: 5px; */
+      margin-left: 1em;
+      gap: 0px;
+      opacity: 0px;
+    }
+
+  }
+  .av-te .av-te-bg .av-te__container .av-modal-all-events-container .av-list-events-left .div-modal-left-title-mobile #modal-left-title,.av-te .av-te-bg .av-te__container .av-modal-all-events-container .av-list-events-right .modal-right-title  {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+    text-align: left !important;
+    box-shadow: unset;
+    white-space: normal !important;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  .av-te .av-te-bg .av-te__container .av-modal-all-events-container .av-list-events-right .modal-right-title{
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+.div-modal-left-title-desktop{
+  display: none;
+}
+  .div-modal-left-title-mobile{
+    display: block;
+    padding-left: 1em;
+    padding-right: 1em ;
+  }
+  .av-modal-all-events-container .all-booking-detail .all-booking-title {
+    //styleName: H4 Mobile;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+  }
+  .av-modal-all-events-container .all-event-list {
+     max-height: unset;
+    padding: 1em;
+  }
+  .av-modal-all-events-container .av-modal-all-events__content .av-list-events-left {
+    margin: 0px;
+    background-color: #eff0e8;
+    width: 100%;
+  }
+.av-list-events-right{
+
+}
+  #portlet_avanis_eventos_minicalendar_AvanisEventosMiniCalendar{
+    margin: 0px;
+  }
+
+  .av-modal-all-events-container .av-list-events-right {
+    border-radius: 0px 0px 0px 0px;
+  }
+
+  .modal-seguidores .av-te-ma-modal__panel, .modal-cancelar-peticion .av-te-ma-modal__panel {
+
+  }
+
+
+
+
+}
+
+@media (min-width: 767px) {
+  .portal-popup .calendar-portlet .dialog-footer {
+    position: relative;
+  }
+}
+
+.definition-of-terms {
+  dt {
+    // 		color: $dark;
+    font-weight: normal;
+    margin-bottom: 2em;
+    width: 25em;
+    word-break: break-word;
+  }
+}
+
+.event-dots {
+  display: flex;
+  justify-content: center; /* Centra los puntos horizontalmente */
+  margin-top: 5px; /* Ajusta el espacio entre el número del día y los puntos */
+}
+
+.event-dots::before {
+  content: "●";
+  //display: inline-block;
+  font-size: 0.8em; /* Tamaño del punto */
+  margin-right: 2px; /* Espacio entre los puntos */
+}
+
+.event-dots::after {
+  content: "●";
+  //display: inline-block;
+  font-size: 0.8em; /* Tamaño del punto */
+  margin-right: 2px; /* Espacio entre los puntos */
+}
+
+/* Agregar un tercer punto */
+
+.event-dots {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Tres columnas para tres puntos */
+  gap: 2px; /* Espacio entre los puntos */
+  margin-top: 5px; /* Ajusta el espacio entre el número del día y los puntos */
+  justify-content: center; /* Centra los puntos horizontalmente */
+}
+
+.event-dots span {
+  font-size: 0.8em; /* Tamaño del punto */
+}
+
+yui3-calendar-day-selected::after {
+  content: '\25CF';
+  display: block;
+  font-size: 0.8em;
+  margin-top: -18px;
+}
+
+.yui3-calendar-day.one-events:after {
+  content: '\25CF';
+  display: block;
+  font-size: 0.8em;
+  margin-top: -18px;
+}
+
+.yui3-calendar-day.two-events:after {
+  content: '\25CF\25CF';
+  display: block;
+  font-size: 0.8em;
+  margin-top: -18px;
+}
+
+.yui3-calendar-day.three-events .event-dots::after {
+  content: '\25CF\25CF\25CF';
+  display: block;
+  font-size: 0.8em;
+  margin-top: -18px;
+}
+
+/* Estilo para el día seleccionado en el calendario */
+.yui3-calendar-day-selected {
+  background-color: #122C1F !important;
+  border-radius: 50%; /* Hace que el fondo sea circular */
+  color: #fff; /* Color del texto para asegurar buena visibilidad sobre el fondo oscuro */
+  font-weight: bold; /* Hace que el texto sea más prominente */
+  text-align: center; /* Centra el texto dentro del círculo */
+  line-height: 30px; /* Ajusta el alto de la línea para centrar verticalmente el texto */
+  width: 30px; /* Ancho del círculo */
+  height: 30px; /* Altura del círculo (igual al ancho para mantener la forma circular) */
+
+}
+
+/*Estilo para los eventos*/
+/* Elimina los bordes y el color de fondo del contenedor principal de la agenda */
+.scheduler-view-agenda-content {
+  border: none!important;
+  background-color: transparent!important;
+}
+
+/* Elimina los bordes y el color de fondo de los contenedores de eventos */
+.scheduler-view-agenda-container,
+.scheduler-view-agenda-events,
+.scheduler-view-agenda-event,
+.scheduler-view-agenda-header {
+  border: none!important;
+  background-color: transparent!important;
+}
+
+/* Elimina los bordes y el color de fondo de los detalles del evento */
+.scheduler-view-agenda-event-color,
+.scheduler-view-agenda-event-content,
+.scheduler-view-agenda-event-dates {
+  border: none!important;
+  background-color: transparent!important;
+}
+
+.portlet-boundary.portlet-boundary_avanis_eventos_admin_portlet_AvanisEventosAdminPortlet_.portlet-static.portlet-static-end.decorate {
+  width: 392px;
+
+}
+
+#_avanis_eventos_admin_portlet_AvanisEventosAdminPortlet_calendarListContainer{
+  display:none;
+}
+
+.scheduler-base-hd.row {
+  justify-content: space-between;
+  margin: 0;
+  display: none;
+}
+
+.scheduler-view-agenda-info-container{
+  display: none;
+}
+
+.scheduler-view-agenda-header{
+  display: none;
+}
+.scheduler-view-agenda-header-day{
+  display: none;
+}
+.eventos-separador{
+  border: 1px solid;
+  color: #BFC7C6;
+}
+.container-eventos-usuario{
+  display: flex;
+  column-gap: 12px;
+  .container-eventos-usuario-punto-verde{
+
+  }
+  .container-eventos-usuario-texto{
+    h5{
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+  }
+
+}
+.success{
+  margin-bottom: -2em!important;
+}
+#success{
+  margin-top: 1em;
+  margin-bottom: -1em;
+}
+
+// WIDGET PROXIMOS EVENTOS
+#main-content:has(.av-te) {
+  //background-color: #eff0e8;
+}
+.av-pe * {
+  margin: 0;
+  padding: 0;
+}
+
+.av-pe {
+  width: 100%;
+  display: flex;
+
+  &__container {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-title {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+    color: #101717;
+  }
+
+  &__header-cta-dots {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__separador {
+    width: calc(100% + 32px);
+    height: 1px;
+    translate: -16px;
+    background-color: #bfc7c6;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+  }
+
+  &__event {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__event-calendar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__calendar-month {
+    width: 48px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    background-color: #c6e75a;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #101717;
+  }
+
+  &__calendar-day {
+    width: 48px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+    border-right: 1px solid #bfc7c6;
+    border-bottom: 1px solid #bfc7c6;
+    border-left: 1px solid #bfc7c6;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    color: #101717;
+  }
+
+  &__event-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__event-title {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #101717;
+    &:hover {
+      color: #107E3E !important;
+    }
+  }
+
+  &__event-description,
+  &__event-date,
+  &__event-location {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: #101717;
+  }
+
+  &__footer-text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #107e3e;
+    cursor: pointer;
+  }
+}
+.all-booking-title:hover{
+  color: #107E3E !important;
+}
+
+/*modal sin logar detalle evento*/
+.modal-seguidores .av-te-ma-modal{
+  background-color: rgba(39, 48, 47, 0.6);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 111;
+  display: none;
+}
+.modal-seguidores .av-te-ma-modal__panel, .modal-cancelar-peticion .av-te-ma-modal__panel {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 688px;
+  max-width: 608px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 0em 0em 1em 1em;
+}
+.modal-seguidores .av-te-ma-modal__header, .modal-cancelar-peticion .av-te-ma-modal__header {
+  align-items: center;
+  background-color: #EFF0E8;
+  border-radius: 16px 16px 0 0;
+  color: #101717;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+#content{
+  background-color: white;
+}
+#content .modal-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center!important;
+  color: #101717;
+}
+.modal-seguidores .av-te-ma-modal .av-icon-close {
+  cursor: pointer;
+  font-size: 32px;
+}
+.modal-seguidores .av-te-ma-modal__content {
+  background-color: #FFFFFF;
+  padding: 32px;
+  text-align: left;
+  border-radius: 0em 0em 1em 1em;
+  .av-theme__btn--primary {
+    max-width: 100%;
+  }
+  .av-form-content{
+    margin-top: 2em !important;
+    .av-social-login-google{
+      span{
+        font-weight: 600!important;
+      }
+    }
+  }
+
+}
+.modal-seguidores .av-te-ma-modal__text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  text-align: left;
+  .separador{
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 23px;
+    margin-bottom: 1.5em;
+  }
+  .av-ac-mp__buttons{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+  }
+  .av-te-ma-modal__text-title{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+}
+.modal-seguidores .av-te-ma-modal__footer {
+  display: none;
+}
+.btn-social-google {
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  max-height: 40px;
+  margin-bottom: 24px !important;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  border: 1px solid #bfc7c6 !important;
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #101717 !important;
+}
+#modal-description {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+
+}
+#iniciar-sesion-link, .politicas-link{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  color: #107E3E;
+
+}
+@media only screen and (max-width: 400px) {
+  .av-te-ma-modal {
+    width: 100vw; /* Ancho completo */
+    height: 100vh; /* Altura completa */
+    max-width: 100%; /* Asegúrate de que no tenga un max-width predefinido */
+    max-height: 100%; /* Altura completa sin límite */
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .av-te-ma-modal__panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .av-te-ma-modal__header, .av-te-ma-modal__footer {
+    padding: 10px;
+  }
+
+  .av-te-ma-modal__content {
+    flex-grow: 1;
+    overflow-y: auto; /* Para permitir el scroll si el contenido es muy largo */
+    padding: 10px;
+  }
+
+  /* Opcionalmente, ajusta otros estilos internos para adaptarse mejor a la pantalla */
+}
+.av-ac-mp__buttons{
+  display: flex;
+  /* gap: 33px; */
+  justify-content: space-between;
+}
+.modal-datos-evento{
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+  .modal-left-img{
+    img {
+      vertical-align: middle;
+      border-radius: 8px;
+      width: 186.5px;
+      height: 112.24px;
+      object-fit: cover;
+    }
+  }
+  .modal-right-dates{
+    .calendario{
+      width: 13px;
+    }
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    .contenido-right-dates{
+      display: flex;
+      gap: 1em;
+      margin-bottom: 4px;
+    }
+
+  }
+}
+.av-te-ma-modal__text-event-title{
+  margin-bottom: 8px!important;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+
+}
+.modal-logado {
+  min-width: 608px;
+}
+
+@media (max-width: 608px) {
+  .modal-seguidores .av-te-ma-modal__panel{
+    width: 100%;
+    max-height: 100%;
+  }
+  .modal-seguidores .av-te-ma-modal__header,.modal-seguidores .av-te-ma-modal__content{
+    border-radius: 0px;
+  }
+  .modal-seguidores .av-te-ma-modal__content{
+
+  }
+
+  .modal-seguidores .av-te-ma-modal__text .av-ac-mp__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    .modal-btn{
+      width: 100%!important;
+    }
+  }
+
+  .modal-datos-evento {
+    display: block;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+  .modal-datos-evento .modal-left-img img {
+    vertical-align: middle;
+    border-radius: 8px;
+    width: 100%;
+    height: 202px;
+    object-fit: cover;
+  }
+  .modal-logado{
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.modal-seguidores .seguir-politicas{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #646B6B;
+}
+
+#content .lfr-layout-structure-item-row{
+  background-color: #107E3E;
+}
+
+.all-event-success{
+  height: 100%;
+}
+
+.all-booking-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.all-booking-link:hover .all-booking-title {
+  color: green;
+}
+/*Re-deploy*/

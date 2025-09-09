@@ -1,0 +1,66 @@
+.mi-perfil-notificaciones{
+  .form-switch .form-check-input:checked {
+    background-color: #107e3e;
+    border-color: #107e3e;
+  }
+  hr {
+    border-style: inset;
+    border-width: 1px;
+  }
+  .mi-perfil-notificacion-parcela,.mi-perfil-notificacion-de-mi-comunidad{
+    display: flex;
+    justify-content: space-between;
+    .conjunto-checkboxes{
+      flex-basis: 65%;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      p{
+        margin-left: 10px;
+        margin-top: -2px;
+      }
+    }
+    .titulo-notificacion{
+      flex-basis: 70%;
+    }
+
+    .checkbox-email{
+
+    }
+    .checkbox-notificacion{
+
+    }
+  }
+  .permitir-notificaciones-label{
+    margin-left: 10px;
+    margin-top: -2px;
+    width: max-content;
+  }
+  .checkbox-slider--b-flat {
+    position: relative;
+    width: 120px;
+  }
+  @media (min-width: 769px) {
+    .btn-guardar-notificaciones{
+  width: 165px;
+    }
+  }
+h4{
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin-top: 1em;
+
+}
+  .checkbox-slider--b-flat input + span:before{
+    background: rgb(37 195 93 / 20%);
+  }
+
+}
+.av-account-view__body label {
+  margin-bottom: 16px;
+  display: flex;
+}

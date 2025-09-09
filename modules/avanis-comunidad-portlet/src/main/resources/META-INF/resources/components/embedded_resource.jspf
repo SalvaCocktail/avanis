@@ -1,0 +1,102 @@
+<%@ page import="com.liferay.calendar.model.CalendarBooking" %>
+<%@ page import="com.liferay.calendar.service.CalendarBookingLocalServiceUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.DateUtil" %>
+<%@ page import="com.liferay.blogs.model.BlogsEntry" %>
+<%@ page import="com.liferay.blogs.service.BlogsEntryLocalServiceUtil" %>
+<%@ page import="com.liferay.journal.model.JournalArticle" %>
+<%@ page import="com.liferay.journal.service.JournalArticleLocalServiceUtil" %>
+<%@ page import="com.liferay.dynamic.data.mapping.storage.DDMFormValues" %>
+<%@ page import="com.liferay.dynamic.data.mapping.storage.DDMFormFieldValue" %>
+<%@ page import="com.liferay.dynamic.data.mapping.model.Value" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="com.liferay.portal.kernel.dao.jdbc.DataAccess" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<% ExpandoBridge expandoBridgeThread = thread.getExpandoBridge();
+    String classAndId = (String) expandoBridgeThread.getAttribute("resourceClassAndId");
+    if (classAndId != null && !classAndId.isBlank()) {
+        try {
+            int lastIndex = classAndId.lastIndexOf('.');
+            String resourceClassName = classAndId.substring(0, lastIndex);
+            Long resourceId = Long.parseLong(classAndId.substring(lastIndex + 1));
+            String resourceTitle = null;
+            String resourceSubtitle = null;
+            String resourceImageUrl = null;
+            String resourceStartDate = null;
+            String resourceEndDate = null;
+            String resourceUrl = null;
+
+            switch (resourceClassName) {
+                case "com.liferay.calendar.model.CalendarBooking":
+                    CalendarBooking calendarBooking = CalendarBookingLocalServiceUtil.getCalendarBooking(resourceId);
+                    resourceTitle = calendarBooking.getTitle(locale);
+                    resourceImageUrl = (String) calendarBooking.getExpandoBridge().getAttribute("event_image_url");
+                    resourceStartDate = DateUtil.getDate(new Date(calendarBooking.getStartTime()), "EEEE d 'de' MMMM", locale);
+                    resourceEndDate = DateUtil.getDate(new Date(calendarBooking.getEndTime()), "EEEE d 'de' MMMM", locale);
+                    resourceUrl = PortalUtil.getPortalURL(themeDisplay) + "/detalle-del-evento?eventTitle=" + calendarBooking.getExpandoBridge().getAttribute("event_url");
+
+                    break;
+                case "com.liferay.blogs.model.BlogsEntry":
+                    BlogsEntry blogsEntry = BlogsEntryLocalServiceUtil.getBlogsEntry(resourceId);
+                    resourceTitle = blogsEntry.getTitle();
+                    resourceSubtitle = blogsEntry.getSubtitle();
+                    resourceImageUrl = blogsEntry.getCoverImageURL(themeDisplay);
+                    resourceUrl = PortalUtil.getPortalURL(themeDisplay) + "/b/" + blogsEntry.getUrlTitle();
+
+                    break;
+                case "com.liferay.journal.model.JournalArticle":
+                    JournalArticle journalArticle = JournalArticleLocalServiceUtil.getArticle(themeDisplay.getScopeGroupId(), String.valueOf(resourceId));
+                    resourceTitle = journalArticle.getTitle(locale);
+                    resourceUrl = PortalUtil.getPortalURL(themeDisplay) + "/w/" + journalArticle.getUrlTitle();
+                    resourceSubtitle = journalArticle.getDescription(locale);
+                    DDMFormValues jaDDMFormValues = journalArticle.getDDMFormValues();
+                    List<DDMFormFieldValue> dDMFormFieldValues = jaDDMFormValues.getDDMFormFieldValues();
+                    for (DDMFormFieldValue ddmFormFieldValue : dDMFormFieldValues) {
+                        if ("fechaInicioSolicitud".equals(ddmFormFieldValue.getFieldReference())) {
+                            Value value = ddmFormFieldValue.getValue();
+                            resourceStartDate = value.getString(themeDisplay.getLocale());
+                        } else if ("fechaFinSolicitud".equals(ddmFormFieldValue.getFieldReference())) {
+                            Value value = ddmFormFieldValue.getValue();
+                            resourceEndDate = value.getString(themeDisplay.getLocale());
+                        }
+                    }
+                    break;
+
+                case "lonja":
+
+                    try {
+                        // Crear una consulta SQL para obtener los datos
+                        String sqlQuery = "SELECT nombreproducto, lonjaId FROM avanis_lonjas_preciolonja WHERE productoid = ?";
+
+                        // Ejecutar la consulta
+                        try (Connection connection = DataAccess.getConnection();
+                             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
+
+                            preparedStatement.setLong(1, resourceId);
+
+                            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                                if (resultSet.next()) {
+                                    // Obtener el nombre del producto y lonjaId
+                                    resourceTitle = resultSet.getString("nombreproducto");
+                                    long lonjaId = resultSet.getLong("lonjaId");
+
+                                    // Construir la URL con lonjaId y productoId
+                                    resourceUrl = "/detalle-lonja?lonjaId=" + lonjaId + "&productoId=" + resourceId;
+                                }
+                            }
+                        }
+
+                    } catch (Exception e) {
+                        System.err.println("Error ejecutando la consulta SQL: " + e.getMessage());
+                    }
+                    break;
+
+            }
+
+
+%>
+<%@ include file="./view_embedded_resource.jspf" %>
+<% } catch (Exception e) {
+    //System.out.println(e.getMessage());
+}
+}%>

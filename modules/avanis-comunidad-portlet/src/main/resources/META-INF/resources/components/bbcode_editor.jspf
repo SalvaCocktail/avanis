@@ -1,0 +1,36 @@
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
+<%@ page import="com.liferay.portal.kernel.editor.Editor" %>
+<%@ page import="com.liferay.portal.kernel.util.HashMapBuilder" %>
+<%@ page import="com.liferay.taglib.ui.InputEditorTag" %>
+<%@ page import="avanis.comunidad.portlet.util.MBUtil" %>
+<%
+if(Validator.isNotNull(body)){
+	body = MBUtil.getBBCodeNormalize(body);
+}
+
+Editor editor = InputEditorTag.getEditor(request, "ckeditor_bbcode");
+%>
+
+<liferay-editor:editor
+	allowBrowseDocuments="<%= false %>"
+	contents="<%= body %>"
+	editorName="ckeditor_bbcode"
+	configKey=""
+	fileBrowserParams='<%=
+		HashMapBuilder.put(
+			"categoryId", String.valueOf(categoryId)
+		).build()
+	%>'
+	cssClass="form-control"
+	name="bodyEditor"
+	placeholder=" "
+	showSource="<%= false %>"
+	skipEditorLoading="<%= true %>"
+/>
+
+
+<aui:script>
+	function <portlet:namespace />getHTML() {
+	    return window.<portlet:namespace />bodyEditor.getHTML();
+	}
+</aui:script>
