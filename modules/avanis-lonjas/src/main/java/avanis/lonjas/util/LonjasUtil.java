@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -72,19 +73,28 @@ public class LonjasUtil {
         List<InfoProducto> listaProductos = new ArrayList<>();
 
         List<ProductoExplot> productoExplotSearch = ProductoExplotLocalServiceUtil.getProductoExplotByExplotacionId(plotId);
+        
+        Set<Long> lonjaIds = productoExplotSearch.stream()
+                .map(ProductoExplot::getLonjaId)
+                .collect(Collectors.toSet());
 
+        Set<Long> productoIds = productoExplotSearch.stream()
+                .map(ProductoExplot::getProductoId)
+                .collect(Collectors.toSet());
+
+        
         OrderByComparator<PrecioLonja> orderByComparator = OrderByComparatorFactoryUtil.create("AVANIS_LONJAS_PRECIOLONJA", "fecha", false);
-        List<PrecioLonja> listPrecioLonja = productoExplotSearch.stream()
-                .map(precioLonjaAux -> PrecioLonjaLocalServiceUtil
-                        .getPrecioLonjaByLonjaIdByProductoId(precioLonjaAux.getLonjaId(), precioLonjaAux.getProductoId(), orderByComparator)
-                        .stream()
-                        .findFirst()
-                        .orElse(null))
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+        Map<String, PrecioLonja> precios = PrecioLonjaLocalServiceUtil
+                .getLatestByLonjaIdsAndProductoIds(lonjaIds, productoIds, orderByComparator)
+                .stream()
+                .collect(Collectors.toMap(pl -> pl.getLonjaId() + "_" + pl.getProductoId(), pl -> pl));
 
-        listPrecioLonja.stream()
-                .forEach(producto -> listaProductos.add(completarInfoProducto(producto, null, userId)));
+        productoExplotSearch.forEach(pe -> {
+            PrecioLonja precio = precios.get(pe.getLonjaId() + "_" + pe.getProductoId());
+            if (precio != null) {
+                listaProductos.add(completarInfoProducto(precio, null, userId));
+            }
+        });
 
         return listaProductos;
     }

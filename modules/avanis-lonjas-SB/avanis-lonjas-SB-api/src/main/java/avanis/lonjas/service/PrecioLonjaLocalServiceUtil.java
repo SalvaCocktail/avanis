@@ -16,6 +16,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 import java.io.Serializable;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Provides the local service utility for PrecioLonja. This utility wraps
@@ -255,12 +256,20 @@ public class PrecioLonjaLocalServiceUtil {
 		return getService().getPrecioLonjaByLonjaIdByFecha(lonjaId, fecha);
 	}
 
-	public static List<PrecioLonja> getPrecioLonjaByLonjaIdByProductoId(
-		long lonjaId, long productoId,
-		OrderByComparator<PrecioLonja> orderByComparator) {
-
-		return getService().getPrecioLonjaByLonjaIdByProductoId(
-			lonjaId, productoId, orderByComparator);
+    public static List<PrecioLonja> getPrecioLonjaByLonjaIdByProductoId(
+            long lonjaId, long productoId,
+            OrderByComparator<PrecioLonja> orderByComparator) {
+    	
+    	return getService().getPrecioLonjaByLonjaIdByProductoId(
+                lonjaId, productoId, orderByComparator);
+	}
+	
+	public static List<PrecioLonja> getLatestByLonjaIdsAndProductoIds(
+	        Set<Long> lonjaIds, Set<Long> productoIds,
+	        OrderByComparator<PrecioLonja> orderByComparator) {
+	
+	        return getService().getLatestByLonjaIdsAndProductoIds(
+	                lonjaIds, productoIds, orderByComparator);
 	}
 
 	/**

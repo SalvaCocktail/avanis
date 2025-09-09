@@ -28,6 +28,7 @@ import java.io.Serializable;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -230,10 +231,15 @@ public interface PrecioLonjaLocalService
 	public List<PrecioLonja> getPrecioLonjaByLonjaIdByFecha(
 		long lonjaId, Date fecha);
 
-	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public List<PrecioLonja> getPrecioLonjaByLonjaIdByProductoId(
-		long lonjaId, long productoId,
-		OrderByComparator<PrecioLonja> orderByComparator);
+	 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+     public List<PrecioLonja> getPrecioLonjaByLonjaIdByProductoId(
+             long lonjaId, long productoId,
+             OrderByComparator<PrecioLonja> orderByComparator);
+
+     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+     public List<PrecioLonja> getLatestByLonjaIdsAndProductoIds(
+             Set<Long> lonjaIds, Set<Long> productoIds,
+             OrderByComparator<PrecioLonja> orderByComparator);
 
 	/**
 	 * Returns a range of all the precio lonjas.

@@ -7,6 +7,7 @@ package avanis.lonjas.service;
 
 import com.liferay.portal.kernel.service.ServiceWrapper;
 import com.liferay.portal.kernel.service.persistence.BasePersistence;
+import java.util.Set;
 
 /**
  * Provides a wrapper for {@link PrecioLonjaLocalService}.
@@ -287,13 +288,24 @@ public class PrecioLonjaLocalServiceWrapper
 
 	@Override
 	public java.util.List<avanis.lonjas.model.PrecioLonja>
-		getPrecioLonjaByLonjaIdByProductoId(
-			long lonjaId, long productoId,
-			com.liferay.portal.kernel.util.OrderByComparator
-				<avanis.lonjas.model.PrecioLonja> orderByComparator) {
-
-		return _precioLonjaLocalService.getPrecioLonjaByLonjaIdByProductoId(
-			lonjaId, productoId, orderByComparator);
+	    getPrecioLonjaByLonjaIdByProductoId(
+	            long lonjaId, long productoId,
+	            com.liferay.portal.kernel.util.OrderByComparator
+	                    <avanis.lonjas.model.PrecioLonja> orderByComparator) {
+	
+	    return _precioLonjaLocalService.getPrecioLonjaByLonjaIdByProductoId(
+	            lonjaId, productoId, orderByComparator);
+	}
+	
+	@Override
+	public java.util.List<avanis.lonjas.model.PrecioLonja>
+	    getLatestByLonjaIdsAndProductoIds(
+	            Set<Long> lonjaIds, Set<Long> productoIds,
+	            com.liferay.portal.kernel.util.OrderByComparator
+	                    <avanis.lonjas.model.PrecioLonja> orderByComparator) {
+	
+	    return _precioLonjaLocalService.getLatestByLonjaIdsAndProductoIds(
+	            lonjaIds, productoIds, orderByComparator);
 	}
 
 	/**

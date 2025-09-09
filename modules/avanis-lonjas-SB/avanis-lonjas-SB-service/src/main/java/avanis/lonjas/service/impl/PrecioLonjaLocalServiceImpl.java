@@ -10,11 +10,18 @@ import avanis.lonjas.service.base.PrecioLonjaLocalServiceBaseImpl;
 
 import com.liferay.portal.aop.AopService;
 
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
+import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import org.osgi.service.component.annotations.Component;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Brian Wing Shun Chan
@@ -35,6 +42,30 @@ public class PrecioLonjaLocalServiceImpl
 	}
 
 	public List<PrecioLonja> getPrecioLonjaByLonjaIdByProductoId(long lonjaId, long productoId, OrderByComparator<PrecioLonja> orderByComparator){
-		return precioLonjaPersistence.findBylonjaIdProductoId(lonjaId, productoId, -1, -1, orderByComparator);
+        return precioLonjaPersistence.findBylonjaIdProductoId(lonjaId, productoId, -1, -1, orderByComparator);
+}
+
+	public List<PrecioLonja> getLatestByLonjaIdsAndProductoIds(
+	        Set<Long> lonjaIds, Set<Long> productoIds, OrderByComparator<PrecioLonja> orderByComparator) {
+	
+	        if (lonjaIds == null || lonjaIds.isEmpty() ||
+	                productoIds == null || productoIds.isEmpty()) {
+	                return new ArrayList<>();
+	        }
+	
+	        DynamicQuery dynamicQuery = dynamicQuery()
+	                .add(RestrictionsFactoryUtil.in("lonjaId", lonjaIds))
+	                .add(RestrictionsFactoryUtil.in("productoId", productoIds));
+	
+	        List<PrecioLonja> results = dynamicQuery(dynamicQuery, QueryUtil.ALL_POS, QueryUtil.ALL_POS, orderByComparator);
+	
+	        Map<String, PrecioLonja> latest = new LinkedHashMap<>();
+	
+	        for (PrecioLonja precioLonja : results) {
+	                String key = precioLonja.getLonjaId() + "_" + precioLonja.getProductoId();
+	                latest.putIfAbsent(key, precioLonja);
+	        }
+	
+	        return new ArrayList<>(latest.values());
 	}
 }
