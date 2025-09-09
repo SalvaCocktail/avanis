@@ -30,9 +30,11 @@ import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -54,7 +56,9 @@ public class SitemapFilter extends BaseFilter {
     private static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     private static final String URLSET_OPEN = "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n";
     private static final String URLSET_CLOSE = "</urlset>";
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter
+            .ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
+            .withZone(ZoneOffset.UTC);
 
     private volatile SitemapConfig _configuration;
 
@@ -183,11 +187,13 @@ public class SitemapFilter extends BaseFilter {
     }
 
     // Método para agregar URLs al Sitemap
-    private void appendUrlToSitemap(StringBuilder xmlBuilder, String loc, java.util.Date lastmod) {
+    private void appendUrlToSitemap(StringBuilder xmlBuilder, String loc, Date lastmod) {
         xmlBuilder.append("<url>\n");
         xmlBuilder.append("<loc>").append(loc).append("</loc>\n");
         if (lastmod != null) {
-            xmlBuilder.append("<lastmod>").append(DATE_FORMAT.format(lastmod)).append("</lastmod>\n");
+        	xmlBuilder.append("<lastmod>")
+            .append(DATE_FORMATTER.format(lastmod.toInstant()))
+            .append("</lastmod>\n");
         }
         xmlBuilder.append("</url>\n");
     }
