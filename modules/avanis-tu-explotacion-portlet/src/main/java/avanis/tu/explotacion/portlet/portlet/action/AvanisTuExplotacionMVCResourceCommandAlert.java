@@ -1,6 +1,9 @@
 package avanis.tu.explotacion.portlet.portlet.action;
 
 import avanis.tu.explotacion.portlet.constants.AvanisTuExplotacionPortletKeys;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
@@ -11,6 +14,8 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCResourceCommand;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCResourceCommand;
 import com.liferay.portal.kernel.service.UserNotificationEventLocalServiceUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
+import com.liferay.portal.kernel.util.OrderByComparator;
+import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 import com.liferay.portal.kernel.util.Portal;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -34,6 +39,7 @@ import java.util.List;
 public class AvanisTuExplotacionMVCResourceCommandAlert extends BaseMVCResourceCommand {
 
         private static final Log _log = LogFactoryUtil.getLog(AvanisTuExplotacionMVCResourceCommandAlert.class);
+        private static final int _PAGE_SIZE = 20;
 
         @Override
         protected void doServeResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse)
@@ -52,22 +58,31 @@ public class AvanisTuExplotacionMVCResourceCommandAlert extends BaseMVCResourceC
 
                 // Marcar notificación como leída en la tabla UserNotificationEvent
                 try {
+                        DynamicQuery dynamicQuery = UserNotificationEventLocalServiceUtil.dynamicQuery();
+
+                        dynamicQuery.add(PropertyFactoryUtil.forName("userId").eq(userId));
+                        dynamicQuery.add(PropertyFactoryUtil.forName("archived").eq(false));
+                        dynamicQuery.add(RestrictionsFactoryUtil.ilike("payload", "%" + description + "%"));
+                        dynamicQuery.add(RestrictionsFactoryUtil.ilike("payload", "%" + probability + "%"));
+                        dynamicQuery.add(RestrictionsFactoryUtil.ilike("payload", "%" + phenomenon + "%"));
+
+                        OrderByComparator<UserNotificationEvent> orderByComparator =
+                               OrderByComparatorFactoryUtil.create("UserNotificationEvent", "timestamp", false);
+
                         List<UserNotificationEvent> userNotificationEvents =
-                                UserNotificationEventLocalServiceUtil.getUserNotificationEvents(userId, -1, -1);
+                                UserNotificationEventLocalServiceUtil.dynamicQuery(
+                                        dynamicQuery, 0, _PAGE_SIZE, orderByComparator);
 
                         for (UserNotificationEvent userNotificationEvent : userNotificationEvents) {
-                                if (!userNotificationEvent.getArchived()) {
-                                        // Leer el payload y convertirlo a JSONObject
-                                        JSONObject payloadJson = JSONFactoryUtil.createJSONObject(userNotificationEvent.getPayload());
-                                        String title = payloadJson.getString("title");
-                                        String body = payloadJson.getString("body");
+                                JSONObject payloadJson = JSONFactoryUtil.createJSONObject(userNotificationEvent.getPayload());
+                                String title = payloadJson.getString("title");
+                                String body = payloadJson.getString("body");
 
-                                        // Comparar con la descripción de la alerta
-                                        if (body.contains(description) && body.contains(probability) && title.contains(phenomenon)) {
-                                                // Marcar como archivada
-                                                userNotificationEvent.setArchived(true);
-                                                UserNotificationEventLocalServiceUtil.updateUserNotificationEvent(userNotificationEvent);
-                                        }
+                                // Comparar con la descripción de la alerta
+                                if (body.contains(description) && body.contains(probability) && title.contains(phenomenon)) {
+                                        // Marcar como archivada
+                                        userNotificationEvent.setArchived(true);
+                                        UserNotificationEventLocalServiceUtil.updateUserNotificationEvent(userNotificationEvent);
                                 }
                         }
                 } catch (PortalException e) {
@@ -92,8 +107,3 @@ public class AvanisTuExplotacionMVCResourceCommandAlert extends BaseMVCResourceC
                 }
                 return sb.toString();
         }
-
-        @Reference
-        private Portal _portal;
-
-}
